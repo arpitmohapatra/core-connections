@@ -91,6 +91,10 @@ echo "Building images into $OUT"
 echo
 
 echo "Hero"
+# Source is a 2.14:1 phone-panorama shot - kept at its native wide ratio on
+# purpose: the hero is a full-width overlay (photo as background, headline
+# overlaid on top), and CSS switches to a taller object-fit crop on mobile
+# via aspect-ratio + object-position rather than a second cropped asset.
 process_image "$SRC_A/20240213_132448.jpg" "hero/home" 0 none "480 960 1600 2400"
 
 echo "Team headshots (portrait crop)"
@@ -115,10 +119,18 @@ process_image "$SRC_A/Monate & Heather.JPG"                     "about/our-story
 process_image "$SRC_A/DSC06492.jpeg"                             "about/philosophy"        0 none "480 960 1600"
 
 echo "Contact / location"
-process_image "$SRC_A/CLINIC - Close up.JPG"                    "contact/exterior-sign"   90 none "480 960 1600"
+process_image "$SRC_A/CLINIC - Close up.JPG"                    "contact/exterior-sign"   90 portrait "480 960 1600"
 
 echo "Stat band (photo-overlay, per client reference)"
 process_image "$SRC_A/20240213_133944.jpg"                      "hero/stat-band"          0 none "640 1200 2000"
+
+echo "Brand mark (nav/footer logo, derived from the favicon set)"
+mkdir -p "$OUT/brand"
+sips -Z 64  "$ROOT/favicon/android-chrome-512x512.png" --out "$OUT/brand/mark-64.png" >/dev/null
+sips -Z 128 "$ROOT/favicon/android-chrome-512x512.png" --out "$OUT/brand/mark-128.png" >/dev/null
+"$CWEBP" -quiet -q 90 "$OUT/brand/mark-64.png"  -o "$OUT/brand/mark-64.webp"
+"$CWEBP" -quiet -q 90 "$OUT/brand/mark-128.png" -o "$OUT/brand/mark-128.webp"
+echo "  built brand/mark-{64,128}.{png,webp}"
 
 echo
 du -sh "$OUT" | sed 's/^/Total output size: /'
