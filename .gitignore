@@ -1,1 +1,14 @@
-scrape
+# Raw source photography (1GB+, includes video). Never committed — only the
+# processed output in assets/img/ (built by tools/build-images.sh) ships.
+/photos for website/
+/in clinic photos/
+*.mp4
+
+# OS cruft
+.DS_Store
+
+# Scratch/original brand assets kept locally for reference, not served
+# (processed versions live in assets/img/brand/ and assets/favicon/)
+/2025-logo.jpg
+/favicon/
+/comments.txt
