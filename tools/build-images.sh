@@ -117,6 +117,8 @@ process_image "$SRC_A/Galia - Yoga - cross legged (landscape).jpeg" "service/phy
 echo "About / story"
 process_image "$SRC_A/Monate & Heather.JPG"                     "about/our-story"         0 none "480 960 1600"
 process_image "$SRC_A/DSC06492.jpeg"                             "about/philosophy"        0 none "480 960 1600"
+# Source is only 1024px wide - cap output widths so nothing upscales.
+process_image "$SRC_B/Clinic-small-room--1024x682.jpg"           "about/clinic-room"       0 none "480 960"
 
 echo "Contact / location"
 process_image "$SRC_A/CLINIC - Close up.JPG"                    "contact/exterior-sign"   90 portrait "480 960 1600"
