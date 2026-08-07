@@ -123,9 +123,6 @@ process_image "$SRC_B/Clinic-small-room--1024x682.jpg"           "about/clinic-r
 echo "Contact / location"
 process_image "$SRC_A/CLINIC - Close up.JPG"                    "contact/exterior-sign"   90 portrait "480 960 1600"
 
-echo "Stat band (photo-overlay, per client reference)"
-process_image "$SRC_A/20240213_133944.jpg"                      "hero/stat-band"          0 none "640 1200 2000"
-
 echo "Brand mark (nav/footer logo, derived from the favicon set)"
 mkdir -p "$OUT/brand"
 sips -Z 64  "$ROOT/favicon/android-chrome-512x512.png" --out "$OUT/brand/mark-64.png" >/dev/null
