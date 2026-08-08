@@ -319,22 +319,31 @@ p+p {
 .nav__toggle-bar::after {
   content: "";
   position: absolute;
-  left: 11px;
-  right: 11px;
+  /* Explicit width, not left+right: left/right values here would resolve
+     against each element's OWN containing block, not the 44px button — for
+     .nav__toggle-bar that's the button (correct), but for ::before/::after
+     it's .nav__toggle-bar itself (22px wide), so the same left/right pair
+     means something different at each level. Width in px + left:0 on the
+     pseudo-elements keeps all three bars aligned instead of staircasing. */
+  width: 22px;
   height: 2px;
+  border-radius: 1px;
   background: var(--color-primary-dark);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
 }
 
 .nav__toggle-bar {
+  left: 11px;
   top: 21px;
 }
 
 .nav__toggle-bar::before {
+  left: 0;
   top: -7px;
 }
 
 .nav__toggle-bar::after {
+  left: 0;
   top: 7px;
 }
 
@@ -386,19 +395,33 @@ p+p {
   .nav__menu {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
+    align-items: stretch;
+    gap: 0;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: var(--color-bg);
-    padding: var(--space-md) var(--space-sm) var(--space-lg);
+    padding: var(--space-xs) var(--space-sm) var(--space-lg);
     border-bottom: 1px solid var(--color-line);
   }
 
   .nav__menu.is-open {
     display: flex;
+  }
+
+  .nav__menu a {
+    display: block;
+    padding: 0.9em 0.2em;
+    width: 100%;
+    border-bottom: 1px solid var(--color-line);
+    font-size: 1.05rem;
+  }
+
+  .nav__menu a.btn {
+    margin-top: var(--space-sm);
+    justify-content: center;
+    border-bottom: none;
   }
 
   .nav__menu .btn {
