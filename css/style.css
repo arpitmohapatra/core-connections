@@ -980,6 +980,70 @@ p+p {
   margin-top: 0.3em;
 }
 
+/* ---------- Fee tables ---------- */
+.fee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.fee-table {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.fee-table h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.fee-group-label {
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-top: var(--space-sm);
+}
+
+.fee-group-label:first-of-type {
+  margin-top: var(--space-xs);
+}
+
+.fee-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-block: 0.4em;
+  border-bottom: 1px dashed var(--color-line);
+  font-size: 0.96rem;
+}
+
+.fee-row:last-of-type {
+  border-bottom: none;
+}
+
+.fee-row .fee-label {
+  color: var(--color-text);
+}
+
+.fee-row .fee-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+.fee-note {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
 /* ---------- Cards: policies / values / stats ---------- */
 .card-grid {
   display: grid;
