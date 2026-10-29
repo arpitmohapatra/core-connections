@@ -2264,7 +2264,7 @@ mark {
 }
 
 .services-grid > .service-card:not(.service-card--feature):nth-of-type(3n) {
-  background: #1b1730;
+  background: var(--color-primary-dark);
   color: #fff;
 }
 
