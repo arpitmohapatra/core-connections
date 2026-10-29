@@ -1861,7 +1861,7 @@ mark {
 .page-header {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #362c5e 0%, #362c5e 52%, rgba(54, 44, 94, 0.55) 78%, rgba(54, 44, 94, 0) 100%), url("../brand/cc-pattern-dark.svg") center / 60px auto, #362c5e;
+  background: linear-gradient(90deg, #362c5e 0%, #362c5e 52%, rgba(54, 44, 94, 0.55) 78%, rgba(54, 44, 94, 0) 100%), url("../images/cc-pattern-dark.svg") center / 60px auto, #362c5e;
   color: #fff;
   border-bottom: 0;
   padding-block: var(--space-xl) calc(var(--space-lg) + 1rem);
