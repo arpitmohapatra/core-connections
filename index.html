@@ -32,14 +32,14 @@
     </header>
 
     <div class="splash__choices">
-      <a class="choice choice--core" href="home.html" data-clinic="core">
+      <a class="choice choice--core" href="home.html">
         <img class="choice__logo" data-motion="reveal" src="images/logo-horizontal-reverse.svg" width="270" height="52" alt="">
         <h2 class="sr-only">Core Connections Physiotherapy</h2>
         <p>Pelvic health, pre &amp; postnatal and orthopedic physiotherapy. Inclusive, gender-affirming and trauma-informed care since 2008.</p>
         <span class="choice__go">Enter site <span aria-hidden="true">&rarr;</span></span>
       </a>
 
-      <a class="choice choice--pessary" href="pessary/index.html" data-clinic="pessary">
+      <a class="choice choice--pessary" href="pessary/index.html">
         <img class="choice__logo choice__logo--opc" data-motion="reveal" src="pessary/logo-horizontal.svg" width="185" height="56" alt="">
         <h2 class="sr-only">Ottawa Pessary Clinic</h2>
         <p>Individualized pessary fitting and care, in collaboration with Core Connections. Officially opening January 2027.</p>
@@ -47,32 +47,9 @@
       </a>
     </div>
 
-    <p class="splash__note">We&rsquo;ll remember your choice. Each site links to the other, so you can always move between the two clinics.</p>
+    <p class="splash__note">Each site links to the other, so you can always move between the two clinics.</p>
   </main>
 
-  <script>
-    (function () {
-      var KEY = 'cc-clinic';
-      var DEST = { core: 'home.html', pessary: 'pessary/index.html' };
-      var params = new URLSearchParams(window.location.search);
-      var stay = params.has('switch') || params.has('choose');
-      var saved = null;
-      try { saved = window.localStorage.getItem(KEY); } catch (e) { /* storage unavailable */ }
-
-      // Returning visitors skip the splash. Both sites link to home.html /
-      // pessary pages directly, so this can never trap anyone here.
-      if (!stay && saved && DEST[saved]) {
-        window.location.replace(DEST[saved]);
-        return;
-      }
-
-      document.querySelectorAll('[data-clinic]').forEach(function (link) {
-        link.addEventListener('click', function () {
-          try { window.localStorage.setItem(KEY, link.getAttribute('data-clinic')); } catch (e) { /* ignore */ }
-        });
-      });
-    })();
-  </script>
 <script src="js/brand-motion.js" defer></script>
 </body>
 </html>
