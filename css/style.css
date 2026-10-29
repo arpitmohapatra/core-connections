@@ -2366,3 +2366,19 @@ mark {
     transform: none;
   }
 }
+
+/* Footer text must stay light on the dark violet ground (p defaults to dark ink) */
+.site-footer p,
+.site-footer address,
+.site-footer li {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.site-footer a {
+  color: #fff;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  color: var(--color-accent);
+}
