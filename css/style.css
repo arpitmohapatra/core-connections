@@ -1366,11 +1366,6 @@ p+p {
   outline-color: var(--color-white);
 }
 
-.opc-ribbon__sep {
-  opacity: 0.55;
-  margin: 0 0.2rem;
-}
-
 /* Callout used inside content pages */
 .opc-callout {
   background: linear-gradient(120deg, var(--color-navy-deep), var(--color-navy));
