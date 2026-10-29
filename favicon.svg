@@ -16,6 +16,7 @@
       <circle cx="100" cy="58" r="45" fill="black"/>
     </mask>
   </defs>
+  <rect width="200" height="200" rx="40" fill="#ffffff"/>
   <!-- the Core Connections mark, centred in a square canvas -->
   <g transform="translate(0 24)">
     <circle cx="100" cy="50" r="50" fill="#5c68a0" mask="url(#cutout1)"/>
