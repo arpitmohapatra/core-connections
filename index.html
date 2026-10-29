@@ -21,7 +21,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/splash.css">
 </head>
 <body>
@@ -50,6 +50,26 @@
     <p class="splash__note">Each site links to the other, so you can always move between the two clinics.</p>
   </main>
 
+  <script>
+    // Kinetic: the headline rises word by word (skipped for Reduce motion).
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var h1 = document.querySelector('.splash h1');
+      if (!h1 || h1.children.length) return;
+      var words = h1.textContent.trim().split(/\s+/);
+      h1.setAttribute('aria-label', words.join(' '));
+      h1.textContent = '';
+      words.forEach(function (word, i) {
+        var span = document.createElement('span');
+        span.className = 'rise-word' + (i === words.length - 1 ? ' rise-word--hl' : '');
+        span.style.setProperty('--i', i);
+        span.setAttribute('aria-hidden', 'true');
+        span.textContent = word;
+        h1.appendChild(span);
+        if (i < words.length - 1) h1.appendChild(document.createTextNode(' '));
+      });
+    })();
+  </script>
 <script src="js/brand-motion.js" defer></script>
 </body>
 </html>

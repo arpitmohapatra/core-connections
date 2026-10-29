@@ -130,7 +130,7 @@ img {
 .choice--core {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(90deg, #362c5e 0%, #362c5e 68%, rgba(54, 44, 94, 0.55) 88%, rgba(54, 44, 94, 0) 100%), url("../images/cc-pattern-dark.svg") center / 60px auto, #362c5e;
+  background: #362c5e;
   color: #fff;
   border-radius: 28px;
   box-shadow: 0 16px 40px rgba(54, 44, 94, 0.3);
@@ -280,4 +280,86 @@ img {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+}
+
+
+/* ---- Kinetic (Core Connections side) ---- */
+:root {
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+.splash__eyebrow {
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+}
+
+.rise-word {
+  display: inline-block;
+  animation: rise-word 0.6s var(--spring) both;
+  animation-delay: calc(var(--i) * 90ms + 120ms);
+}
+
+.rise-word--hl {
+  color: var(--primary);
+}
+
+@keyframes rise-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+  }
+}
+
+/* Photo with a slow push-in under a violet scrim; text stays on the solid side */
+.choice--core::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(54, 44, 94, 0.9) 0%, rgba(54, 44, 94, 0.78) 45%, rgba(27, 23, 48, 0.94) 100%),
+    url("../images/clinic-room.jpg") center / cover;
+  animation: kb 14s ease-out both;
+}
+
+@keyframes kb {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.14);
+  }
+}
+
+.choice--core,
+.choice--pessary {
+  transition: transform 0.45s var(--spring), box-shadow 0.45s ease, border-color 0.9s ease;
+}
+
+.choice--core:hover,
+.choice--core:focus-visible {
+  transform: translateY(-8px) rotate(-1.5deg);
+  box-shadow: 0 18px 36px rgba(54, 44, 94, 0.35);
+}
+
+.choice--core .choice__go {
+  border-radius: 14px;
+  box-shadow: none;
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.4rem;
+  transition: transform 0.4s var(--spring);
+}
+
+.choice--core:hover .choice__go {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-word,
+  .choice--core::before {
+    animation: none;
+  }
 }
