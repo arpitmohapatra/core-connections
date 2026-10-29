@@ -215,3 +215,5 @@ img {
     transform: none;
   }
 }
+
+.motion-pending { visibility: hidden; }

@@ -1620,3 +1620,8 @@ p+p {
 .review__stars { color: var(--color-accent-dark); letter-spacing: 0.15em; }
 .reviews__summary { color: var(--color-muted); margin-top: var(--space-3xs); }
 .reviews__summary span { color: var(--color-accent-dark); }
+
+/* Brand motion: hide a reveal logo until the script has swapped in its animatable SVG */
+.motion-pending {
+  visibility: hidden;
+}

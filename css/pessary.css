@@ -137,3 +137,5 @@ footer .fine{border-top:1px solid rgba(255,255,255,.2);margin-top:32px;padding-t
 .rv blockquote p{font-family:var(--serif);font-size:1.15rem;line-height:1.5;margin:0}
 .rv figcaption{font-size:.9rem;color:var(--grey)}
 .rv-s{color:var(--teal);letter-spacing:.15em}
+
+.motion-pending{visibility:hidden}
