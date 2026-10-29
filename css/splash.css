@@ -125,7 +125,7 @@ img {
 }
 
 .choice__logo {
-  height: 4rem;
+  height: 3.25rem;
   width: auto;
   align-self: flex-start;
   margin-bottom: 0.75rem;
@@ -217,3 +217,16 @@ img {
 }
 
 .motion-pending { visibility: hidden; }
+
+.choice__logo--opc {
+  height: 3.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

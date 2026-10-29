@@ -36,7 +36,18 @@
     });
   }
 
+  function text(svg, delay, dx) {
+    ['.t1', '.t2'].forEach(function (sel, i) {
+      svg.querySelectorAll(sel).forEach(function (e) {
+        anim(e, [{ opacity: 0, transform: 'translateX(-' + dx + 'px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 850, delay: delay + i * 200 });
+      });
+    });
+  }
+
   function reveal(svg) {
+    var isCC = !!svg.querySelector('.rings');
+    text(svg, isCC ? 1250 : 1500, isCC ? 14 : 12);
     svg.querySelectorAll('.rings').forEach(function (g) {
       anim(g, [{ transform: 'rotate(-120deg) scale(.55)' }, { transform: 'none' }], { duration: 1600 });
     });
