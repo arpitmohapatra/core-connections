@@ -298,9 +298,43 @@ p+p {
   align-items: center;
 }
 
-.nav__brand img {
+.nav__brand {
+  text-decoration: none;
+}
+
+/* Logo lockup: the redesigned SVG mark plus the name set as live text */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #5c68a0;
+  line-height: 1;
+}
+
+.brand-lockup__mark {
   height: 34px;
   width: auto;
+}
+
+.brand-lockup__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-lockup__text b {
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.04em;
+}
+
+.brand-lockup__text span {
+  font-weight: 400;
+  font-size: 0.98rem;
+  letter-spacing: 0.1em;
 }
 
 .nav__toggle {
@@ -1220,7 +1254,7 @@ p+p {
   margin-bottom: var(--space-xs);
 }
 
-.footer-brand img {
+.footer-brand .brand-lockup {
   margin-bottom: var(--space-sm);
   background: var(--color-white);
   padding: 0.5em 0.9em;
@@ -1316,113 +1350,13 @@ p+p {
 }
 
 .opc-ribbon a:focus-visible,
-.opc-gate a:focus-visible,
 .opc-callout a:focus-visible {
   outline-color: var(--color-white);
 }
 
-/* Home-page gate: a distinct band directly under the header */
-.opc-gate {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(100deg, var(--color-navy-deep) 0%, var(--color-navy) 60%, #243a6e 100%);
-  color: var(--color-white);
-  border-bottom: 3px solid var(--color-accent);
-}
-
-.opc-gate::before,
-.opc-gate::after {
-  /* pessary rings: two concentric outlines drifting off the right edge */
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  pointer-events: none;
-}
-
-.opc-gate::before {
-  width: 320px;
-  height: 320px;
-  right: -90px;
-  top: -150px;
-}
-
-.opc-gate::after {
-  width: 200px;
-  height: 200px;
-  right: 30px;
-  top: -60px;
-  border-color: rgba(147, 191, 46, 0.45);
-}
-
-.opc-gate__inner {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-  padding-block: var(--space-sm);
-}
-
-.opc-gate__tag {
-  display: inline-block;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-navy-deep);
-  background: var(--color-accent);
-  padding: 0.25em 0.8em;
-  border-radius: 999px;
-  margin-bottom: 0.5rem;
-}
-
-.opc-gate h2 {
-  color: var(--color-white);
-  font-size: clamp(1.45rem, 1.6vw + 1rem, 2.1rem);
-}
-
-.opc-gate p {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.opc-gate__text p:not(.opc-gate__tag) {
-  margin-top: 0.3rem;
-  max-width: 52ch;
-  font-size: 0.98rem;
-}
-
-.opc-gate__btn {
-  flex: none;
-  background: var(--color-white);
-  color: var(--color-navy-deep);
-}
-
-.opc-gate__btn:hover {
-  background: var(--color-accent);
-  color: var(--color-navy-deep);
-}
-
-.opc-gate__btn .arrow {
-  transition: transform 0.2s ease;
-}
-
-.opc-gate__btn:hover .arrow {
-  transform: translateX(4px);
-}
-
-@media (max-width: 720px) {
-  .opc-gate__inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
-  }
-
-  .opc-gate__btn {
-    width: 100%;
-    justify-content: center;
-  }
+.opc-ribbon__sep {
+  opacity: 0.55;
+  margin: 0 0.2rem;
 }
 
 /* Callout used inside content pages */
