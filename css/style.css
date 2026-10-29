@@ -298,9 +298,43 @@ p+p {
   align-items: center;
 }
 
-.nav__brand img {
+.nav__brand {
+  text-decoration: none;
+}
+
+/* Logo lockup: the redesigned SVG mark plus the name set as live text */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #5c68a0;
+  line-height: 1;
+}
+
+.brand-lockup__mark {
   height: 34px;
   width: auto;
+}
+
+.brand-lockup__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-lockup__text b {
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.04em;
+}
+
+.brand-lockup__text span {
+  font-weight: 400;
+  font-size: 0.98rem;
+  letter-spacing: 0.1em;
 }
 
 .nav__toggle {
@@ -1220,7 +1254,7 @@ p+p {
   margin-bottom: var(--space-xs);
 }
 
-.footer-brand img {
+.footer-brand .brand-lockup {
   margin-bottom: var(--space-sm);
   background: var(--color-white);
   padding: 0.5em 0.9em;
