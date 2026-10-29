@@ -1862,11 +1862,11 @@ mark {
   color: var(--color-primary);
 }
 
-/* Page headers: violet with the brand pattern and a citron slash */
+/* Page headers: violet; brand pattern fades in only on the right, away from the text */
 .page-header {
   position: relative;
   overflow: hidden;
-  background: var(--color-primary-dark) url("../brand/cc-pattern-dark.svg") center / 60px auto;
+  background: linear-gradient(90deg, #362c5e 0%, #362c5e 52%, rgba(54, 44, 94, 0.55) 78%, rgba(54, 44, 94, 0) 100%), url("../brand/cc-pattern-dark.svg") center / 60px auto, #362c5e;
   color: #fff;
   border-bottom: 0;
   padding-block: var(--space-xl) calc(var(--space-lg) + 1rem);
@@ -1915,7 +1915,7 @@ mark {
 }
 
 .section--dark {
-  background: var(--color-primary-dark) url("../brand/cc-pattern-dark.svg") center / 60px auto;
+  background: var(--color-primary-dark);
 }
 
 .section__head h2 {
@@ -1984,7 +1984,7 @@ mark {
 
 .service-card--feature {
   border-radius: var(--radius-xl);
-  background: var(--color-primary-dark) url("../brand/cc-pattern-dark.svg") center / 60px auto;
+  background: var(--color-primary-dark);
 }
 
 .service-card--feature img {
@@ -2038,9 +2038,9 @@ mark {
   font-weight: 600;
 }
 
-/* Footer: citron cap, deep violet pattern */
+/* Footer: citron cap on solid deep violet */
 .site-footer {
-  background: var(--color-primary-dark) url("../brand/cc-pattern-dark.svg") center / 60px auto;
+  background: var(--color-primary-dark);
   border-top: 8px solid var(--color-accent);
 }
 

@@ -130,7 +130,7 @@ img {
 .choice--core {
   position: relative;
   overflow: hidden;
-  background: #362c5e url("../brand/cc-pattern-dark.svg") center / 60px auto;
+  background: linear-gradient(90deg, #362c5e 0%, #362c5e 68%, rgba(54, 44, 94, 0.55) 88%, rgba(54, 44, 94, 0) 100%), url("../brand/cc-pattern-dark.svg") center / 60px auto, #362c5e;
   color: #fff;
   border-radius: 28px;
   box-shadow: 0 16px 40px rgba(54, 44, 94, 0.3);
