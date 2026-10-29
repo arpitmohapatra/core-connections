@@ -303,6 +303,13 @@ p+p {
 }
 
 /* Logo lockup: the redesigned SVG mark plus the name set as live text */
+.brand-logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  max-width: 100%;
+}
+
 .brand-lockup {
   display: inline-flex;
   align-items: center;
@@ -1254,11 +1261,9 @@ p+p {
   margin-bottom: var(--space-xs);
 }
 
-.footer-brand .brand-lockup {
+.footer-brand .brand-logo {
+  display: block;
   margin-bottom: var(--space-sm);
-  background: var(--color-white);
-  padding: 0.5em 0.9em;
-  border-radius: var(--radius);
 }
 
 .footer-grid a {

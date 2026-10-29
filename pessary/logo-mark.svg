@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ottawa Pessary Clinic mark">
-  <!-- the ring: a pessary -->
-  <circle cx="32" cy="32" r="25" fill="none" stroke="#1f2f4d" stroke-width="6.5"/>
-  <!-- the cradle: support held inside the ring -->
-  <path d="M16.5 35a15.5 15.5 0 0 0 31 0z" fill="#7fae9f"/>
-  <!-- the person, resting on that support -->
-  <circle cx="32" cy="26.5" r="6.5" fill="#d98574"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 63.8" width="72" height="64" role="img" aria-label="Ottawa Pessary Clinic"><title>Ottawa Pessary Clinic</title><svg x="0" y="0" width="72" height="63.8" viewBox="14 20 72 63.8" overflow="visible"><circle class="ring" cx="50" cy="44" r="20" fill="none" stroke="#D98574" stroke-width="8"></circle><path class="arc" d="M14 58A38 38 0 0 0 86 58A44 44 0 0 1 14 58Z" fill="#5B9384"></path></svg></svg>
