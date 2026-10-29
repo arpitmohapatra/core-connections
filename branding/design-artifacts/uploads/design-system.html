@@ -1,0 +1,372 @@
+<title>Dhruva Design System</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap">
+<style>
+/* ===== Dhruva design tokens (single source; mirrored in docs/DESIGN.md) ===== */
+:root{
+  --font:'Plus Jakarta Sans','Noto Sans Devanagari','Noto Sans Telugu',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --bg:#F3F7F6; --surface:#FFFFFF; --surface-2:#E9F0EF; --surface-3:#DCE7E6; --line:#D5E0DF; --line-strong:#B7C8C6;
+  --ink:#0B1A1B; --ink-2:#3B5254; --ink-3:#587072; --ink-inv:#FFFFFF;
+  --brand:#0E5A58; --brand-hover:#0B4B49; --brand-ink:#FFFFFF; --brand-soft:#D9EFEC; --brand-deep:#093A39;
+  --accent:#F2A311; --accent-ink:#2A1B00; --accent-soft:#FDF0D2;
+  --ok:#157A3B; --ok-soft:#DDF3E5; --warn:#A8480A; --warn-soft:#FCEBD0; --info:#1D4FD7; --info-soft:#E1EAFD;
+  --sos:#C92418; --sos-solid:#D92D20; --sos-soft:#FDE6E3; --sos-ink:#FFFFFF;
+  --escort:#A81D63; --escort-soft:#FBE3EF; --expired:#C92418; --expired-soft:#FDE6E3;
+  --scrim:rgba(7,22,23,.52);
+  --map-land:#EAF0EC; --map-water:#BFDDE8; --map-park:#D3E7D2; --map-road:#FFFFFF; --map-casing:#CBD8D4; --map-major:#FFF3D6; --map-major-casing:#E3C98A; --map-label:#5B7471; --route:#0E5A58; --route-casing:#FFFFFF;
+  --sh-1:0 1px 2px rgba(10,50,48,.07),0 0 0 1px rgba(10,50,48,.03);
+  --sh-2:0 4px 16px rgba(10,50,48,.10),0 1px 3px rgba(10,50,48,.06);
+  --sh-3:0 16px 40px rgba(10,50,48,.18),0 4px 10px rgba(10,50,48,.08);
+  --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:20px; --s-6:24px; --s-8:32px; --s-10:40px; --s-12:48px; --s-16:64px;
+  --d-fast:120ms; --d-base:200ms; --d-slow:320ms; --d-sheet:280ms;
+  --e-std:cubic-bezier(.2,0,0,1); --e-dec:cubic-bezier(.05,.7,.1,1); --e-acc:cubic-bezier(.3,0,.8,.15);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0A1213; --surface:#111B1C; --surface-2:#192627; --surface-3:#223234; --line:#25383A; --line-strong:#3A5254;
+  --ink:#E9F3F2; --ink-2:#B1C6C5; --ink-3:#8BA3A2; --ink-inv:#0A1213;
+  --brand:#4FD1C5; --brand-hover:#7BE0D7; --brand-ink:#032321; --brand-soft:#123231; --brand-deep:#0D2625;
+  --accent:#FFB938; --accent-ink:#2A1B00; --accent-soft:#3A2B0A;
+  --ok:#5BDB8A; --ok-soft:#12301D; --warn:#FBB254; --warn-soft:#3A2A0B; --info:#8FB0FF; --info-soft:#14224A;
+  --sos:#FF8176; --sos-solid:#D92D20; --sos-soft:#3D1512; --sos-ink:#FFFFFF;
+  --escort:#F58BC0; --escort-soft:#3A1328; --expired:#FF8176; --expired-soft:#3D1512;
+  --scrim:rgba(0,0,0,.62);
+  --map-land:#14211F; --map-water:#173A4A; --map-park:#17301F; --map-road:#243634; --map-casing:#0E1918; --map-major:#3A4A3E; --map-major-casing:#0E1918; --map-label:#85A09C; --route:#4FD1C5; --route-casing:#0A1213;
+  --sh-1:0 1px 2px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03);
+  --sh-2:0 6px 20px rgba(0,0,0,.45);
+  --sh-3:0 18px 44px rgba(0,0,0,.6);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1213; --surface:#111B1C; --surface-2:#192627; --surface-3:#223234; --line:#25383A; --line-strong:#3A5254;
+  --ink:#E9F3F2; --ink-2:#B1C6C5; --ink-3:#8BA3A2; --ink-inv:#0A1213;
+  --brand:#4FD1C5; --brand-hover:#7BE0D7; --brand-ink:#032321; --brand-soft:#123231; --brand-deep:#0D2625;
+  --accent:#FFB938; --accent-ink:#2A1B00; --accent-soft:#3A2B0A;
+  --ok:#5BDB8A; --ok-soft:#12301D; --warn:#FBB254; --warn-soft:#3A2A0B; --info:#8FB0FF; --info-soft:#14224A;
+  --sos:#FF8176; --sos-solid:#D92D20; --sos-soft:#3D1512; --sos-ink:#FFFFFF;
+  --escort:#F58BC0; --escort-soft:#3A1328; --expired:#FF8176; --expired-soft:#3D1512;
+  --scrim:rgba(0,0,0,.62);
+  --map-land:#14211F; --map-water:#173A4A; --map-park:#17301F; --map-road:#243634; --map-casing:#0E1918; --map-major:#3A4A3E; --map-major-casing:#0E1918; --map-label:#85A09C; --route:#4FD1C5; --route-casing:#0A1213;
+  --sh-1:0 1px 2px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.03);
+  --sh-2:0 6px 20px rgba(0,0,0,.45);
+  --sh-3:0 18px 44px rgba(0,0,0,.6);
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0;touch-action:manipulation}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:var(--r-xs)}
+.ms{font-family:'Material Symbols Rounded';font-weight:400;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;flex:none;user-select:none}
+.ms.f{font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24}
+.ms.s16{font-size:16px}.ms.s20{font-size:20px}.ms.s28{font-size:28px}.ms.s32{font-size:32px}
+/* type roles */
+.t-display{font-size:32px;line-height:40px;font-weight:800;letter-spacing:-.02em}
+.t-h1{font-size:26px;line-height:34px;font-weight:800;letter-spacing:-.015em}
+.t-h2{font-size:20px;line-height:28px;font-weight:700;letter-spacing:-.01em}
+.t-title{font-size:17px;line-height:26px;font-weight:700}
+.t-body{font-size:15px;line-height:24px}
+.t-sm{font-size:13px;line-height:20px}
+.t-cap{font-size:12px;line-height:18px}
+.t-over{font-size:11px;line-height:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.muted{color:var(--ink-2)}.faint{color:var(--ink-3)}
+.num{font-variant-numeric:tabular-nums}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:var(--r-md);font-weight:700;font-size:15px;white-space:nowrap;transition:background var(--d-fast) var(--e-std),transform var(--d-fast) var(--e-std),box-shadow var(--d-fast) var(--e-std);background:var(--brand);color:var(--brand-ink)}
+.btn:hover{background:var(--brand-hover)}
+.btn:active{transform:scale(.98)}
+.btn[disabled],.btn.dis{opacity:.42;pointer-events:none}
+.btn.sec{background:var(--surface-2);color:var(--ink)}.btn.sec:hover{background:var(--surface-3)}
+.btn.ghost{background:transparent;color:var(--brand);box-shadow:inset 0 0 0 1.5px var(--line-strong)}.btn.ghost:hover{background:var(--brand-soft)}
+.btn.tonal{background:var(--brand-soft);color:var(--brand)}
+.btn.acc{background:var(--accent);color:var(--accent-ink)}.btn.acc:hover{filter:brightness(.96)}
+.btn.danger{background:var(--sos-solid);color:var(--sos-ink)}.btn.danger:hover{filter:brightness(.94)}
+.btn.sm{min-height:40px;padding:0 14px;font-size:14px;border-radius:12px}
+.btn.xs{min-height:32px;padding:0 10px;font-size:13px;border-radius:10px}
+.btn.block{display:flex;width:100%}
+.ibtn{width:48px;height:48px;border-radius:var(--r-pill);display:inline-grid;place-items:center;color:var(--ink);transition:background var(--d-fast)}
+.ibtn:hover{background:var(--surface-2)}
+.ibtn.sm{width:40px;height:40px}
+/* inputs */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field>label{font-size:13px;font-weight:600;color:var(--ink-2)}
+.in{height:52px;border-radius:12px;border:1.5px solid var(--line-strong);background:var(--surface);padding:0 14px;font-size:16px;width:100%;transition:border-color var(--d-fast),box-shadow var(--d-fast)}
+.in::placeholder{color:var(--ink-3)}
+.in:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 22%,transparent)}
+.in.err{border-color:var(--sos)}
+textarea.in{height:auto;min-height:88px;padding:12px 14px;resize:vertical}
+.help{font-size:12px;line-height:18px;color:var(--ink-3)}.help.err{color:var(--sos);font-weight:600;display:flex;gap:4px;align-items:center}
+.in.sm{height:40px;font-size:14px;border-radius:10px}
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:var(--r-pill);border:1.5px solid var(--line-strong);background:var(--surface);font-size:13px;font-weight:600;color:var(--ink-2);white-space:nowrap;transition:all var(--d-fast)}
+.chip.on{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.chip:hover:not(.on){background:var(--surface-2)}
+/* badges */
+.badge{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:var(--r-pill);font-size:12px;font-weight:700;white-space:nowrap;background:var(--surface-2);color:var(--ink-2)}
+.badge .ms{font-size:14px;font-variation-settings:'FILL' 1,'wght' 600,'GRAD' 0,'opsz' 20}
+.b-ok{background:var(--ok-soft);color:var(--ok)}.b-warn{background:var(--warn-soft);color:var(--warn)}.b-sos{background:var(--sos-soft);color:var(--sos)}
+.b-escort{background:var(--escort-soft);color:var(--escort)}.b-info{background:var(--info-soft);color:var(--info)}.b-brand{background:var(--brand-soft);color:var(--brand)}
+.b-solid-sos{background:var(--sos-solid);color:var(--sos-ink)}
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh-1)}
+.pad{padding:16px}
+.row{display:flex;align-items:center;gap:12px}.col{display:flex;flex-direction:column}.grow{flex:1;min-width:0}
+.sp{flex:1}
+.hr{height:1px;background:var(--line);border:0;margin:0}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;background:var(--brand-soft);color:var(--brand);flex:none}
+.avatar.lg{width:56px;height:56px;font-size:19px}
+.plate{display:inline-flex;align-items:center;gap:6px;background:#F7D84A;color:#1B1500;border:2px solid #1B1500;border-radius:6px;padding:1px 8px;font-weight:800;letter-spacing:.06em;font-size:14px;line-height:22px;font-variant-numeric:tabular-nums}
+.plate.ev{background:#1E8F4E;color:#fff;border-color:#0B3D20}
+.switch{position:relative;width:52px;height:32px;border-radius:99px;background:var(--line-strong);transition:background var(--d-base);flex:none}
+.switch::after{content:"";position:absolute;left:4px;top:4px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:var(--sh-1);transition:transform var(--d-base) var(--e-dec)}
+.switch[aria-checked="true"]{background:var(--brand)}.switch[aria-checked="true"]::after{transform:translateX(20px)}
+/* sheet */
+.sheet{background:var(--surface);border-radius:24px 24px 0 0;box-shadow:var(--sh-3)}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line-strong);margin:8px auto 4px}
+/* skeleton */
+.sk{background:linear-gradient(90deg,var(--surface-2) 25%,var(--surface-3) 50%,var(--surface-2) 75%);background-size:200% 100%;animation:shim 1.3s linear infinite;border-radius:8px}
+@keyframes shim{to{background-position:-200% 0}}
+/* SOS */
+.sos-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 24px;border-radius:var(--r-pill);background:var(--sos-solid);color:var(--sos-ink);font-weight:800;font-size:16px;letter-spacing:.04em;box-shadow:0 6px 18px color-mix(in srgb,var(--sos-solid) 45%,transparent);position:relative;transition:transform var(--d-fast)}
+.sos-btn:active{transform:scale(.97)}
+.sos-btn.round{width:64px;height:64px;padding:0;flex-direction:column;gap:0;font-size:13px}
+.pulse{position:relative}
+.pulse::before{content:"";position:absolute;inset:-6px;border-radius:inherit;border:2px solid var(--sos-solid);opacity:0;animation:pl 2s var(--e-dec) infinite}
+@keyframes pl{0%{transform:scale(.92);opacity:.7}100%{transform:scale(1.18);opacity:0}}
+.toast{position:absolute;left:16px;right:16px;bottom:96px;background:var(--ink);color:var(--ink-inv);border-radius:14px;padding:12px 16px;font-size:14px;font-weight:600;display:flex;gap:10px;align-items:center;box-shadow:var(--sh-3);opacity:0;transform:translateY(12px);pointer-events:none;transition:all var(--d-base) var(--e-dec);z-index:60}
+.toast.on{opacity:1;transform:none}
+/* map */
+.map{position:relative;overflow:hidden;background:var(--map-land)}
+.map svg{display:block;width:100%;height:100%}
+@keyframes mpulse{0%{r:8;opacity:.5}100%{r:26;opacity:0}}
+.mp-pulse{animation:mpulse 2s var(--e-dec) infinite;transform-box:fill-box}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+/* prototype chrome */
+.proto{display:grid;grid-template-columns:240px minmax(0,1fr) 300px;gap:32px;max-width:1280px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left,0px)) 48px;padding-right:max(16px,env(safe-area-inset-right,0px));align-items:start}
+.proto h1{margin:0}
+.side-list{display:flex;flex-direction:column;gap:2px;position:sticky;top:16px}
+.side-list button{display:flex;gap:10px;align-items:center;min-height:40px;padding:0 12px;border-radius:10px;text-align:left;color:var(--ink-2);font-weight:600;font-size:14px}
+.side-list button:hover{background:var(--surface-2)}.side-list button.on{background:var(--brand-soft);color:var(--brand)}
+.notes{position:sticky;top:16px;display:flex;flex-direction:column;gap:12px;font-size:13px}
+.notes code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--surface-2);padding:2px 6px;border-radius:6px;display:inline-block;margin:2px 2px 2px 0;color:var(--ink)}
+.phone{width:390px;height:812px;border-radius:50px;background:var(--surface);position:relative;overflow:hidden;margin:0 auto;box-shadow:0 0 0 10px #101A1B,0 0 0 11px #3A4D4E,var(--sh-3);isolation:isolate}
+.sb{height:44px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 28px 6px;font-size:14px;font-weight:700;position:relative;z-index:30}
+.sb.over{position:absolute;left:0;right:0;top:0}
+.hind{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:130px;height:5px;border-radius:3px;background:var(--ink);opacity:.8;z-index:50;pointer-events:none}
+.scr{position:absolute;inset:0;display:none;flex-direction:column;background:var(--bg);opacity:0}
+.scr.on{display:flex;animation:scin var(--d-slow) var(--e-dec) forwards}
+@keyframes scin{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.scroll{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;padding-bottom:16px}.scroll::-webkit-scrollbar{display:none}
+.tabbar{display:flex;height:84px;padding:6px 8px 22px;background:var(--surface);border-top:1px solid var(--line);flex:none;position:relative;z-index:20}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:700;color:var(--ink-3);min-height:48px;position:relative;border-radius:12px}
+.tabbar button.on{color:var(--brand)}
+.tabbar button.on .ms{font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24}
+.tabbar button.on::before{content:"";position:absolute;top:-6px;width:28px;height:3px;border-radius:0 0 3px 3px;background:var(--brand)}
+.dot{position:absolute;top:2px;right:calc(50% - 20px);min-width:16px;height:16px;border-radius:8px;background:var(--sos-solid);color:#fff;font-size:10px;font-weight:800;display:grid;place-items:center;padding:0 4px}
+.topbar{display:flex;align-items:center;gap:8px;padding:4px 8px 4px 16px;min-height:56px;flex:none}
+.overlay{position:absolute;inset:0;background:var(--scrim);z-index:70;display:none;align-items:flex-end}
+.overlay.on{display:flex;animation:fade var(--d-base) forwards}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.overlay .sheet{width:100%;padding:8px 20px 34px;animation:up var(--d-sheet) var(--e-dec)}
+@keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+.themebtn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:200;height:44px;padding:0 14px;border-radius:99px;background:var(--ink);color:var(--ink-inv);display:flex;gap:8px;align-items:center;font-weight:700;font-size:13px;box-shadow:var(--sh-3)}
+@media (max-width:1060px){.proto{grid-template-columns:minmax(0,1fr);gap:20px}.side-list{flex-direction:row;overflow-x:auto;position:static;padding-bottom:4px}.side-list button{white-space:nowrap;flex:none}.notes{position:static}}
+@media (max-width:440px){.phone{width:100%;height:calc(100dvh - 190px);min-height:640px;border-radius:28px;box-shadow:0 0 0 1px var(--line),var(--sh-2)}}
+
+.wrap{max-width:1180px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-left,0px)) 96px;padding-right:max(16px,env(safe-area-inset-right,0px))}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-left,0px));display:flex;gap:4px;overflow-x:auto;align-items:center}
+.nav a{white-space:nowrap;padding:8px 12px;border-radius:10px;color:var(--ink-2);font-weight:600;font-size:13px;text-decoration:none}.nav a:hover{background:var(--surface-2);color:var(--ink)}
+.nav .wm{margin-right:12px;color:var(--brand)}
+.wm{display:inline-flex;align-items:center;gap:8px;font-weight:800;letter-spacing:-.03em;font-size:20px}.wm svg{width:26px;height:26px}
+section.blk{padding-top:56px}
+section.blk>h2{font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+section.blk>p.lead{margin:0 0 24px;color:var(--ink-2);max-width:68ch}
+h3.sub{font-size:13px;font-weight:700;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px}
+.hero-ds{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;padding:48px 0 8px}
+.hero-ds h1{font-size:clamp(34px,5vw,56px);line-height:1.04;font-weight:800;letter-spacing:-.035em;margin:0 0 16px;text-wrap:balance}
+.grid{display:grid;gap:12px}.g3{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}.g4{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.sw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.sw .pair{display:grid;grid-template-columns:1fr 1fr;height:64px}.sw .pair div{display:flex;align-items:flex-end;padding:6px 8px;font-size:11px;font-weight:700;font-family:ui-monospace,Menlo,monospace}
+.sw .m{padding:10px 12px}.sw .m b{font-size:13px}.sw .m div{font-size:12px;color:var(--ink-2)}
+.stage{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.stage.col{flex-direction:column;align-items:stretch}
+.tbl{width:100%;border-collapse:collapse;font-size:13px}.tbl th{text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding:8px 12px;background:var(--surface-2)}.tbl td{padding:10px 12px;border-bottom:1px solid var(--line)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+.tr{display:grid;grid-template-columns:130px minmax(0,1fr) 140px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.tr .spec{font-size:12px;color:var(--ink-3);text-align:right}
+.bar{background:var(--brand);height:16px;border-radius:4px}
+.do,.dont{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.do>header,.dont>header{display:flex;gap:8px;align-items:center;padding:10px 14px;font-weight:800;font-size:13px}
+.do>header{background:var(--ok-soft);color:var(--ok)}.dont>header{background:var(--sos-soft);color:var(--sos)}
+.do .b,.dont .b{padding:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--ink-2)}
+.phone-s{width:300px;border-radius:30px;border:8px solid #101A1B;overflow:hidden;background:var(--bg);position:relative;flex:none}
+.input-demo{display:grid;gap:14px;width:100%;max-width:360px}
+.mot{display:inline-block;width:56px;height:56px;border-radius:14px;background:var(--brand);cursor:pointer}
+.mot.go{transform:translateX(120px) scale(1.1)}
+@media (max-width:760px){.hero-ds{grid-template-columns:1fr}.tr{grid-template-columns:1fr}.tr .spec{text-align:left}}
+</style>
+
+<div class="wrap">
+<nav class="nav" aria-label="Sections"><span class="wm"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="var(--brand)"/><path d="M14 4l2.6 7.4L24 14l-7.4 2.6L14 24l-2.6-7.4L4 14l7.4-2.6z" fill="var(--accent)"/></svg>dhruva</span>
+<a href="#brand">Brand</a><a href="#color">Colour</a><a href="#type">Type</a><a href="#space">Space and shape</a><a href="#motion">Motion</a><a href="#icons">Icons</a><a href="#comp">Components</a><a href="#safety">Safety kit</a><a href="#map">Map</a><a href="#states">States</a><a href="#rules">Do and don't</a>
+<span class="sp"></span><button class="btn xs sec" id="themeBtn"><span class="ms s16">contrast</span>Theme</button></nav>
+
+<header class="hero-ds" id="brand">
+  <div>
+    <div class="t-over faint" style="margin-bottom:12px">Design system v1.0 for Flutter</div>
+    <h1>Built for the ride home.</h1>
+    <p class="muted t-body" style="max-width:52ch">Dhruva is the commute product for companies that move people at night. Calm teal, clear type, and a safety kit that is always one thumb away. Three surfaces share one set of tokens: Rider, Driver, and Control Room.</p>
+    <div class="row" style="gap:10px;margin-top:20px;flex-wrap:wrap"><a class="btn" href="employee.html" style="text-decoration:none">Rider prototype</a><a class="btn sec" href="driver.html" style="text-decoration:none">Driver</a><a class="btn sec" href="admin.html" style="text-decoration:none">Control Room</a></div>
+  </div>
+  <div class="stage" style="justify-content:center;gap:28px;padding:36px;background:var(--brand-deep);border:0">
+    <div style="color:#EAF6F4;text-align:center"><svg viewBox="0 0 28 28" width="120" height="120" aria-label="Dhruva mark"><rect width="28" height="28" rx="8" fill="#0E5A58"/><rect x=".5" y=".5" width="27" height="27" rx="7.5" fill="none" stroke="rgba(255,255,255,.25)"/><path d="M14 4l2.6 7.4L24 14l-7.4 2.6L14 24l-2.6-7.4L4 14l7.4-2.6z" fill="#F2A311"/></svg><div style="font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-top:8px">dhruva</div><div style="font-size:12px;opacity:.7;letter-spacing:.1em;text-transform:uppercase;margin-top:4px">The pole star. Fixed, reliable.</div></div>
+  </div>
+</header>
+
+<section class="blk" id="principles"><h2>Principles</h2><p class="lead">Decisions are tested against these, in order.</p>
+<div class="grid g4">
+ <div class="card pad"><span class="ms f" style="color:var(--sos)">sos</span><div class="t-title" style="margin-top:6px">Safety is never buried</div><div class="t-sm muted">SOS, share and OTP are visible on every live-trip screen, never behind a menu.</div></div>
+ <div class="card pad"><span class="ms f" style="color:var(--brand)">visibility</span><div class="t-title" style="margin-top:6px">Say it plainly</div><div class="t-sm muted">State, reason, next step. "Closed for today" beats a grey button.</div></div>
+ <div class="card pad"><span class="ms f" style="color:var(--accent)">touch_app</span><div class="t-title" style="margin-top:6px">Thumb first</div><div class="t-sm muted">48 dp targets, primary action in the lower third, no gesture-only paths.</div></div>
+ <div class="card pad"><span class="ms f" style="color:var(--info)">density_small</span><div class="t-title" style="margin-top:6px">Dense where it pays</div><div class="t-sm muted">Control Room packs 13 px data; mobile breathes at 15 px.</div></div>
+</div></section>
+
+<section class="blk" id="color"><h2>Colour</h2><p class="lead">Teal ink on cool neutrals. Amber marks the one thing to do next. Red is reserved for SOS and expired items, escort is a distinct magenta so it never reads as danger. Every text pair meets WCAG AA in both themes.</p>
+<h3 class="sub">Core tokens, light and dark</h3><div class="grid g3" id="sw"></div>
+<h3 class="sub">Status language</h3><div class="grid g4" id="status"></div>
+<h3 class="sub">Contrast check (computed live for the active theme)</h3><div class="tw"><table class="tbl" id="ct"></table></div></section>
+
+<section class="blk" id="type"><h2>Type</h2><p class="lead">Plus Jakarta Sans, available in Flutter through the google_fonts package. Noto Sans Devanagari and Noto Sans Telugu are the fallbacks, so Hindi and Telugu strings keep line height 1.5 or more and never clip matras.</p>
+<div class="stage col" style="gap:0">
+ <div class="tr"><div class="t-cap faint">Display</div><div class="t-display">Home safe, every shift.</div><div class="spec">32 / 40 / 800 / -0.02em</div></div>
+ <div class="tr"><div class="t-cap faint">H1</div><div class="t-h1">Request a ride</div><div class="spec">26 / 34 / 800 / -0.015em</div></div>
+ <div class="tr"><div class="t-cap faint">H2</div><div class="t-h2">Trips today</div><div class="spec">20 / 28 / 700 / -0.01em</div></div>
+ <div class="tr"><div class="t-cap faint">Title</div><div class="t-title">Orbis Labs to Kondapur</div><div class="spec">17 / 26 / 700</div></div>
+ <div class="tr"><div class="t-cap faint">Body</div><div class="t-body">Your cab arrives in 6 minutes. Wait at Gate 2.</div><div class="spec">15 / 24 / 400</div></div>
+ <div class="tr"><div class="t-cap faint">Body small</div><div class="t-sm">Requests close 3 hours before the shift.</div><div class="spec">13 / 20 / 400</div></div>
+ <div class="tr"><div class="t-cap faint">Caption</div><div class="t-cap">Updated 20:42 IST</div><div class="spec">12 / 18 / 400</div></div>
+ <div class="tr"><div class="t-cap faint">Overline</div><div class="t-over">Boarding code</div><div class="spec">11 / 16 / 700 / +0.08em</div></div>
+ <div class="tr"><div class="t-cap faint">OTP digits</div><div class="num" style="font-size:40px;line-height:48px;font-weight:800;letter-spacing:.28em">4 8 2 1</div><div class="spec">40 / 48 / 800 / +0.28em, tabular</div></div>
+ <div class="tr"><div class="t-cap faint">Hindi</div><div style="font-size:15px;line-height:1.7">आपकी कैब 6 मिनट में पहुँचेगी। कृपया गेट 2 पर इंतज़ार करें।</div><div class="spec">same size, line height 1.7</div></div>
+ <div class="tr" style="border:0"><div class="t-cap faint">Telugu</div><div style="font-size:15px;line-height:1.7">మీ క్యాబ్ 6 నిమిషాల్లో వస్తుంది. దయచేసి గేట్ 2 వద్ద వేచి ఉండండి.</div><div class="spec">same size, line height 1.7</div></div>
+</div>
+<p class="t-sm muted" style="margin-top:12px">Admin density: body 13 / 20, table cells 13, table headers 11 uppercase. Numerals are always tabular.</p></section>
+
+<section class="blk" id="space"><h2>Space, shape, elevation</h2><p class="lead">A 4 / 8 grid. Corners: 14 on buttons and inputs, 16 on cards, 24 on sheets, full pill on chips and badges. Shadows are tinted teal, never pure black in light mode.</p>
+<div class="grid g2"><div class="stage col"><div class="t-sm"><b>Spacing scale</b></div><div id="spc" class="col" style="gap:6px"></div></div>
+<div class="stage col"><div class="t-sm"><b>Radii</b></div><div class="row" style="gap:14px;flex-wrap:wrap" id="rad"></div><div class="t-sm" style="margin-top:12px"><b>Elevation</b></div><div class="row" style="gap:18px;flex-wrap:wrap" id="shd"></div></div></div></section>
+
+<section class="blk" id="motion"><h2>Motion</h2><p class="lead">Motion explains cause and effect: a sheet rises from its trigger, a screen slides in the direction of travel, SOS counts down visibly. Nothing loops except live pulses. Reduced motion collapses every duration to zero.</p>
+<div class="grid g2"><div class="tw"><table class="tbl"><thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead><tbody><tr><td class="mono">d-fast</td><td>120 ms</td><td>Press, hover, switch</td></tr><tr><td class="mono">d-base</td><td>200 ms</td><td>Fades, chips, toasts</td></tr><tr><td class="mono">d-sheet</td><td>280 ms</td><td>Bottom sheets, dialogs</td></tr><tr><td class="mono">d-slow</td><td>320 ms</td><td>Screen transitions, progress</td></tr><tr><td class="mono">e-std</td><td>cubic(.2, 0, 0, 1)</td><td>State changes</td></tr><tr><td class="mono">e-dec</td><td>cubic(.05, .7, .1, 1)</td><td>Entering</td></tr><tr><td class="mono">e-acc</td><td>cubic(.3, 0, .8, .15)</td><td>Leaving (60 to 70% of enter time)</td></tr></tbody></table></div>
+<div class="stage col"><div class="t-sm"><b>Try it</b></div><div style="height:72px;display:flex;align-items:center"><span class="mot" id="mot" style="transition:transform 320ms cubic-bezier(.05,.7,.1,1)"></span></div><div class="row" style="gap:8px"><button class="btn sm" id="motGo">Slide in</button><span class="sos-btn pulse" style="min-height:40px;padding:0 16px;font-size:13px">Live pulse</span></div></div></div></section>
+
+<section class="blk" id="icons"><h2>Iconography</h2><p class="lead">Material Symbols Rounded, weight 400, optical size 24. Outline by default, filled (FILL 1) for the active tab and for safety icons. Sizes: 16 inline, 20 in buttons, 24 default, 32 empty states. Never mix another family.</p>
+<div class="stage" id="ic" style="gap:6px"></div></section>
+
+<section class="blk" id="comp"><h2>Components</h2><p class="lead">All specs are in docs/DESIGN.md. The pieces below are live.</p>
+<h3 class="sub">Buttons</h3><div class="stage"><button class="btn">Primary</button><button class="btn acc">Accent</button><button class="btn sec">Secondary</button><button class="btn ghost">Outlined</button><button class="btn tonal">Tonal</button><button class="btn danger">Danger</button><button class="btn" disabled>Disabled</button><button class="btn sm">Small 40</button><button class="btn xs">Dense 32</button><button class="ibtn" aria-label="Menu"><span class="ms">more_vert</span></button></div>
+<h3 class="sub">Inputs</h3><div class="stage"><div class="input-demo"><div class="field"><label for="i1">Work email</label><input class="in" id="i1" placeholder="name@company.in"><span class="help">We send a 6-digit code to this address.</span></div><div class="field"><label for="i2">Boarding code</label><input class="in err" id="i2" value="4812" aria-invalid="true"><span class="help err"><span class="ms s16 f">error</span>Code does not match. 4 tries left.</span></div></div>
+ <div class="input-demo"><div class="field"><label for="i3">Reason</label><select class="in" id="i3"><option>Safety rule fix</option></select></div><div class="field"><label for="i4">Note</label><textarea class="in" id="i4" placeholder="Add context"></textarea></div></div></div>
+<h3 class="sub">Chips, badges, switch</h3><div class="stage"><button class="chip on">Selected</button><button class="chip">Login</button><button class="chip"><span class="ms s16">filter_list</span>Filter</button><span class="badge b-ok"><span class="ms">check_circle</span>On time</span><span class="badge b-warn"><span class="ms">schedule</span>Delayed 9 min</span><span class="badge b-escort"><span class="ms">shield_person</span>Escort</span><span class="badge b-info"><span class="ms">near_me</span>In progress</span><span class="badge"><span class="ms">block</span>Cancelled</span><span class="badge b-sos"><span class="ms">event_busy</span>Expired</span><button class="switch" role="switch" aria-checked="true" aria-label="Demo"></button><button class="switch" role="switch" aria-checked="false" aria-label="Demo off"></button></div>
+<h3 class="sub">Cards, list rows</h3><div class="grid g2"><div class="card pad"><div class="row"><span class="badge b-info"><span class="ms">logout</span>Logout 21:30</span><span class="sp"></span><span class="plate">TG 07 W 0308</span></div><div class="t-title" style="margin:10px 0 2px">Orbis Labs to Kondapur</div><div class="t-sm muted">5 stops, 38 km, about 1 h 18 min</div></div>
+<div class="card"><div class="row" style="padding:14px 16px;border-bottom:1px solid var(--line)"><div class="avatar">AR</div><div class="grow"><b>Ananya Reddy</b><div class="t-cap faint">OL-20418, Kondapur</div></div><span class="badge b-ok">Pin set</span></div><div class="row" style="padding:14px 16px"><div class="avatar">DK</div><div class="grow"><b>Divya Kota</b><div class="t-cap faint">OL-21009, Miyapur</div></div><span class="badge b-sos"><span class="ms">report</span>No pin</span></div></div></div>
+<h3 class="sub">Bottom sheet and navigation</h3><div class="stage" style="align-items:flex-start;gap:24px"><div class="phone-s" style="height:340px"><div class="map" style="position:absolute;inset:0" id="dsMap1"></div><div class="sheet" style="position:absolute;bottom:60px;left:0;right:0;padding-bottom:12px"><div class="grab"></div><div style="padding:6px 16px"><div class="t-h2" style="font-size:18px">Arriving in 6 min</div><div class="t-sm muted">Ramesh is 2.1 km away</div></div></div><nav class="tabbar" style="position:absolute;bottom:0;left:0;right:0;height:64px;padding-bottom:6px"><button class="on"><span class="ms">home</span>Home</button><button><span class="ms">route</span>Trips</button><button><span class="ms">notifications</span>Alerts</button><button><span class="ms">person</span>Profile</button></nav></div>
+<div class="grow col" style="gap:10px;min-width:260px"><div class="t-sm"><b>Mobile bottom navigation</b></div><div class="t-sm muted">Max 4 tabs. Icon and label always. Active: filled icon, brand colour, 3 px top indicator. Badge for unread. Rider: Home, Trips, Alerts, Profile. Driver: Trips, Docs, Summary, Help.</div><div class="t-sm"><b>Control Room side rail</b></div><div class="t-sm muted">224 px with labels above 1180 px, 68 px icons-only to 640 px, then a bottom bar. Groups: Operate, Manage. SOS carries a red count.</div></div></div>
+<h3 class="sub">Table (Control Room)</h3><div class="tw"><table class="tbl"><thead><tr><th>Plate</th><th>Type</th><th>Vendor</th><th>Documents</th></tr></thead><tbody><tr><td><span class="plate" style="font-size:12px;line-height:18px">TG 07 W 0308</span></td><td>Innova Crysta</td><td>Sri Lakshmi Travels</td><td><span class="badge b-ok"><span class="ms">check_circle</span>Valid</span></td></tr><tr><td><span class="plate" style="font-size:12px;line-height:18px">TG 09 B 2214</span></td><td>Ertiga</td><td>Sri Lakshmi Travels</td><td><span class="badge b-warn"><span class="ms">schedule</span>Expiring 13 d</span></td></tr><tr><td><span class="plate" style="font-size:12px;line-height:18px">TG 09 C 7765</span></td><td>Tempo Traveller</td><td>Charminar Cabs</td><td><span class="badge b-sos"><span class="ms">event_busy</span>Expired</span></td></tr></tbody></table></div>
+<p class="t-sm muted" style="margin-top:8px">Row height 44, header 36, no zebra, hover tint, selected row brand-soft, sticky header, numbers right-aligned tabular.</p></section>
+
+<section class="blk" id="safety"><h2>Safety kit</h2><p class="lead">These four elements are the product. They appear exactly like this everywhere.</p>
+<div class="grid g2">
+<div class="stage col"><div class="t-over faint">SOS</div><div class="row" style="gap:16px;flex-wrap:wrap"><button class="sos-btn pulse"><span class="ms f">sos</span>SOS</button><button class="sos-btn round pulse" aria-label="SOS"><span class="ms f">sos</span></button></div><div class="t-sm muted">Solid red, white text, 56 dp minimum, soft pulse. Tap starts a 5 second visible countdown with Cancel and Send now. Sending needs no confirmation dialog; cancelling does not either. Works offline: queued and retried.</div></div>
+<div class="stage col"><div class="t-over faint">Boarding code</div><div class="card pad" style="text-align:center"><div class="t-over faint">Boarding code</div><div class="num" style="font-size:40px;line-height:48px;font-weight:800;letter-spacing:.28em;padding-left:.28em">4 8 2 1</div><div class="t-sm muted">Tell this to the driver only after you see your name.</div></div></div>
+<div class="stage col"><div class="t-over faint">Escort</div><div class="card pad row" style="border-color:var(--escort);background:var(--escort-soft);box-shadow:none"><span class="ms f" style="color:var(--escort)">shield_person</span><div class="grow t-sm" style="color:var(--ink)"><b>Escort Lakshmi D.</b> is in the cab<div style="color:var(--ink-2)">Verified by Dhruva, ID checked 20:48</div></div></div><div class="row" style="gap:8px"><span class="badge b-escort"><span class="ms">shield_person</span>Escort onboard</span><span class="badge b-escort"><span class="ms">female</span>Woman</span><span class="badge"><span class="ms">bedtime</span>Night</span></div></div>
+<div class="stage col"><div class="t-over faint">Share trip</div><div class="row card pad" style="box-shadow:none"><span class="ms" style="color:var(--brand)">link</span><div class="grow t-sm num"><b>dhruva.in/t/9fK2xQ7mLp</b></div><button class="btn xs tonal">Copy</button></div><div class="t-sm muted">Read-only link. Shows plate, driver first name, position, ETA. Ends with the trip.</div></div>
+</div></section>
+
+<section class="blk" id="map"><h2>Map styling</h2><p class="lead">OpenStreetMap data through MapLibre. Roads are quiet, the route is the loudest line, vehicles carry a heading arrow and a status colour. The mockups use a schematic of the HITEC City, Madhapur, Kondapur corridor.</p>
+<div class="grid g2"><div class="map" style="height:360px;border-radius:16px;border:1px solid var(--line)" id="dsMap2"></div>
+<div class="stage col"><div class="t-sm"><b>Pins</b></div>
+<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))"><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="12" fill="var(--surface)" stroke="var(--brand)" stroke-width="3"/><text y="4" font-size="11" font-weight="800" text-anchor="middle" fill="var(--ink)">2</text></svg><span class="t-sm">Pickup stop</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="12" fill="var(--surface)" stroke="var(--accent)" stroke-width="3"/><text y="4" font-size="11" font-weight="800" text-anchor="middle" fill="var(--ink)">3</text></svg><span class="t-sm">Next stop</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="12" fill="var(--surface)" stroke="var(--ok)" stroke-width="3"/><text y="4" font-size="11" font-weight="800" text-anchor="middle" fill="var(--ink)">1</text></svg><span class="t-sm">Boarded</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="12" fill="var(--surface)" stroke="var(--ink-3)" stroke-width="3"/><text y="4" font-size="11" font-weight="800" text-anchor="middle" fill="var(--ink)">4</text></svg><span class="t-sm">No-show</span></div>
+<div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="11" fill="var(--brand)" stroke="var(--surface)" stroke-width="2.5"/><path d="M0-5l4 7h-8z" fill="#fff"/></svg><span class="t-sm">Vehicle, on time</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="11" fill="var(--warn)" stroke="var(--surface)" stroke-width="2.5"/><path d="M0-5l4 7h-8z" fill="#fff"/></svg><span class="t-sm">Delayed</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="11" fill="var(--ink-3)" stroke="var(--surface)" stroke-width="2.5"/><path d="M0-5l4 7h-8z" fill="#fff"/></svg><span class="t-sm">Stale over 60 s</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="11" fill="var(--sos-solid)" stroke="var(--surface)" stroke-width="2.5"/><path d="M0-5l4 7h-8z" fill="#fff"/></svg><span class="t-sm">SOS</span></div><div class="row"><svg width="30" height="30" viewBox="-15 -15 30 30"><circle r="11" fill="var(--brand)" stroke="var(--surface)" stroke-width="2.5"/><circle cx="8" cy="-8" r="5" fill="var(--escort)" stroke="var(--surface)" stroke-width="1.5"/></svg><span class="t-sm">With escort</span></div></div>
+<div class="t-sm muted">Route: 5 px brand over a 9 px casing. Done route: 4 px grey 60%. Fit bounds with 48 px padding. Stale threshold 60 s.</div></div></div></section>
+
+<section class="blk" id="states"><h2>Empty, loading, error</h2><p class="lead">Every list and map ships all three. Skeletons match the final layout. Errors say what happened and what to do.</p>
+<div class="grid g3"><div class="card"><div class="row" style="padding:14px"><div class="sk" style="width:40px;height:40px;border-radius:12px"></div><div class="grow col" style="gap:8px"><div class="sk" style="height:14px;width:55%"></div><div class="sk" style="height:12px;width:80%"></div></div></div><div class="row" style="padding:14px;border-top:1px solid var(--line)"><div class="sk" style="width:40px;height:40px;border-radius:12px"></div><div class="grow col" style="gap:8px"><div class="sk" style="height:14px;width:45%"></div><div class="sk" style="height:12px;width:70%"></div></div></div><div class="t-cap faint" style="padding:0 14px 12px">Loading</div></div>
+<div class="card pad" style="text-align:center"><div class="avatar lg" style="margin:0 auto 10px"><span class="ms s28">route</span></div><div class="t-title">No trips yet</div><div class="t-sm muted" style="margin:2px 0 14px">Trips you take or cancel will show up here.</div><button class="btn sm">Request a ride</button></div>
+<div class="card pad" style="text-align:center;border-color:var(--sos)"><div class="avatar lg" style="margin:0 auto 10px;background:var(--sos-soft);color:var(--sos)"><span class="ms s28">cloud_off</span></div><div class="t-title">Cannot reach Dhruva</div><div class="t-sm muted" style="margin:2px 0 14px">Check your connection. SOS still works and will send as soon as you are online.</div><button class="btn sm sec">Try again</button></div></div></section>
+
+<section class="blk" id="rules"><h2>Do and don't</h2><p class="lead">The mistakes that most often make a safety product look careless.</p>
+<div class="grid g2">
+<div class="do"><header><span class="ms">check_circle</span>Do</header><div class="b"><div class="row"><button class="sos-btn" style="min-height:44px;padding:0 18px;font-size:14px"><span class="ms f">sos</span>SOS</button><span>Keep SOS visible on every live-trip and trip-run screen.</span></div><div class="row"><span class="badge b-sos"><span class="ms">event_busy</span>Expired</span><span>Pair colour with an icon and a word.</span></div></div></div>
+<div class="dont"><header><span class="ms">cancel</span>Don't</header><div class="b"><div class="row"><span style="width:44px;height:44px;border-radius:50%;background:var(--surface-3);display:grid;place-items:center;flex:none"><span class="ms faint">more_horiz</span></span><span>Hide SOS in an overflow menu or behind a long press only.</span></div><div class="row"><span style="width:12px;height:12px;border-radius:50%;background:var(--sos-solid);flex:none"></span><span>Signal status with a lone coloured dot.</span></div></div></div>
+<div class="do"><header><span class="ms">check_circle</span>Do</header><div class="b"><span>Explain blocked actions: "Cannot assign: fitness certificate expired 12 Oct."</span><span>Ask for a reason on every manual roster change.</span></div></div>
+<div class="dont"><header><span class="ms">cancel</span>Don't</header><div class="b"><span>Use red for anything but SOS, expired, errors and destructive actions.</span><span>Use amber text on white; use the warn token (contrast 5:1).</span></div></div>
+</div></section>
+</div>
+
+<script>
+/* Schematic Hyderabad IT-corridor basemap. Production uses MapLibre/OSM; this mirrors the styling tokens. */
+function mapSvg(o){
+  o=o||{};
+  var vb=o.vb||'0 0 400 560';
+  var P=function(d,c,w,x){return '<path d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round" stroke-linejoin="round"'+(x||'')+'/>'};
+  var major=[
+    'M-10 470 C 120 430, 250 470, 410 360',
+    'M20 570 C 90 430, 140 330, 175 270 S 260 120, 300 -10',
+    'M-10 175 C 120 150, 260 170, 410 215',
+    'M60 420 C 160 400, 300 420, 410 440'];
+  var minor=['M0 90H400','M0 250H400','M0 330H400','M0 520H400','M60 0V560','M120 0V560','M240 0V560','M330 0V560','M200 140C 210 200, 215 260, 205 330','M280 215L330 330','M90 250L40 380','M135 330L180 440'];
+  var s='<svg viewBox="'+vb+'" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+(o.label||'Map of HITEC City, Madhapur and Kondapur')+'">';
+  s+='<rect x="-20" y="-20" width="440" height="600" fill="var(--map-land)"/>';
+  s+='<ellipse cx="318" cy="268" rx="44" ry="25" transform="rotate(-18 318 268)" fill="var(--map-water)"/>';
+  s+='<path d="M40 70c20-14 50-10 62 6s0 40-24 44-52-8-38-50z" fill="var(--map-water)"/>';
+  s+='<rect x="140" y="370" width="70" height="46" rx="10" fill="var(--map-park)"/><rect x="330" y="80" width="50" height="60" rx="10" fill="var(--map-park)"/><rect x="20" y="470" width="60" height="40" rx="10" fill="var(--map-park)"/>';
+  minor.forEach(function(d){s+=P(d,'var(--map-casing)',3.4,' opacity=".55"')+P(d,'var(--map-road)',2)});
+  major.forEach(function(d){s+=P(d,'var(--map-major-casing)',10)+P(d,'var(--map-major)',7.5)});
+  var L=function(x,y,t,sz,r){return '<text x="'+x+'" y="'+y+'" font-size="'+(sz||9)+'" font-weight="700" fill="var(--map-label)" stroke="var(--map-land)" stroke-width="3" paint-order="stroke" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif"'+(r?' transform="rotate('+r+' '+x+' '+y+')"':'')+'>'+t+'</text>'};
+  s+=L(272,130,'HITEC City',11)+L(190,238,'Madhapur',11)+L(100,320,'Kondapur',11)+L(300,400,'Gachibowli',11)+L(318,300,'Durgam Cheruvu',8)+L(230,160,'Mindspace Rd',7,6)+L(122,460,'ORR',8,-8);
+  if(o.route){var pts=o.route;var d='M'+pts.map(function(p){return p[0]+' '+p[1]}).join(' L');
+    s+=P(d,'var(--route-casing)',9)+P(d,'var(--route)',5,o.dashed?' stroke-dasharray="1 9"':'')}
+  if(o.done){var d2='M'+o.done.map(function(p){return p[0]+' '+p[1]}).join(' L');s+=P(d2,'var(--ink-3)',4,' opacity=".6"')}
+  (o.stops||[]).forEach(function(p){
+    var col=p.state==='done'?'var(--ok)':p.state==='noshow'?'var(--ink-3)':p.state==='next'?'var(--accent)':'var(--brand)';
+    s+='<g transform="translate('+p.x+' '+p.y+')"><circle r="12" fill="var(--surface)" stroke="'+col+'" stroke-width="3"/>'
+      +'<text y="4" font-size="11" font-weight="800" text-anchor="middle" fill="var(--ink)" font-family="Plus Jakarta Sans,sans-serif">'+(p.n||'')+'</text>'
+      +(p.f?'<circle cx="9" cy="-9" r="5" fill="var(--escort)" stroke="var(--surface)" stroke-width="1.5"/>':'')+'</g>'});
+  if(o.dest){s+='<g transform="translate('+o.dest[0]+' '+o.dest[1]+')"><path d="M0 0C-14-16-16-26 0-34 16-26 14-16 0 0z" fill="var(--ink)"/><circle cy="-22" r="5" fill="var(--surface)"/></g>'}
+  if(o.home){s+='<g transform="translate('+o.home[0]+' '+o.home[1]+')"><circle class="mp-pulse" r="8" fill="var(--brand)" opacity=".4"/><circle r="9" fill="var(--brand)" stroke="#fff" stroke-width="3"/><circle r="3" fill="#fff"/></g>'}
+  (o.vehicles||[]).forEach(function(v){
+    var c=v.sos?'var(--sos-solid)':v.s==='late'?'var(--warn)':v.s==='stale'?'var(--ink-3)':v.s==='idle'?'var(--info)':'var(--brand)';
+    s+='<g transform="translate('+v.x+' '+v.y+')" data-vid="'+(v.id||'')+'" style="cursor:pointer">'
+      +(v.sos?'<circle class="mp-pulse" r="8" fill="var(--sos-solid)" opacity=".5"/>':'')
+      +'<circle r="'+(v.sel?15:11)+'" fill="'+c+'" stroke="'+(v.sel?'var(--ink)':'var(--surface)')+'" stroke-width="'+(v.sel?3:2.5)+'"/>'
+      +'<path d="M0-5l4 7h-8z" fill="#fff" transform="rotate('+(v.r||0)+')"/>'
+      +(v.esc?'<circle cx="10" cy="-10" r="5" fill="var(--escort)" stroke="var(--surface)" stroke-width="1.5"/>':'')+'</g>'});
+  if(o.veh){var v=o.veh;s+='<g transform="translate('+v.x+' '+v.y+')"><circle r="22" fill="var(--brand)" opacity=".18"/><circle r="14" fill="var(--brand)" stroke="#fff" stroke-width="3.5"/><path d="M0-6l5 9h-10z" fill="#fff" transform="rotate('+(v.r||0)+')"/></g>'}
+  if(o.sos){s+='<g transform="translate('+o.sos[0]+' '+o.sos[1]+')"><circle class="mp-pulse" r="8" fill="var(--sos-solid)" opacity=".5"/><circle r="13" fill="var(--sos-solid)" stroke="#fff" stroke-width="3"/><text y="4.5" font-size="12" font-weight="800" text-anchor="middle" fill="#fff" font-family="Plus Jakarta Sans,sans-serif">!</text></g>'}
+  return s+'</svg>'}
+
+var $=function(s){return document.querySelector(s)};
+var T=[['Brand','--brand','#0E5A58','#4FD1C5','Primary actions, active nav, route line'],['Brand deep','--brand-deep','#093A39','#0D2625','Hero surfaces'],['Brand soft','--brand-soft','#D9EFEC','#123231','Selected rows, tonal buttons'],['Accent','--accent','#F2A311','#FFB938','Next action, ETA, current stop'],['Background','--bg','#F3F7F6','#0A1213','App background'],['Surface','--surface','#FFFFFF','#111B1C','Cards, sheets, nav'],['Surface 2','--surface-2','#E9F0EF','#192627','Inputs fill, chips, table header'],['Line','--line','#D5E0DF','#25383A','Dividers, card borders'],['Ink','--ink','#0B1A1B','#E9F3F2','Primary text'],['Ink 2','--ink-2','#3B5254','#B1C6C5','Secondary text'],['Ink 3','--ink-3','#587072','#8BA3A2','Captions, placeholders (4.5:1)']];
+$('#sw').innerHTML=T.map(function(t){return '<div class="sw"><div class="pair"><div style="background:'+t[2]+';color:'+(t[0].indexOf('Ink')===0||t[0]==='Accent'||t[0]==='Background'||t[0]==='Surface'||t[0]==='Surface 2'||t[0]==='Line'||t[0]==='Brand soft'?'#0B1A1B':'#fff')+'">'+t[2]+'</div><div style="background:'+t[3]+';color:'+(t[0].indexOf('Ink')===0||t[0]==='Brand'||t[0]==='Accent'?'#0A1213':'#E9F3F2')+'">'+t[3]+'</div></div><div class="m"><b>'+t[0]+'</b> <code>'+t[1]+'</code><div>'+t[4]+'</div></div></div>'}).join('');
+var S=[['On time / OK','ok','check_circle','#157A3B','#5BDB8A','Valid documents, on-time, boarded'],['Delayed / expiring','warn','schedule','#A8480A','#FBB254','Late trips, documents under 30 days'],['SOS','sos','sos','#C92418','#FF8176','Open emergency. Solid fill when active'],['Expired document','expired','event_busy','#C92418','#FF8176','Hard block, pairs with a reason line'],['Escort','escort','shield_person','#A81D63','#F58BC0','Escort assigned or required'],['In progress','info','near_me','#1D4FD7','#8FB0FF','Live trips, upcoming']];
+$('#status').innerHTML=S.map(function(s){return '<div class="card pad"><div class="row" style="gap:8px"><span class="badge" style="background:var(--'+(s[1]==='expired'?'sos':s[1])+'-soft);color:var(--'+(s[1]==='expired'?'sos':s[1])+')"><span class="ms">'+s[2]+'</span>'+s[0].split(' / ')[0]+'</span></div><div class="t-sm" style="margin-top:8px"><b>'+s[0]+'</b></div><div class="t-cap muted">'+s[5]+'</div><div class="mono faint" style="margin-top:6px">'+s[3]+' / '+s[4]+'</div></div>'}).join('');
+function lum(h){var c=h.replace('#','').match(/../g).map(function(x){x=parseInt(x,16)/255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)});return .2126*c[0]+.7152*c[1]+.0722*c[2]}
+function cr(a,b){var x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)}
+function rgb2hex(v){var m=v.match(/\d+/g);return '#'+m.slice(0,3).map(function(n){return ('0'+(+n).toString(16)).slice(-2)}).join('')}
+function tok(n){var d=document.createElement('div');d.style.color='var('+n+')';document.body.appendChild(d);var c=getComputedStyle(d).color;d.remove();return rgb2hex(c)}
+function drawCT(){var P=[['Ink on surface','--ink','--surface'],['Ink 2 on surface','--ink-2','--surface'],['Ink 3 on surface','--ink-3','--surface'],['Brand on surface','--brand','--surface'],['Brand ink on brand','--brand-ink','--brand'],['Accent ink on accent','--accent-ink','--accent'],['OK on ok-soft','--ok','--ok-soft'],['Warn on warn-soft','--warn','--warn-soft'],['SOS on sos-soft','--sos','--sos-soft'],['White on SOS solid','--sos-ink','--sos-solid'],['Escort on escort-soft','--escort','--escort-soft'],['Info on info-soft','--info','--info-soft']];
+ $('#ct').innerHTML='<thead><tr><th>Pair</th><th>Ratio</th><th>Result</th></tr></thead><tbody>'+P.map(function(p){var r=cr(tok(p[1]),tok(p[2]));return '<tr><td>'+p[0]+'</td><td class="num"><b>'+r.toFixed(2)+':1</b></td><td>'+(r>=4.5?'<span class="badge b-ok"><span class="ms">check_circle</span>AA</span>':r>=3?'<span class="badge b-warn"><span class="ms">schedule</span>Large text only</span>':'<span class="badge b-sos">Fail</span>')+'</td></tr>'}).join('')+'</tbody>'}
+$('#spc').innerHTML=[4,8,12,16,20,24,32,40,48,64].map(function(n){return '<div class="row" style="gap:12px"><span class="mono faint" style="width:36px">'+n+'</span><div class="bar" style="width:'+n*3+'px"></div></div>'}).join('');
+$('#rad').innerHTML=[['xs',6],['sm',10],['md',14],['lg',20],['xl',28],['pill',999]].map(function(r){return '<div style="text-align:center"><div style="width:64px;height:64px;background:var(--brand-soft);border:2px solid var(--brand);border-radius:'+r[1]+'px"></div><div class="t-cap muted" style="margin-top:4px">'+r[0]+' '+(r[1]>99?'full':r[1])+'</div></div>'}).join('');
+$('#shd').innerHTML=[['1','--sh-1','Cards'],['2','--sh-2','Raised, FAB'],['3','--sh-3','Sheets, dialogs']].map(function(r){return '<div style="text-align:center"><div style="width:88px;height:64px;background:var(--surface);border-radius:14px;box-shadow:var('+r[1]+')"></div><div class="t-cap muted" style="margin-top:8px">'+r[0]+' '+r[2]+'</div></div>'}).join('');
+var IC=['home','route','notifications','person','near_me','share_location','sos','shield_person','pin','verified_user','event_busy','schedule','bedtime','logout','login','directions_car','badge','call','person_off','flag','satellite_alt','view_kanban','database','monitoring','tune','upload_file','home_pin','location_on','check_circle','block'];
+$('#ic').innerHTML=IC.map(function(i){return '<div style="width:84px;text-align:center;padding:8px 0"><span class="ms s28">'+i+'</span><div class="t-cap faint" style="font-size:10.5px;word-break:break-all">'+i+'</div></div>'}).join('');
+function maps(){$('#dsMap1').innerHTML=mapSvg({vb:'80 230 220 200',route:[[196,268],[150,318],[96,392]],veh:{x:196,y:268,r:200},home:[96,392]});
+ $('#dsMap2').innerHTML=mapSvg({vb:'40 90 330 400',route:[[258,170],[236,210],[196,268],[150,318],[118,350],[96,392]],stops:[{x:196,y:268,n:1,state:'done'},{x:150,y:318,n:2,f:1,state:'next'},{x:118,y:350,n:3,f:1},{x:96,y:392,n:4,f:1}],dest:[258,170],vehicles:[{x:300,y:392,r:130,sos:1},{x:150,y:230,r:60,s:'late'},{x:320,y:170,r:20,esc:1},{x:92,y:240,r:90,s:'stale'}]})}
+$('#motGo').onclick=function(){$('#mot').classList.toggle('go')};
+$('#themeBtn').onclick=function(){var r=document.documentElement;var d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark';maps();drawCT()};
+maps();drawCT();
+</script>

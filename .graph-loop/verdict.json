@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-10-29T05:36:30.357962+00:00",
+  "results": [
+    {
+      "id": "c1",
+      "text": "All local links, images and anchors resolve on every page",
+      "mode": "shell",
+      "command": "python3 .graph-loop/check_site.py links",
+      "passed": true,
+      "exit_code": 0,
+      "output_tail": "OK (13 pages)\n"
+    },
+    {
+      "id": "c2",
+      "text": "Every Core Connections page links to pessary/; pessary/index.html and pessary/visit.html exist and link back",
+      "mode": "shell",
+      "command": "python3 .graph-loop/check_site.py gate",
+      "passed": true,
+      "exit_code": 0,
+      "output_tail": "OK (13 pages)\n"
+    },
+    {
+      "id": "c3",
+      "text": "No new/removed images (existing images/ only)",
+      "mode": "shell",
+      "command": "ls images | sort | diff - .graph-loop/images.snapshot",
+      "passed": true,
+      "exit_code": 0,
+      "output_tail": ""
+    },
+    {
+      "id": "c4",
+      "text": "No external scripts; only Google Fonts external",
+      "mode": "shell",
+      "command": "! grep -rEl '<script[^>]+src=\"https?://' --include=*.html . --exclude-dir=.graph-loop --exclude-dir='photos for website' --exclude-dir='in clinic photos'",
+      "passed": true,
+      "exit_code": 0,
+      "output_tail": ""
+    },
+    {
+      "id": "c5",
+      "text": "Core Connections content rewritten from PDF (home, our story, approach, team, services/conditions, accessibility+directions, contact, careers/mentorship); pessary mentions point to Ottawa Pessary Clinic",
+      "mode": "manual",
+      "passed": null,
+      "exit_code": null,
+      "output_tail": null
+    },
+    {
+      "id": "c6",
+      "text": "Pessary view is distinct, creative, responsive, accessible; only facts from PDF/existing site (no invented prices/claims); opening Jan 2027 noted",
+      "mode": "manual",
+      "passed": null,
+      "exit_code": null,
+      "output_tail": null
+    },
+    {
+      "id": "c7",
+      "text": "'Go to Ottawa Pessary Clinic' gate is prominent immediately on opening CC home and persistent on other pages",
+      "mode": "manual",
+      "passed": null,
+      "exit_code": null,
+      "output_tail": null
+    }
+  ],
+  "verifiable_count": 4,
+  "verifiable_passed": 4,
+  "manual_count": 3,
+  "hard_gate_passed": true
+}

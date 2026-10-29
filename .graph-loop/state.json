@@ -1,0 +1,80 @@
+{
+  "task": "Two-entity website: rewrite Core Connections site from PDF + add Ottawa Pessary Clinic view with entry gate",
+  "created_at": "2026-10-29T05:28:34.201275+00:00",
+  "engine": "agent",
+  "max_rounds": 3,
+  "budget_tokens": null,
+  "scope": {
+    "include": [],
+    "exclude": []
+  },
+  "constraints": [],
+  "autonomy": {
+    "edit": true,
+    "commit": false,
+    "destructive": false
+  },
+  "criteria": [
+    {
+      "id": "c1",
+      "text": "All local links, images and anchors resolve on every page",
+      "verifiable": true,
+      "command": "python3 .graph-loop/check_site.py links",
+      "status": "passed",
+      "evidence": "verify.py PASS"
+    },
+    {
+      "id": "c2",
+      "text": "Every Core Connections page links to pessary/; pessary/index.html and pessary/visit.html exist and link back",
+      "verifiable": true,
+      "command": "python3 .graph-loop/check_site.py gate",
+      "status": "passed",
+      "evidence": "verify.py PASS"
+    },
+    {
+      "id": "c3",
+      "text": "No new/removed images (existing images/ only)",
+      "verifiable": true,
+      "command": "ls images | sort | diff - .graph-loop/images.snapshot",
+      "status": "passed",
+      "evidence": "verify.py PASS"
+    },
+    {
+      "id": "c4",
+      "text": "No external scripts; only Google Fonts external",
+      "verifiable": true,
+      "command": "! grep -rEl '<script[^>]+src=\"https?://' --include=*.html . --exclude-dir=.graph-loop --exclude-dir='photos for website' --exclude-dir='in clinic photos'",
+      "status": "passed",
+      "evidence": "verify.py PASS"
+    },
+    {
+      "id": "c5",
+      "text": "Core Connections content rewritten from PDF (home, our story, approach, team, services/conditions, accessibility+directions, contact, careers/mentorship); pessary mentions point to Ottawa Pessary Clinic",
+      "verifiable": false,
+      "command": null,
+      "status": "passed",
+      "evidence": "panel 3/3 satisfied with file:line evidence"
+    },
+    {
+      "id": "c6",
+      "text": "Pessary view is distinct, creative, responsive, accessible; only facts from PDF/existing site (no invented prices/claims); opening Jan 2027 noted",
+      "verifiable": false,
+      "command": null,
+      "status": "passed",
+      "evidence": "panel 3/3 satisfied; 360px email overflow + rings aria fixed"
+    },
+    {
+      "id": "c7",
+      "text": "'Go to Ottawa Pessary Clinic' gate is prominent immediately on opening CC home and persistent on other pages",
+      "verifiable": false,
+      "command": null,
+      "status": "passed",
+      "evidence": "panel 3/3: gate band before hero, ribbon on all 11 CC pages (not sticky)"
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "rounds": [],
+  "status": "complete",
+  "stop_reason": null
+}

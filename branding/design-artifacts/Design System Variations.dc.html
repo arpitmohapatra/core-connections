@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E7E4EC;-webkit-font-smoothing:antialiased}a{color:#4D4184;text-decoration:none}a:hover{color:#362C5E}
+@keyframes breathe{0%,100%{transform:scale(.84)}50%{transform:scale(1.06)}}
+@keyframes fadeA{0%,46%{opacity:1}50%,96%{opacity:0}100%{opacity:1}}
+@keyframes fadeB{0%,46%{opacity:0}50%,96%{opacity:1}100%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulseDot{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes draw{from{stroke-dashoffset:240}to{stroke-dashoffset:0}}
+@keyframes flow{to{stroke-dashoffset:-24}}
+@keyframes rise{from{opacity:0;transform:translateY(.55em)}to{opacity:1;transform:none}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(147,191,46,.5)}50%{box-shadow:0 0 0 14px rgba(147,191,46,0)}}
+@keyframes glowC{0%,100%{box-shadow:0 0 0 0 rgba(217,133,116,.5)}50%{box-shadow:0 0 0 12px rgba(217,133,116,0)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</helmet>
+
+<section style="padding:80px;display:flex;flex-direction:column;gap:40px;font-family:'Plus Jakarta Sans',sans-serif;color:#1B1730;">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:900px;">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Turn 2 · Variations of the Clinic Design System</span>
+    <h1 style="margin:0;font-size:44px;line-height:1.08;font-weight:800;letter-spacing:-.03em;">Three ways to move</h1>
+    <p style="margin:0;font-size:16px;line-height:1.6;color:#4A4360;">Same tokens, type and components underneath. Each variation adds its own motif and motion language. Hover the buttons and cards, and use Replay to rerun the entrance animations.</p>
+    <span onClick="{{ replay }}" style="align-self:flex-start;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:12px;font-weight:700;font-size:14px;background:#fff;color:#4D4184;box-shadow:inset 0 0 0 1.5px #BDB5CC;margin-top:6px;"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;">replay</span>Replay entrances</span>
+  </div>
+
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+
+  <!-- ===================== 2a BREATH ===================== -->
+  <div id="2a" style="width:760px;flex:none;background:#F6F4F9;border-radius:28px;overflow:hidden;box-shadow:0 16px 40px rgba(54,44,94,.18),0 4px 10px rgba(54,44,94,.08);">
+    <div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="background:#1B1730;color:#fff;font-weight:800;font-size:13px;padding:3px 10px;border-radius:999px;">2a</span><span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Breath</span></div>
+      <h2 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;">Paced like a slow breath.</h2>
+      <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4A4360;max-width:60ch;">Motion follows an 8-second breathing cycle. Nothing snaps; things swell and settle. A serif italic softens one word per headline. Suits the somatic, trauma-informed side of the clinic.</p>
+    </div>
+    <div style="margin:0 20px;background:#fff;border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 220px;gap:24px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Core Connections · Westboro</span>
+        <h3 style="margin:0;font-size:38px;line-height:1.08;font-weight:800;letter-spacing:-.03em;">Care that moves at <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:44px;letter-spacing:0;color:#4D4184;">your pace.</span></h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4A4360;">Inclusive, gender-affirming and trauma-informed physiotherapy since 2008.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#93BF2E;color:#1E2A05;animation:glow 8s ease-in-out infinite;transition:transform .6s cubic-bezier(.4,0,.2,1);" style-hover="transform:scale(1.04);">Book online</span>
+          <span style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#EEE9F5;color:#4D4184;transition:background .6s cubic-bezier(.4,0,.2,1);" style-hover="background:#E3DCF1;">Free phone consult</span>
+        </div>
+      </div>
+      <div style="display:grid;place-items:center;height:220px;">{{ breathRing }}</div>
+    </div>
+    <div style="padding:24px 36px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#4D4184;"></div><span style="font-size:11px;color:#4A4360;">#4D4184</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#8A7EC4;"></div><span style="font-size:11px;color:#4A4360;">#8A7EC4</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#EEE9F5;border:1px solid #DDD8E6;"></div><span style="font-size:11px;color:#4A4360;">#EEE9F5</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#93BF2E;"></div><span style="font-size:11px;color:#4A4360;">#93BF2E</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#fff;border:1px solid #DDD8E6;"></div><span style="font-size:11px;color:#4A4360;">#FFFFFF</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:44px;border-radius:999px;background:#1B1730;"></div><span style="font-size:11px;color:#4A4360;">#1B1730</span></div>
+    </div>
+    <div style="padding:0 36px 24px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:6px;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Type</span>
+        <span style="font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.1;">Jakarta 800 <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:#4D4184;">+ Instrument italic</span></span>
+        <span style="font-size:12.5px;color:#4A4360;">Serif italic for one emphasis word per heading only.</span>
+      </div>
+      <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform .8s cubic-bezier(.4,0,.2,1),box-shadow .8s cubic-bezier(.4,0,.2,1);cursor:pointer;" style-hover="transform:translateY(-3px);box-shadow:0 16px 40px rgba(54,44,94,.14);">
+        <div style="display:flex;align-items:center;gap:10px;"><span style="width:40px;height:40px;border-radius:50%;background:#EEE9F5;display:grid;place-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:22px;line-height:1;color:#4D4184;font-variation-settings:'FILL' 1;">self_improvement</span></span><b style="font-size:16px;">Somatic education</b></div>
+        <span style="font-size:13px;line-height:20px;color:#4A4360;">Greater awareness of movement, breathing and tension.</span>
+      </div>
+    </div>
+    <div style="padding:0 36px 24px;">
+      <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+          <tr><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;font:500 12px 'JetBrains Mono',monospace;">d-breath</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;">8000 ms, ease-in-out</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;color:#4A4360;">Hero ring, Book glow</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;font:500 12px 'JetBrains Mono',monospace;">d-settle</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;">600–800 ms, cubic(.4,0,.2,1)</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;color:#4A4360;">Hover, card lift 3 px</td></tr>
+          <tr><td style="padding:9px 14px;font:500 12px 'JetBrains Mono',monospace;">rule</td><td style="padding:9px 14px;" colspan="2">No bounce, no slide-ins. Opacity and scale only.</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin:0 20px 20px;background:#F3F7F6;border:1px solid #D6E2DF;border-radius:20px;padding:18px 20px;display:flex;align-items:center;gap:16px;">
+      <img src="assets/opc-mark.svg" alt="" style="width:40px;height:40px;animation:breathe 8s ease-in-out infinite;">
+      <div style="flex:1;display:flex;flex-direction:column;"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2B6A64;">OPC theme</span><b style="font-size:18px;color:#13213A;letter-spacing:-.01em;">Support, <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:21px;color:#2B6A64;">fitted with care.</span></b></div>
+      <span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:#D98574;color:#2A0F08;animation:glowC 8s ease-in-out infinite;">Book a fitting</span>
+    </div>
+  </div>
+
+  <!-- ===================== 2b CONNECTIONS ===================== -->
+  <div id="2b" style="width:760px;flex:none;background:#221C3D;border-radius:28px;overflow:hidden;color:#F1EEF8;box-shadow:0 16px 40px rgba(54,44,94,.3);">
+    <div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="background:#93BF2E;color:#1E2A05;font-weight:800;font-size:13px;padding:3px 10px;border-radius:999px;">2b</span><span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B7AEDB;">Connections</span></div>
+      <h2 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;">The logo, set in motion.</h2>
+      <p style="margin:0;font-size:14.5px;line-height:1.6;color:#C9C1EA;max-width:60ch;">The three interlocking circles of the mark become the system's motif. Lines draw between services to show integrated care. Deep violet surfaces, citron as the live signal, mono numerals that count up.</p>
+    </div>
+    <div style="margin:0 20px;background:#362C5E;border-radius:20px;padding:28px 32px;display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#93BF2E;">Integrated physiotherapy</span>
+        <h3 style="margin:0;font-size:40px;line-height:1.05;font-weight:800;letter-spacing:-.03em;color:#fff;">Everything is connected.</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#C9C1EA;">Musculoskeletal, pelvic health, visceral and nervous systems, treated together.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <span style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#93BF2E;color:#1E2A05;transition:transform .2s cubic-bezier(.2,0,0,1),gap .2s;" style-hover="transform:translateY(-2px);gap:14px;">Book online<span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;">arrow_forward</span></span>
+          <span style="cursor:pointer;display:inline-flex;align-items:center;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3);transition:box-shadow .2s;" style-hover="box-shadow:inset 0 0 0 1.5px #93BF2E;">Our approach</span>
+        </div>
+      </div>
+      <div style="height:240px;display:grid;place-items:center;">{{ orbit }}</div>
+    </div>
+    <div style="padding:24px 36px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="background:#2B2450;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:2px;"><span style="font:700 44px/1 'JetBrains Mono',monospace;color:#93BF2E;">{{ n17 }}</span><span style="font-size:12.5px;color:#C9C1EA;margin-top:6px;">years serving our community</span></div>
+      <div style="background:#2B2450;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:2px;"><span style="font:700 44px/1 'JetBrains Mono',monospace;color:#93BF2E;">{{ n19 }}</span><span style="font-size:12.5px;color:#C9C1EA;margin-top:6px;">years in pelvic health</span></div>
+      <div style="background:#2B2450;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:2px;"><span style="font:700 44px/1 'JetBrains Mono',monospace;color:#93BF2E;">{{ n36 }}</span><span style="font-size:12.5px;color:#C9C1EA;margin-top:6px;">years in orthopedics</span></div>
+    </div>
+    <div style="padding:0 36px 24px;">
+      <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+        <div style="position:absolute;left:0;right:0;top:50%;height:2px;">{{ flowLine }}</div>
+        <div style="position:relative;background:#fff;color:#1B1730;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;transition:transform .2s cubic-bezier(.2,0,0,1);cursor:pointer;" style-hover="transform:translateY(-4px);"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;color:#4D4184;font-variation-settings:'FILL' 1;">favorite</span><b style="font-size:15px;">Pelvic health</b><span style="font-size:12.5px;color:#4A4360;">Women, men and 2SLGBTQIA+</span></div>
+        <div style="position:relative;background:#fff;color:#1B1730;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;transition:transform .2s cubic-bezier(.2,0,0,1);cursor:pointer;" style-hover="transform:translateY(-4px);"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;color:#4D4184;font-variation-settings:'FILL' 1;">accessibility_new</span><b style="font-size:15px;">Orthopedic</b><span style="font-size:12.5px;color:#4A4360;">FCAMPT-certified</span></div>
+        <div style="position:relative;background:#fff;color:#1B1730;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;transition:transform .2s cubic-bezier(.2,0,0,1);cursor:pointer;" style-hover="transform:translateY(-4px);"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;color:#4D4184;font-variation-settings:'FILL' 1;">psychology</span><b style="font-size:15px;">Mind–body</b><span style="font-size:12.5px;color:#4A4360;">Somatic, trauma-informed</span></div>
+      </div>
+    </div>
+    <div style="padding:0 36px 24px;">
+      <div style="border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px;color:#E4DFF3;">
+          <tr><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);font:500 12px 'JetBrains Mono',monospace;">d-orbit</td><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);">60 s linear loop</td><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);color:#B7AEDB;">Hero mark only</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);font:500 12px 'JetBrains Mono',monospace;">d-draw</td><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);">1200 ms, cubic(.05,.7,.1,1)</td><td style="padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.1);color:#B7AEDB;">Connector lines on scroll-in</td></tr>
+          <tr><td style="padding:9px 14px;font:500 12px 'JetBrains Mono',monospace;">d-count</td><td style="padding:9px 14px;">1600 ms ease-out</td><td style="padding:9px 14px;color:#B7AEDB;">Stats, once per page view</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin:0 20px 20px;background:#1F2F4D;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px 20px;display:flex;align-items:center;gap:16px;">
+      <span style="width:44px;height:44px;border-radius:50%;background:#FAF7F2;display:grid;place-items:center;flex:none;"><img src="assets/opc-mark.svg" alt="" style="width:32px;height:32px;animation:spin 30s linear infinite;"></span>
+      <div style="flex:1;display:flex;flex-direction:column;"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7FAE9F;">OPC theme</span><b style="font-size:18px;color:#fff;">Fitting pessaries since <span style="font-family:'JetBrains Mono',monospace;color:#D98574;">2013</span></b></div>
+      <span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:#D98574;color:#2A0F08;">Book a fitting</span>
+    </div>
+  </div>
+
+  <!-- ===================== 2c KINETIC ===================== -->
+  <div id="2c" style="width:760px;flex:none;background:#FFFFFF;border-radius:28px;overflow:hidden;box-shadow:0 16px 40px rgba(54,44,94,.18),0 4px 10px rgba(54,44,94,.08);">
+    <div style="padding:32px 36px 24px;display:flex;flex-direction:column;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;"><span style="background:#4D4184;color:#fff;font-weight:800;font-size:13px;padding:3px 10px;border-radius:999px;">2c</span><span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Kinetic</span></div>
+      <h2 style="margin:0;font-size:30px;line-height:1.15;font-weight:800;letter-spacing:-.02em;">Energetic, built around movement.</h2>
+      <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4A4360;max-width:60ch;">Big type that rises word by word, a moving service ticker, photos with a slow push-in and cards with a springy lift. Citron used in full blocks. Speaks most to sports and orthopedic patients.</p>
+    </div>
+    <div style="margin:0 20px;position:relative;height:340px;border-radius:20px;overflow:hidden;">
+      {{ kbPhoto }}
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,23,48,.05) 20%,rgba(27,23,48,.82) 100%);"></div>
+      <div style="position:absolute;left:28px;right:28px;bottom:26px;display:flex;flex-direction:column;gap:16px;color:#fff;">
+        {{ riseHead }}
+        <div style="display:flex;gap:10px;">
+          <span style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:14px;font-weight:800;background:#93BF2E;color:#1E2A05;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:translateY(-3px) scale(1.04);">Book online</span>
+          <span style="cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:14px;font-weight:700;background:rgba(255,255,255,.16);color:#fff;backdrop-filter:blur(8px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:translateY(-3px);">Our team</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin:16px 20px 0;background:#93BF2E;border-radius:16px;overflow:hidden;height:56px;display:flex;align-items:center;">{{ marquee }}</div>
+    <div style="padding:24px 36px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <sc-for list="{{ kCards }}" as="k" hint-placeholder-count="3">
+        <div style="cursor:pointer;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;min-height:150px;transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .45s;background:{{ k.bg }};color:{{ k.fg }};" style-hover="transform:translateY(-8px) rotate(-1.5deg);box-shadow:0 18px 36px rgba(54,44,94,.22);">
+          <span style="font:700 12px 'JetBrains Mono',monospace;opacity:.75;">{{ k.n }}</span>
+          <b style="font-size:20px;line-height:1.15;letter-spacing:-.01em;flex:1;">{{ k.t }}</b>
+          <span style="font-family:'Material Symbols Rounded';font-size:26px;line-height:1;">north_east</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="padding:0 36px 24px;display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-radius:14px;overflow:hidden;">
+      <div style="height:56px;background:#93BF2E;"></div><div style="height:56px;background:#4D4184;"></div><div style="height:56px;background:#362C5E;"></div><div style="height:56px;background:#C68F5B;"></div><div style="height:56px;background:#F6F4F9;"></div><div style="height:56px;background:#1B1730;"></div>
+    </div>
+    <div style="padding:0 36px 24px;">
+      <div style="border:1px solid #DDD8E6;border-radius:16px;overflow:hidden;">
+        <table style="width:100%;border-collapse:collapse;font-size:12.5px;">
+          <tr><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;font:500 12px 'JetBrains Mono',monospace;">e-spring</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;">cubic(.34,1.56,.64,1), 350–450 ms</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;color:#4A4360;">Hover lift, tilt −1.5°</td></tr>
+          <tr><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;font:500 12px 'JetBrains Mono',monospace;">d-rise</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;">600 ms, 90 ms stagger per word</td><td style="padding:9px 14px;border-bottom:1px solid #DDD8E6;color:#4A4360;">Headlines on load</td></tr>
+          <tr><td style="padding:9px 14px;font:500 12px 'JetBrains Mono',monospace;">d-ticker</td><td style="padding:9px 14px;">28 s linear loop, pauses on hover</td><td style="padding:9px 14px;color:#4A4360;">Service marquee</td></tr>
+        </table>
+      </div>
+    </div>
+    <div style="margin:0 20px 20px;background:#1F2F4D;border-radius:20px;padding:18px 20px;display:flex;align-items:center;gap:16px;overflow:hidden;">
+      <img src="assets/opc-mark.svg" alt="" style="width:40px;height:40px;background:#FAF7F2;border-radius:50%;padding:4px;">
+      <div style="flex:1;display:flex;flex-direction:column;"><span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7FAE9F;">OPC theme</span><b style="font-size:20px;color:#fff;letter-spacing:-.02em;">Support, fitted with care.</b></div>
+      <span style="cursor:pointer;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:800;background:#D98574;color:#2A0F08;transition:transform .35s cubic-bezier(.34,1.56,.64,1);" style-hover="transform:translateY(-3px) scale(1.04);">Book a fitting</span>
+    </div>
+  </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { run: 0, p: 0 };
+  componentDidMount() { this.count(); }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  count() {
+    cancelAnimationFrame(this.raf);
+    const t0 = performance.now();
+    const tick = (t) => {
+      const x = Math.min(1, (t - t0) / 1600);
+      this.setState({ p: 1 - Math.pow(1 - x, 3) });
+      if (x < 1) this.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  renderVals() {
+    const h = React.createElement;
+    const { run, p } = this.state;
+
+    const breathRing = h('div', { style: { position: 'relative', width: 200, height: 200, display: 'grid', placeItems: 'center' } },
+      h('div', { style: { position: 'absolute', inset: 0, borderRadius: '50%', background: '#EEE9F5', animation: 'breathe 8s ease-in-out infinite' } }),
+      h('div', { style: { position: 'absolute', inset: 28, borderRadius: '50%', background: '#DCD4EE', animation: 'breathe 8s ease-in-out infinite', animationDelay: '-.4s' } }),
+      h('img', { src: 'assets/cc-mark.svg', alt: '', style: { position: 'relative', width: 78, height: 'auto' } }),
+      h('span', { style: { position: 'absolute', bottom: -6, fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#4D4184', animation: 'fadeA 8s ease-in-out infinite' } }, 'Breathe in'),
+      h('span', { style: { position: 'absolute', bottom: -6, fontSize: 12, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#4D4184', animation: 'fadeB 8s ease-in-out infinite' } }, 'Breathe out')
+    );
+
+    const circ = (cx, cy) => h('circle', { cx, cy, r: 50, fill: 'none', stroke: '#B7AEDB', strokeWidth: 2, strokeDasharray: 320, style: { animation: 'draw 1.4s cubic-bezier(.05,.7,.1,1) both' } });
+    const orbit = h('svg', { key: 'o' + run, viewBox: '0 0 200 190', width: 250, height: 238 },
+      h('g', { style: { transformOrigin: '100px 90px', animation: 'spin 60s linear infinite' } },
+        circ(100, 55), circ(70, 107), circ(130, 107),
+        h('circle', { cx: 100, cy: 5, r: 4, fill: '#93BF2E' }),
+        h('circle', { cx: 20, cy: 107, r: 4, fill: '#C68F5B' }),
+        h('circle', { cx: 180, cy: 107, r: 4, fill: '#8A7EC4' })
+      ),
+      h('circle', { cx: 100, cy: 90, r: 22, fill: '#93BF2E', style: { transformOrigin: '100px 90px', animation: 'pulseDot 4s ease-in-out infinite' } })
+    );
+
+    const flowLine = h('svg', { width: '100%', height: 2, preserveAspectRatio: 'none', viewBox: '0 0 100 2', style: { display: 'block', overflow: 'visible' } },
+      h('line', { x1: 0, y1: 1, x2: 100, y2: 1, stroke: '#93BF2E', strokeWidth: 2, strokeDasharray: '4 8', vectorEffect: 'non-scaling-stroke', style: { animation: 'flow 1s linear infinite' } })
+    );
+
+    const words = 'Back to the things you love.'.split(' ');
+    const riseHead = h('h3', { key: 'r' + run, style: { margin: 0, fontSize: 48, lineHeight: 1.02, fontWeight: 800, letterSpacing: '-.035em', display: 'flex', flexWrap: 'wrap', gap: '0 .25em', maxWidth: '12ch' } },
+      words.map((w, i) => h('span', { key: i, style: { display: 'inline-block', animation: 'rise .6s cubic-bezier(.34,1.56,.64,1) both', animationDelay: (i * 90) + 'ms', color: w === 'love.' ? '#93BF2E' : '#fff' } }, w))
+    );
+
+    const kbPhoto = h('img', { key: 'k' + run, src: 'assets/service-mobility.jpg', alt: '', style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', animation: 'kb 14s ease-out both' } });
+
+    const items = ['Pelvic health', 'Pre & postnatal', 'Orthopedic & sports', 'Vestibular', 'EDS & hypermobility', 'Adults 60+', 'Cupping', 'Hypopressives', 'Telehealth'];
+    const row = (k) => h('div', { key: k, style: { display: 'flex', gap: 28, paddingRight: 28, flex: 'none', alignItems: 'center' } },
+      items.map((t, i) => h('span', { key: i, style: { display: 'flex', alignItems: 'center', gap: 28, fontWeight: 800, fontSize: 20, letterSpacing: '-.01em', color: '#1E2A05', whiteSpace: 'nowrap' } }, t, h('span', { style: { width: 8, height: 8, borderRadius: '50%', background: '#362C5E' } })))
+    );
+    const marquee = h('div', { style: { display: 'flex', width: 'max-content', animation: 'marquee 28s linear infinite' }, onMouseEnter: e => e.currentTarget.style.animationPlayState = 'paused', onMouseLeave: e => e.currentTarget.style.animationPlayState = 'running' }, row('a'), row('b'));
+
+    return {
+      breathRing, orbit, flowLine, riseHead, kbPhoto, marquee,
+      n17: String(Math.round(17 * p)).padStart(2, '0'),
+      n19: String(Math.round(19 * p)).padStart(2, '0'),
+      n36: String(Math.round(36 * p)).padStart(2, '0'),
+      kCards: [
+        { n: '01', t: 'Orthopedic & Sports', bg: '#4D4184', fg: '#fff' },
+        { n: '02', t: 'Pelvic Health', bg: '#EEE9F5', fg: '#1B1730' },
+        { n: '03', t: 'Vestibular', bg: '#1B1730', fg: '#fff' }
+      ],
+      replay: () => { this.setState(s => ({ run: s.run + 1 })); this.count(); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>363 Richmond Rd. – Front door signage mockup</title>
+<style>
+  :root {
+    --bg: #faf7f2; --text: #2b2640; --muted: #675f78;
+    --peri: #5c68a0; --lime: #8cc63f; --navy: #1f2f4d; --sage: #7fae9f; --blush: #d98574;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 "Helvetica Neue", Arial, sans-serif; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; display: grid; gap: 24px; grid-template-columns: minmax(0, 520px) 1fr; align-items: start; }
+  @media (max-width: 800px) { .wrap { grid-template-columns: 1fr; } }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; grid-column: 1 / -1; font-weight: 600; }
+  h1 + p { margin: 0; color: var(--muted); grid-column: 1 / -1; }
+  svg { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 2px 14px rgba(0,0,0,.18); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .tabs button { font: inherit; padding: 8px 14px; border: 1.5px solid var(--peri); background: #fff; color: var(--peri); border-radius: 999px; cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: var(--peri); color: #fff; }
+  .tabs button:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
+  .notes h2 { font-size: 1.1rem; margin: 0 0 6px; }
+  .notes ul { margin: 0 0 14px; padding-left: 1.1rem; }
+  .notes li { margin-bottom: 4px; }
+  .notes [data-for] { display: none; }
+  .notes [data-for].on { display: block; }
+  .swatches { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .swatches span { font-size: .78rem; padding: 4px 8px; border-radius: 6px; color: #fff; }
+
+  /* variant visibility */
+  svg [data-v] { display: none; }
+  svg[data-view="current"] [data-v~="current"],
+  svg[data-view="a"] [data-v~="a"],
+  svg[data-view="b"] [data-v~="b"] { display: inline; }
+  svg[data-view="current"] g[data-v~="current"],
+  svg[data-view="a"] g[data-v~="a"],
+  svg[data-view="b"] g[data-v~="b"] { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>363 Richmond Rd. – front door signage</h1>
+  <p>Options A and B use the files in <code>brand/</code>. Illustrative mockup drawn from your photo. Proportions are approximate, not for fabrication.</p>
+
+  <div>
+    <div class="tabs" role="group" aria-label="Signage option">
+      <button type="button" data-view="current" aria-pressed="true">Current</button>
+      <button type="button" data-view="a" aria-pressed="false">A · Both clinics</button>
+      <button type="button" data-view="b" aria-pressed="false">B · Full set</button>
+    </div>
+
+    <svg id="scene" data-view="current" viewBox="0 0 560 780" role="img" aria-label="Front door of 363 Richmond Road with signage options">
+      <defs>
+        <pattern id="brick" width="60" height="28" patternUnits="userSpaceOnUse">
+          <rect width="60" height="28" fill="#c9b9a8"/>
+          <rect x="1" y="1" width="28" height="12" fill="#a8482e"/>
+          <rect x="31" y="1" width="28" height="12" fill="#b0522f"/>
+          <rect x="-14" y="15" width="28" height="12" fill="#b0522f"/>
+          <rect x="16" y="15" width="28" height="12" fill="#a14329"/>
+          <rect x="46" y="15" width="28" height="12" fill="#a8482e"/>
+        </pattern>
+        <linearGradient id="shade" x1="0" x2="1">
+          <stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".3" stop-color="#000" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Core Connections mark -->
+        <symbol id="cc-mark" viewBox="0 0 200 152">
+          <defs>
+            <mask id="m1"><rect width="100%" height="100%" fill="white"/><circle cx="100" cy="58" r="45"/><circle cx="76.93" cy="98" r="45"/></mask>
+            <mask id="m2"><rect width="100%" height="100%" fill="white"/><circle cx="76.93" cy="98" r="45"/><circle cx="123.07" cy="98" r="45"/></mask>
+            <mask id="m3"><rect width="100%" height="100%" fill="white"/><circle cx="123.07" cy="98" r="45"/><circle cx="100" cy="58" r="45"/></mask>
+          </defs>
+          <circle cx="100" cy="50" r="50" fill="currentColor" mask="url(#m1)"/>
+          <circle cx="70" cy="101.96" r="50" fill="currentColor" mask="url(#m2)"/>
+          <circle cx="130" cy="101.96" r="50" fill="currentColor" mask="url(#m3)"/>
+          <circle cx="100" cy="85" r="25" fill="#8cc63f"/>
+        </symbol>
+        <!-- Pessary clinic mark -->
+        <symbol id="opc-mark" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="25" fill="none" stroke="currentColor" stroke-width="6.5"/>
+          <path d="M16.5 35a15.5 15.5 0 0 0 31 0z" fill="#7fae9f"/>
+          <circle cx="32" cy="26.5" r="6.5" fill="#d98574"/>
+        </symbol>
+      </defs>
+
+      <!-- wall -->
+      <rect width="560" height="780" fill="url(#brick)"/>
+      <rect width="560" height="780" fill="url(#shade)"/>
+
+      <!-- awning -->
+      <polygon points="0,0 560,0 560,64 0,96" fill="#1c2150"/>
+      <polygon points="0,96 560,64 560,74 0,106" fill="#11143a"/>
+
+      <!-- left window -->
+      <rect x="0" y="190" width="150" height="330" fill="#6c7b7d"/>
+      <rect x="0" y="190" width="150" height="330" fill="#c9d6d3" opacity=".35"/>
+
+      <!-- door frame -->
+      <rect x="180" y="104" width="220" height="560" fill="#6f625a"/>
+      <!-- transom -->
+      <rect x="194" y="116" width="192" height="86" fill="#2c3a3c"/>
+      <text x="290" y="178" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="52" fill="#e9e9e9">363</text>
+      <!-- door -->
+      <rect x="194" y="216" width="192" height="440" fill="#7a6c63"/>
+      <rect x="204" y="226" width="172" height="330" fill="#243234"/>
+      <rect x="204" y="570" width="172" height="76" fill="#243234"/>
+      <rect x="204" y="560" width="172" height="6" fill="#4a3f39"/>
+      <!-- push bar -->
+      <rect x="196" y="556" width="188" height="5" rx="2" fill="#2a2420"/>
+
+      <!-- ======= DOOR GLASS ======= -->
+      <!-- current -->
+      <g data-v="current">
+        <rect x="208" y="230" width="164" height="136" fill="#e8f1ef"/>
+        <g transform="translate(222,250)" style="color:#4a3f8f"><use href="#cc-mark" width="34" height="26"/></g>
+        <text x="264" y="268" font-family="Georgia, serif" font-weight="700" font-size="26" fill="#4a3f8f">core</text>
+        <rect x="262" y="272" width="96" height="11" fill="#4a3f8f"/>
+        <text x="310" y="281" text-anchor="middle" font-family="Arial" font-weight="700" font-size="7" letter-spacing="1.5" fill="#fff">CONNECTIONS</text>
+        <text x="290" y="318" text-anchor="middle" font-family="Arial" font-weight="700" font-size="15" fill="#3b4a8f">PHYSIOTHERAPY</text>
+        <text x="290" y="336" text-anchor="middle" font-family="Arial" font-size="7.5" fill="#555">orthopedic manual • pelvic health • pre &amp; post natal</text>
+        <rect x="208" y="368" width="164" height="90" fill="#c8e08a"/>
+        <text x="290" y="396" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="17" fill="#8a4b2b">Realign and Flow</text>
+        <text x="290" y="410" text-anchor="middle" font-family="Arial" font-size="7" fill="#6b4a2f">Registered Massage Therapy and Wellness</text>
+        <text x="290" y="430" text-anchor="middle" font-family="Arial" font-size="6" fill="#6b4a2f">Massage • Energy Balancing • Reiki • NET • Yoga</text>
+        <text x="290" y="448" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#6b4a2f">By appointment only</text>
+      </g>
+
+      <!-- option A / B : frosted vinyl -->
+      <g data-v="a b">
+        <rect x="208" y="230" width="164" height="226" fill="#f6f4ee"/>
+        <image href="brand/cc-logo-stacked.svg" x="220" y="236" width="140" height="94.4"/>
+        <text x="290" y="347" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" fill="#675f78">Pelvic health · Orthopedic · Pre &amp; post natal</text>
+        <rect x="222" y="356" width="136" height="1" fill="#d9d2c4"/>
+        <image href="brand/opc-arc-logo-horizontal.svg" x="230" y="362" width="120" height="36.4"/>
+        <text x="290" y="410" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="8" fill="#2b6a64">Pessary fitting · same door</text>
+        <text x="222" y="436" font-family="Helvetica Neue, Arial, sans-serif" font-size="7.5" fill="#675f78">Hours · by appointment</text>
+        <text x="222" y="447" font-family="Helvetica Neue, Arial, sans-serif" font-size="7.5" fill="#2b2640">Scan to book online</text>
+        <rect x="334" y="418" width="30" height="30" fill="#fff" stroke="#2b2640" stroke-width=".8"/>
+        <path d="M338 422h8v8h-8zM352 422h8v8h-8zM338 436h8v8h-8zM350 434h4v4h-4zM356 440h4v4h-4z" fill="#2b2640"/>
+      </g>
+      <g data-v="a b">
+        <rect x="208" y="458" width="164" height="94" fill="#243234"/>
+        <rect x="208" y="458" width="164" height="22" fill="#f6f4ee"/>
+        <text x="290" y="473" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="8.5" fill="#2b2640">Also here: Realign and Flow</text>
+      </g>
+
+      <!-- steps -->
+      <polygon points="150,664 430,664 450,700 130,700" fill="#a9a399"/>
+      <rect x="110" y="700" width="360" height="40" fill="#8f8a82"/>
+      <!-- rails -->
+      <path d="M72 660 L72 590 L120 560 M72 590 L72 700" stroke="#14110f" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M462 660 L462 580 L420 556" stroke="#14110f" stroke-width="7" fill="none" stroke-linecap="round"/>
+
+      <!-- ======= RIGHT PLAQUE ======= -->
+      <g data-v="current">
+        <rect x="446" y="86" width="74" height="418" fill="#6f7fd4" stroke="#4d5db3" stroke-width="2"/>
+        <text transform="translate(477,490) rotate(-90)" font-family="Helvetica Neue, Arial, sans-serif" font-weight="200" font-size="32" fill="#fff" letter-spacing="1">PHYSIOTHERAPY</text>
+        <text transform="translate(512,490) rotate(-90)" font-family="Helvetica Neue, Arial, sans-serif" font-weight="300" font-size="11.5" fill="#fff" letter-spacing="2.6">core connections</text>
+      </g>
+      <g data-v="a b">
+        <rect x="446" y="86" width="74" height="418" rx="3" fill="#5c68a0"/>
+        <image href="brand/cc-logo-horizontal-reverse.svg" width="962.77" height="184.95" transform="translate(457,430) rotate(-90) scale(.281)"/>
+      </g>
+      <!-- ======= PESSARY PLAQUE ======= -->
+      <g data-v="a b">
+        <rect x="446" y="520" width="74" height="96" rx="3" fill="#1f2f4d"/>
+        <image href="brand/opc-arc-logo-stacked-reverse.svg" x="455" y="530" width="56" height="64.8"/>
+      </g>
+
+      <!-- ======= BLADE SIGN ======= -->
+      <line x1="40" y1="190" x2="130" y2="190" stroke="#14110f" stroke-width="4"/>
+      <g data-v="current">
+        <line x1="62" y1="190" x2="62" y2="212" stroke="#14110f" stroke-width="2"/>
+        <line x1="120" y1="190" x2="120" y2="204" stroke="#14110f" stroke-width="2"/>
+        <rect x="46" y="212" width="100" height="148" fill="#fafafa" stroke="#bbb" transform="rotate(-2 96 286)"/>
+        <g transform="translate(78,222) rotate(-2)" style="color:#4a3f8f"><use href="#cc-mark" width="40" height="30"/></g>
+        <text x="96" y="276" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="14" fill="#4a3f8f" transform="rotate(-2 96 276)">core</text>
+        <text x="96" y="322" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#444" transform="rotate(-2 96 322)">ORTHOPEDIC MANUAL THERAPY</text>
+        <text x="96" y="334" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#444" transform="rotate(-2 96 334)">PELVIC FLOOR PHYSIOTHERAPY</text>
+        <text x="96" y="346" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#444" transform="rotate(-2 96 346)">PRE &amp; POST-NATAL PHYSIOTHERAPY</text>
+      </g>
+      <g data-v="a">
+        <line x1="62" y1="190" x2="62" y2="212" stroke="#14110f" stroke-width="2"/>
+        <line x1="120" y1="190" x2="120" y2="204" stroke="#14110f" stroke-width="2"/>
+        <g transform="rotate(-2 96 282)">
+          <rect x="46" y="212" width="100" height="140" rx="3" fill="#faf7f2" stroke="#d9d2c4"/>
+          <image href="brand/cc-logo-stacked.svg" x="53" y="224" width="86" height="58"/>
+          <rect x="66" y="296" width="60" height="1" fill="#d9d2c4"/>
+          <image href="brand/opc-arc-logo-horizontal.svg" x="53" y="306" width="86" height="26"/>
+        </g>
+      </g>
+      <g data-v="b">
+        <!-- B: two round mark-only signs hung one above the other -->
+        <line x1="96" y1="190" x2="96" y2="214" stroke="#14110f" stroke-width="2"/>
+        <circle cx="96" cy="262" r="48" fill="#faf7f2" stroke="#5c68a0" stroke-width="4"/>
+        <image href="brand/cc-mark.svg" x="68" y="236" width="56" height="53"/>
+        <line x1="96" y1="310" x2="96" y2="322" stroke="#14110f" stroke-width="2"/>
+        <circle cx="96" cy="354" r="32" fill="#faf7f2" stroke="#1f2f4d" stroke-width="3.5"/>
+        <image href="brand/opc-arc-mark.svg" x="77" y="337" width="38" height="33.7"/>
+      </g>
+
+      <!-- shrub -->
+      <g fill="#3d6b2e">
+        <ellipse cx="500" cy="740" rx="70" ry="48"/><ellipse cx="450" cy="760" rx="50" ry="30" fill="#2f5724"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="notes">
+    <div data-for="current" class="on">
+      <h2>Current</h2>
+      <ul>
+        <li>Plaque is strong and readable from the street.</li>
+        <li>Blade sign text is too small to read from the sidewalk.</li>
+        <li>Green tenant panel clashes with the periwinkle and brick.</li>
+        <li>Old logo on the glass is small and busy.</li>
+      </ul>
+    </div>
+    <div data-for="a">
+      <h2>A · Both clinics, refreshed (do this first)</h2>
+      <ul>
+        <li><strong>Plaque:</strong> same periwinkle, new ring mark in white at the top, "PHYSIOTHERAPY" kept large.</li>
+        <li><strong>Door glass:</strong> frosted vinyl, big mark at eye level, one-line services, hours and a QR code to book.</li>
+        <li><strong>Tenant:</strong> Realign and Flow reduced to a quiet line on a matching band.</li>
+        <li><strong>Pessary clinic:</strong> its own strip on the door glass and a matching navy plaque under the main one, so patients know they are in the right place.</li>
+        <li><strong>Blade:</strong> cream background, both marks and names, no tiny text.</li>
+      </ul>
+    </div>
+    <div data-for="b">
+      <h2>B · Full set</h2>
+      <ul>
+        <li>Everything in A, plus:</li>
+        <li><strong>Two round blade signs</strong> hung one above the other, mark only. The ring shapes echo both logos and are seen from far along the street.</li>
+        <li>Larger for physiotherapy, smaller for the pessary clinic, so the main clinic still leads.</li>
+      </ul>
+    </div>
+    <div class="swatches" aria-label="Palette">
+      <span style="background:#5c68a0">#5c68a0 periwinkle</span>
+      <span style="background:#8cc63f">#8cc63f lime</span>
+      <span style="background:#1f2f4d">#1f2f4d navy</span>
+      <span style="background:#7fae9f">#7fae9f sage</span>
+      <span style="background:#d98574">#d98574 blush</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  const scene = document.getElementById('scene');
+  const buttons = document.querySelectorAll('.tabs button');
+  const notes = document.querySelectorAll('.notes [data-for]');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    const v = b.dataset.view;
+    scene.dataset.view = v;
+    buttons.forEach(x => x.setAttribute('aria-pressed', x === b));
+    notes.forEach(n => n.classList.toggle('on', n.dataset.for === v));
+  }));
+</script>
+</body>
+</html>

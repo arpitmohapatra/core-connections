@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Urbanist:wght@600;800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F4F9;-webkit-font-smoothing:antialiased}a{color:#3F4A87;text-decoration:none}a:hover{color:#2E3566}</style>
+</helmet>
+<div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#1B1730;font-size:15px;line-height:1.6;">
+
+<nav style="position:sticky;top:0;z-index:20;background:rgba(246,244,249,.94);backdrop-filter:blur(10px);border-bottom:1px solid #DDD8E6;">
+  <div style="max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+    <b style="font-weight:800;letter-spacing:-.02em;margin-right:12px;">Brand identity</b>
+    <a href="#type" style="padding:6px 12px;border-radius:10px;font-weight:600;font-size:13px;background:#EEEBF4;color:#1B1730;">Type</a>
+    <a href="#cc" style="padding:6px 12px;border-radius:10px;font-weight:600;font-size:13px;background:#EEE9F5;">Core Connections</a>
+    <a href="#opc" style="padding:6px 12px;border-radius:10px;font-weight:600;font-size:13px;background:#E4EEEA;color:#1F2F4D;">Ottawa Pessary Clinic</a>
+    <span style="flex:1;"></span>
+    <button onClick="{{ replay }}" style="font:inherit;font-weight:700;font-size:13px;border:0;background:#1B1730;color:#fff;padding:8px 14px;border-radius:10px;cursor:pointer;">Replay animations</button>
+  </div>
+</nav>
+
+<main style="max-width:1180px;margin:0 auto;padding:0 20px 96px;">
+
+<header style="padding:56px 0 24px;display:flex;flex-direction:column;gap:12px;max-width:760px;">
+  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Brand identity v1.0 · two sibling clinics</div>
+  <h1 style="margin:0;font-size:clamp(34px,5vw,54px);line-height:1.05;font-weight:800;letter-spacing:-.035em;text-wrap:balance;">Two marks, one family.</h1>
+  <p style="margin:0;color:#4A4360;text-wrap:pretty;">Both logos are built from circles: rings that connect for Core Connections, a ring that is held for the Ottawa Pessary Clinic. Wordmarks are outlined vector paths, and each subtitle is tracked so its ink width matches the name above it exactly. Every file below is an SVG in <code style="font-size:13px;">assets/brand/</code>.</p>
+</header>
+
+<section id="type" style="padding:24px 0 40px;display:flex;flex-direction:column;gap:16px;">
+  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid #1B1730;padding-bottom:10px;">
+    <h2 style="margin:0;font-size:30px;font-weight:800;letter-spacing:-.025em;">Type explorations</h2>
+    <span style="font-size:13px;color:#675F78;">Same marks, same alignment rules. <b style="color:#1B1730;">Applied: CC3, Urbanist, for both clinics.</b></span>
+  </div>
+  <h3 style="margin:8px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Core Connections</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px;">
+    <sc-for list="{{ ccType }}" as="t" hint-placeholder-count="6">
+      <div id="{{ t.id }}" style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="font:700 12px ui-monospace,Menlo,monospace;background:#3F4A87;color:#fff;border-radius:6px;padding:2px 7px;">{{ t.id }}</span><b style="font-size:14px;">{{ t.name }}</b></div>
+        <div style="min-height:110px;display:grid;place-items:center;padding:8px 12px;"><img src="{{ t.src }}" alt="" style="width:100%;max-width:340px;height:auto;"></div>
+        <span style="font-size:13px;color:#4A4360;text-wrap:pretty;">{{ t.note }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <h3 style="margin:20px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Ottawa Pessary Clinic · Held mark</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px;">
+    <sc-for list="{{ opcType }}" as="t" hint-placeholder-count="6">
+      <div id="{{ t.id }}" style="background:#FAF7F2;border:1px solid #D6E2DF;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px;color:#1F2F4D;">
+        <div style="display:flex;align-items:center;gap:8px;"><span style="font:700 12px ui-monospace,Menlo,monospace;background:#1F2F4D;color:#FAF7F2;border-radius:6px;padding:2px 7px;">{{ t.id }}</span><b style="font-size:14px;">{{ t.name }}</b></div>
+        <div style="min-height:110px;display:grid;place-items:center;padding:8px 12px;"><img src="{{ t.src }}" alt="" style="width:100%;max-width:300px;height:auto;"></div>
+        <span style="font-size:13px;color:#3E4A5C;text-wrap:pretty;">{{ t.note }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ================= CORE CONNECTIONS ================= -->
+<section id="cc" style="padding-top:32px;display:flex;flex-direction:column;gap:20px;">
+  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid #1B1730;padding-bottom:10px;">
+    <h2 style="margin:0;font-size:30px;font-weight:800;letter-spacing:-.025em;">Core Connections Physiotherapy</h2>
+    <span style="font-size:13px;color:#675F78;">Mark: approved · Wordmark: rebuilt</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;">
+    <div style="grid-column:1/-1;background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:clamp(32px,7vw,88px);display:grid;place-items:center;">
+      <img src="assets/brand/cc-logo-horizontal.svg" alt="Core Connections Physiotherapy" style="width:min(100%,640px);height:auto;display:block;">
+    </div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="assets/brand/cc-logo-stacked.svg" alt="" style="width:min(100%,260px);height:auto;"></div>
+    <div style="background:#2E3566;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="assets/brand/cc-logo-stacked-reverse.svg" alt="" style="width:min(100%,260px);height:auto;"></div>
+    <div style="background:#F6F4F9;border:1px solid #DDD8E6;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="assets/brand/cc-mark.svg" alt="" style="width:120px;height:auto;"></div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Construction and alignment</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:start;">
+    <div style="grid-column:span 2;background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:16px;overflow:hidden;"><img src="assets/brand/cc-logo-construction.svg" alt="Construction grid" style="width:100%;height:auto;display:block;"></div>
+    <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+      <li style="display:flex;flex-direction:column;"><b>x = the core's diameter</b><span style="color:#4A4360;font-size:14px;">One third of the mark's height. Keep at least x clear on every side.</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Flush left, flush right</b><span style="color:#4A4360;font-size:14px;">PHYSIOTHERAPY is tracked to 0.3 em so its ink runs edge to edge with "core connections".</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Centred on the text block</b><span style="color:#4A4360;font-size:14px;">The mark is 1.32× the text block height and shares its vertical centre. Gap to text is 0.26× mark height.</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Lowercase over caps</b><span style="color:#4A4360;font-size:14px;">Urbanist ExtraBold lowercase at −2% tracking over SemiBold caps. The round bowls echo the rings.</span></li>
+    </ol>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Versions and minimum size</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:72px;display:grid;place-items:center;"><img src="assets/brand/cc-logo-horizontal-mono.svg" alt="" style="width:100%;height:auto;"></div><span style="font-size:13px;color:#4A4360;"><b style="color:#1B1730;">One colour</b> · fax, stamps, embroidery</span></div>
+    <div style="background:#2E3566;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:72px;display:grid;place-items:center;"><img src="assets/brand/cc-logo-horizontal-reverse.svg" alt="" style="width:100%;height:auto;"></div><span style="font-size:13px;color:#C5CBEA;"><b style="color:#fff;">Reverse</b> · on Night or photography overlays</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:72px;display:flex;align-items:flex-end;gap:20px;"><img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:140px;height:auto;"><img src="assets/brand/cc-mark.svg" alt="" style="width:20px;height:auto;"></div><span style="font-size:13px;color:#4A4360;"><b style="color:#1B1730;">Minimum</b> · lockup 140 px wide, mark 20 px. Below that, use the mark alone.</span></div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Colour</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;">
+    <sc-for list="{{ ccColors }}" as="c" hint-placeholder-count="7">
+      <div style="border:1px solid #DDD8E6;border-radius:16px;overflow:hidden;background:#fff;display:flex;flex-direction:column;">
+        <div style="height:88px;background:{{ c.hex }};"></div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;"><b style="font-size:14px;">{{ c.name }}</b><code style="font-size:12px;color:#675F78;">{{ c.hex }}</code><span style="font-size:12px;color:#4A4360;">{{ c.use }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;height:14px;border-radius:7px;overflow:hidden;"><span style="flex:60;background:#F6F4F9;border:1px solid #DDD8E6;"></span><span style="flex:25;background:#5C68A0;"></span><span style="flex:10;background:#2E3566;"></span><span style="flex:5;background:#8CC63F;"></span></div>
+  <span style="font-size:13px;color:#675F78;margin-top:-12px;">Proportion: 60 Mist · 25 Periwinkle · 10 Night · 5 Lime. Lime is never used for text.</span>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Pattern · Connected rings</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;">
+    <div style="height:240px;border-radius:20px;border:1px solid #DDD8E6;background:#F6F4F9 url(assets/brand/cc-pattern-light.svg) center/60px auto repeat;"></div>
+    <div style="height:240px;border-radius:20px;background:#2E3566 url(assets/brand/cc-pattern-dark.svg) center/60px auto repeat;display:grid;place-items:center;"><span style="width:96px;height:96px;border-radius:50%;background:#2E3566;display:grid;place-items:center;"><img src="assets/brand/cc-mark-reverse.svg" alt="" style="width:60px;height:auto;"></span></div>
+  </div>
+  <span style="font-size:13px;color:#675F78;">The mark's three rings, repeated on a triangular grid. Lime dots fall where the cores would be. Use behind hero panels, cards' empty states and print backs, never behind body text.</span>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Motion · Converge</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="assets/brand/cc-mark-animated.svg?r={{ r }}" alt="" style="width:130px;height:auto;"></div>
+    <div style="grid-column:span 2;background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="assets/brand/cc-logo-animated.svg?r={{ r }}" alt="" style="width:min(100%,520px);height:auto;"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:13px;color:#4A4360;">
+    <span><b style="color:#1B1730;">0–1.6 s</b> · rings rotate 120° into place, staggered 120 ms</span>
+    <span><b style="color:#1B1730;">0.95 s</b> · core pops in with a soft overshoot</span>
+    <span><b style="color:#1B1730;">1.25 s</b> · wordmark slides in, subtitle 200 ms later</span>
+    <span><b style="color:#1B1730;">Idle</b> · core pulses 8% every 4 s. Reduced motion shows the final frame.</span>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Assets</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:flex-end;gap:18px;min-height:96px;"><img src="assets/brand/cc-app-icon.svg" alt="" style="width:88px;height:88px;filter:drop-shadow(0 6px 12px rgba(46,53,102,.25));"><img src="assets/brand/cc-mark.svg" alt="" style="width:32px;height:auto;"><img src="assets/brand/cc-mark.svg" alt="" style="width:16px;height:auto;"></div>
+      <span style="font-size:13px;color:#4A4360;"><b style="color:#1B1730;">App icon and favicon</b> · 128, 32, 16 px</span>
+    </div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:14px;min-height:96px;"><span style="width:88px;height:88px;border-radius:50%;background:#F6F4F9 url(assets/brand/cc-pattern-light.svg) center/30px auto;display:grid;place-items:center;border:1px solid #DDD8E6;"><span style="width:62px;height:62px;border-radius:50%;background:#fff;display:grid;place-items:center;"><img src="assets/brand/cc-mark.svg" alt="" style="width:40px;height:auto;"></span></span><div style="display:flex;flex-direction:column;line-height:1.3;"><b style="font-size:14px;">Core Connections</b><span style="font-size:12px;color:#675F78;">@coreconnections</span></div></div>
+      <span style="font-size:13px;color:#4A4360;"><b style="color:#1B1730;">Social avatar</b> · survives the circle crop</span>
+    </div>
+    <div style="grid-column:span 2;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+      <div style="aspect-ratio:1.75;border-radius:12px;background:#fff;border:1px solid #DDD8E6;box-shadow:0 8px 24px rgba(46,53,102,.10);padding:20px;display:flex;flex-direction:column;justify-content:space-between;">
+        <img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:170px;height:auto;">
+        <div style="display:flex;flex-direction:column;line-height:1.35;"><b style="font-size:13px;">Heather Grewar</b><span style="font-size:11px;color:#4A4360;">Founder · Physiotherapist</span><span style="font-size:11px;color:#4A4360;">Westboro, Ottawa</span></div>
+      </div>
+      <div style="aspect-ratio:1.75;border-radius:12px;background:#2E3566 url(assets/brand/cc-pattern-dark.svg) center/40px auto;box-shadow:0 8px 24px rgba(46,53,102,.18);display:grid;place-items:center;"><img src="assets/brand/cc-mark-reverse.svg" alt="" style="width:56px;height:auto;"></div>
+    </div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;">Don't</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
+    <div style="display:flex;flex-direction:column;gap:8px;"><div style="height:120px;border-radius:16px;background:#fff;border:1px solid #DDD8E6;display:grid;place-items:center;overflow:hidden;"><img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:150px;height:auto;transform:scaleX(1.35);"></div><span style="font-size:13px;color:#B3261E;font-weight:600;">Don't stretch or squash</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;"><div style="height:120px;border-radius:16px;background:#fff;border:1px solid #DDD8E6;display:grid;place-items:center;"><img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:180px;height:auto;filter:hue-rotate(140deg) saturate(2);"></div><span style="font-size:13px;color:#B3261E;font-weight:600;">Don't recolour</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;"><div style="height:120px;border-radius:16px;background:#fff;border:1px solid #DDD8E6;display:grid;place-items:center;"><img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:170px;height:auto;transform:rotate(-12deg);"></div><span style="font-size:13px;color:#B3261E;font-weight:600;">Don't rotate</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;"><div style="height:120px;border-radius:16px;background:url(assets/clinic-exterior.jpg) center/cover;display:grid;place-items:center;"><img src="assets/brand/cc-logo-horizontal.svg" alt="" style="width:180px;height:auto;"></div><span style="font-size:13px;color:#B3261E;font-weight:600;">Don't place on busy photos</span></div>
+  </div>
+</section>
+
+<!-- ================= OTTAWA PESSARY CLINIC ================= -->
+<section id="opc" style="margin-top:80px;display:flex;flex-direction:column;gap:20px;font-variant-numeric:normal;">
+  <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid #1F2F4D;padding-bottom:10px;">
+    <h2 style="margin:0;font-size:30px;font-weight:800;letter-spacing:-.025em;color:#1F2F4D;">Ottawa Pessary Clinic</h2>
+    <span style="font-size:13px;color:#675F78;">Pick a mark below; everything after it updates.</span>
+  </div>
+
+  <h3 style="margin:8px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Mark concepts</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;">
+    <sc-for list="{{ concepts }}" as="k" hint-placeholder-count="3">
+      <button id="{{ k.id }}" onClick="{{ k.pick }}" style="font:inherit;text-align:left;cursor:pointer;background:#fff;border:{{ k.border }};border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:16px;color:#1F2F4D;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <span style="display:inline-flex;align-items:center;gap:8px;"><span style="font:700 12px ui-monospace,Menlo,monospace;background:#1F2F4D;color:#FAF7F2;border-radius:6px;padding:2px 7px;">{{ k.id }}</span><b style="font-size:16px;">{{ k.name }}</b></span>
+          <span style="font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#2B6A64;">{{ k.tag }}</span>
+        </div>
+        <div style="background:#FAF7F2;border-radius:14px;padding:28px;display:grid;place-items:center;min-height:250px;"><img src="{{ k.stacked }}" alt="" style="width:min(100%,200px);height:auto;"></div>
+        <div style="display:flex;align-items:center;gap:14px;"><img src="{{ k.mark }}" alt="" style="width:48px;height:auto;"><img src="{{ k.mark }}" alt="" style="width:24px;height:auto;"><img src="{{ k.mark }}" alt="" style="width:16px;height:auto;"><span style="font-size:12px;color:#675F78;">48 · 24 · 16 px</span></div>
+        <span style="font-size:14px;color:#3E4A5C;text-wrap:pretty;">{{ k.note }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;margin-top:12px;">
+    <div style="grid-column:1/-1;background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:clamp(32px,7vw,88px);display:grid;place-items:center;"><img src="{{ o.horiz }}" alt="Ottawa Pessary Clinic" style="width:min(100%,520px);height:auto;display:block;"></div>
+    <div style="background:#FAF7F2;border:1px solid #D6E2DF;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:260px;"><img src="{{ o.stacked }}" alt="" style="width:min(100%,210px);height:auto;"></div>
+    <div style="background:#1F2F4D;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:260px;"><img src="{{ o.stackedRev }}" alt="" style="width:min(100%,210px);height:auto;"></div>
+    <div style="background:#E4EEEA;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:260px;"><img src="{{ o.mark }}" alt="" style="width:120px;height:auto;"></div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Construction and alignment</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;align-items:start;">
+    <div style="grid-column:span 2;background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:16px;overflow:hidden;"><img src="{{ o.construction }}" alt="Construction grid" style="width:100%;height:auto;display:block;"></div>
+    <ol style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;color:#1F2F4D;">
+      <li style="display:flex;flex-direction:column;"><b>x = one third of the mark</b><span style="color:#3E4A5C;font-size:14px;">Same rule as Core Connections, so the two logos sit at equal weight side by side.</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Same type as Core Connections</b><span style="color:#3E4A5C;font-size:14px;">"ottawa" in Urbanist ExtraBold lowercase over SemiBold caps, so the two clinics read as one family.</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Matched measure</b><span style="color:#3E4A5C;font-size:14px;">The descriptor is tracked to 0.2 em and sized so both lines end on the same vertical.</span></li>
+      <li style="display:flex;flex-direction:column;"><b>Centred on the text block</b><span style="color:#3E4A5C;font-size:14px;">Mark is 1.42× the text block height with a 0.24× gap.</span></li>
+    </ol>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Versions and minimum size</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;">
+    <div style="background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:80px;display:grid;place-items:center;"><img src="{{ o.mono }}" alt="" style="width:min(100%,220px);height:auto;"></div><span style="font-size:13px;color:#3E4A5C;"><b style="color:#1F2F4D;">One colour</b> · Navy only</span></div>
+    <div style="background:#1F2F4D;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:80px;display:grid;place-items:center;"><img src="{{ o.horizRev }}" alt="" style="width:min(100%,220px);height:auto;"></div><span style="font-size:13px;color:#9CC3B7;"><b style="color:#FAF7F2;">Reverse</b> · on Navy</span></div>
+    <div style="background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;"><div style="min-height:80px;display:flex;align-items:flex-end;gap:20px;"><img src="{{ o.horiz }}" alt="" style="width:120px;height:auto;"><img src="{{ o.mark }}" alt="" style="width:20px;height:auto;"></div><span style="font-size:13px;color:#3E4A5C;"><b style="color:#1F2F4D;">Minimum</b> · lockup 120 px wide, mark 20 px</span></div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Colour</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;">
+    <sc-for list="{{ opcColors }}" as="c" hint-placeholder-count="7">
+      <div style="border:1px solid #D6E2DF;border-radius:16px;overflow:hidden;background:#fff;display:flex;flex-direction:column;">
+        <div style="height:88px;background:{{ c.hex }};"></div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;color:#1F2F4D;"><b style="font-size:14px;">{{ c.name }}</b><code style="font-size:12px;color:#5B6676;">{{ c.hex }}</code><span style="font-size:12px;color:#3E4A5C;">{{ c.use }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;height:14px;border-radius:7px;overflow:hidden;"><span style="flex:60;background:#FAF7F2;border:1px solid #D6E2DF;"></span><span style="flex:20;background:#1F2F4D;"></span><span style="flex:12;background:#5B9384;"></span><span style="flex:8;background:#D98574;"></span></div>
+  <span style="font-size:13px;color:#5B6676;margin-top:-12px;">Proportion: 60 Cream · 20 Navy · 12 Sage · 8 Coral. Coral carries the ring and the booking action, nothing else.</span>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Patterns · Cradle and Leaf</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;">
+    <div style="height:240px;border-radius:20px;border:1px solid #D6E2DF;background:#FAF7F2 url(assets/brand/opc-pattern-light.svg) center/48px auto repeat;"></div>
+    <div style="height:240px;border-radius:20px;background:#1F2F4D url(assets/brand/opc-pattern-dark.svg) center/48px auto repeat;display:grid;place-items:center;"><span style="width:96px;height:96px;border-radius:50%;background:#1F2F4D;display:grid;place-items:center;"><img src="{{ o.markRev }}" alt="" style="width:60px;height:auto;"></span></div>
+    <div style="height:240px;border-radius:20px;border:1px solid #D6E2DF;background:#E4EEEA url(assets/brand/opc-pattern-leaves.svg) center/72px auto repeat;"></div>
+  </div>
+  <span style="font-size:13px;color:#5B6676;">Cradle repeats the supporting arc as overlapping U-curves, like fabric or water. Leaf repeats the paired leaves from the Held mark. Keep both at low contrast.</span>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Motion · Hold and breathe</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;">
+    <div style="background:#FAF7F2;border:1px solid #D6E2DF;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="{{ o.markAnim }}" alt="" style="width:130px;height:auto;"></div>
+    <div style="grid-column:span 2;background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:40px;display:grid;place-items:center;min-height:240px;"><img src="{{ o.logoAnim }}" alt="" style="width:min(100%,440px);height:auto;"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;font-size:13px;color:#3E4A5C;">
+    <span><b style="color:#1F2F4D;">Support first</b> · the sage arc rises from below</span>
+    <span><b style="color:#1F2F4D;">Then the ring</b> · coral, drawn clockwise from 12 o'clock</span>
+    <span><b style="color:#1F2F4D;">1.5 s</b> · "Ottawa" slides in, descriptor 200 ms later</span>
+    <span><b style="color:#1F2F4D;">Idle</b> · the coral ring breathes on an 8 s cycle, matching the site's Breath motion</span>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Assets</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:16px;">
+    <div style="background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:flex-end;gap:18px;min-height:96px;"><img src="{{ o.icon }}" alt="" style="width:88px;height:88px;filter:drop-shadow(0 6px 12px rgba(31,47,77,.25));"><img src="{{ o.mark }}" alt="" style="width:32px;height:auto;"><img src="{{ o.mark }}" alt="" style="width:16px;height:auto;"></div>
+      <span style="font-size:13px;color:#3E4A5C;"><b style="color:#1F2F4D;">App icon and favicon</b> · 128, 32, 16 px</span>
+    </div>
+    <div style="background:#fff;border:1px solid #D6E2DF;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:14px;min-height:96px;"><span style="width:88px;height:88px;border-radius:50%;background:#E4EEEA url(assets/brand/opc-pattern-light.svg) center/22px auto;display:grid;place-items:center;"><span style="width:62px;height:62px;border-radius:50%;background:#FAF7F2;display:grid;place-items:center;"><img src="{{ o.mark }}" alt="" style="width:40px;height:auto;"></span></span><div style="display:flex;flex-direction:column;line-height:1.3;color:#1F2F4D;"><b style="font-size:14px;">Ottawa Pessary Clinic</b><span style="font-size:12px;color:#5B6676;">@ottawapessaryclinic</span></div></div>
+      <span style="font-size:13px;color:#3E4A5C;"><b style="color:#1F2F4D;">Social avatar</b> · survives the circle crop</span>
+    </div>
+    <div style="grid-column:span 2;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+      <div style="aspect-ratio:1.75;border-radius:12px;background:#FAF7F2;border:1px solid #D6E2DF;box-shadow:0 8px 24px rgba(31,47,77,.10);padding:20px;display:flex;flex-direction:column;justify-content:space-between;">
+        <img src="{{ o.horiz }}" alt="" style="width:150px;height:auto;">
+        <div style="display:flex;flex-direction:column;line-height:1.35;color:#1F2F4D;"><b style="font-size:13px;">Pessary fittings and follow-up care</b><span style="font-size:11px;color:#3E4A5C;">Westboro, Ottawa</span></div>
+      </div>
+      <div style="aspect-ratio:1.75;border-radius:12px;background:#1F2F4D url(assets/brand/opc-pattern-dark.svg) center/32px auto;box-shadow:0 8px 24px rgba(31,47,77,.18);display:grid;place-items:center;"><img src="{{ o.markRev }}" alt="" style="width:60px;height:auto;"></div>
+    </div>
+  </div>
+
+  <h3 style="margin:28px 0 0;font-size:13px;font-weight:700;color:#2B6A64;letter-spacing:.08em;text-transform:uppercase;">Together</h3>
+  <div style="background:#fff;border:1px solid #DDD8E6;border-radius:20px;padding:clamp(28px,5vw,56px);display:flex;align-items:center;justify-content:center;gap:clamp(24px,5vw,64px);flex-wrap:wrap;">
+    <img src="assets/brand/cc-logo-horizontal.svg" alt="Core Connections Physiotherapy" style="height:60px;width:auto;">
+    <span style="width:1px;height:72px;background:#DDD8E6;"></span>
+    <img src="{{ o.horiz }}" alt="Ottawa Pessary Clinic" style="height:60px;width:auto;">
+  </div>
+  <span style="font-size:13px;color:#5B6676;">Co-branded: equal mark height, a 1 px divider, and at least 2x between lockups.</span>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;opcConcept&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;arc&quot;,&quot;held&quot;,&quot;lotus&quot;],&quot;default&quot;:&quot;arc&quot;,&quot;tsType&quot;:&quot;'arc'|'held'|'lotus'&quot;}}">
+class Component extends DCLogic {
+  state = { pick: null, r: 0 };
+  renderVals() {
+    const sel = this.state.pick || this.props.opcConcept || 'arc';
+    const r = this.state.r;
+    const meta = {
+      arc: ['A', 'Supporting Arc', 'Selected', 'A coral ring cradled by a sage arc. Reads as support at any size and in one colour; the coral ring carries the warmth and the booking colour.'],
+      lotus: ['B', 'Lotus Ring', 'Most gentle', 'A lotus inside an open ring. Warm and calming, but the fine petals fade below 24 px and it leans toward spa rather than clinic.'],
+      held: ['C', 'Held', 'Alternative', 'A blend of both: the pessary ring rests on two lotus leaves that form the supporting arc, with a coral core. Holds up at 16 px and rhymes with the Core Connections core.']
+    };
+    const p = k => 'assets/brand/opc-' + k + '-';
+    const concepts = Object.keys(meta).map(k => ({
+      id: meta[k][0], name: meta[k][1], tag: meta[k][2], note: meta[k][3],
+      stacked: p(k) + 'logo-stacked.svg', mark: p(k) + 'mark.svg',
+      border: k === sel ? '2px solid #1F2F4D' : '1px solid #D6E2DF',
+      pick: () => this.setState({ pick: k })
+    }));
+    const b = p(sel);
+    const o = {
+      horiz: b + 'logo-horizontal.svg', horizRev: b + 'logo-horizontal-reverse.svg', mono: b + 'logo-horizontal-mono.svg',
+      stacked: b + 'logo-stacked.svg', stackedRev: b + 'logo-stacked-reverse.svg', mark: b + 'mark.svg', markRev: b + 'mark-reverse.svg',
+      construction: b + 'logo-construction.svg', icon: b + 'app-icon.svg',
+      markAnim: b + 'mark-animated.svg?r=' + r, logoAnim: b + 'logo-animated.svg?r=' + r
+    };
+    const sw = a => a.map(([name, hex, use]) => ({ name, hex, use }));
+    return {
+      r, o, concepts,
+      ccType: [
+        ['CC0', 'Plus Jakarta Sans 800 / 500', 'assets/brand/type/cc-type-0.svg', 'Previous. Matches the website type exactly; confident and friendly.'],
+        ['CC1', 'Outfit 600 / 400', 'assets/brand/type/cc-type-1.svg', 'Geometric with perfectly round bowls that echo the rings. Softer and lighter.'],
+        ['CC2', 'Sora 600 / 400', 'assets/brand/type/cc-type-2.svg', 'Wide and open with a technical edge. Feels modern-clinical.'],
+        ['CC3', 'Urbanist 800 lowercase / 600 · applied', 'assets/brand/type/cc-type-3.svg', 'Lowercase name reads warm and approachable; caps descriptor keeps it grounded.'],
+        ['CC4', 'Bricolage Grotesque 700 / 500', 'assets/brand/type/cc-type-4.svg', 'More character in the curves; a little editorial and less corporate.'],
+        ['CC5', 'Plus Jakarta Sans all caps', 'assets/brand/type/cc-type-5.svg', 'Closest to the 2025 logo: two caps lines, heavy over light.']
+      ].map(([id, name, src, note]) => ({ id, name, src, note })),
+      opcType: [
+        ['OP0', 'Newsreader 500 + Jakarta', 'assets/brand/type/opc-type-0.svg', 'Previous. A calm book serif; reads trustworthy and medical without feeling cold.'],
+        ['OP1', 'Cormorant Garamond caps + Jakarta', 'assets/brand/type/opc-type-1.svg', 'Closest to your lotus reference. Elegant and quiet; thins out at small sizes.'],
+        ['OP2', 'Instrument Serif + Jakarta', 'assets/brand/type/opc-type-2.svg', 'Condensed, fashionable serif. Most contemporary of the serifs.'],
+        ['OP3', 'Young Serif + Jakarta', 'assets/brand/type/opc-type-3.svg', 'Soft, chunky serif with warmth. Friendly and very legible small.'],
+        ['OP4', 'Marcellus caps throughout', 'assets/brand/type/opc-type-4.svg', 'Flared, carved-stone caps. Classic and composed; one typeface for both lines.'],
+        ['OP5', 'Plus Jakarta Sans 700 + 500', 'assets/brand/type/opc-type-5.svg', 'All-sans: the two clinics read as one family, OPC loses some of its own voice.']
+      ].map(([id, name, src, note]) => ({ id, name, src, note })),
+      replay: () => this.setState(s => ({ r: s.r + 1 })),
+      ccColors: sw([
+        ['Periwinkle', '#5C68A0', 'Mark rings, subtitle'],
+        ['Periwinkle deep', '#3F4A87', 'Wordmark, headings'],
+        ['Night', '#2E3566', 'Reverse ground, footer'],
+        ['Lime', '#8CC63F', 'The core, booking accent'],
+        ['Lime mist', '#EEF5DC', 'Badges, highlights'],
+        ['Mist', '#F6F4F9', 'Page background'],
+        ['Ink', '#1B1730', 'Body text, one-colour logo']
+      ]),
+      opcColors: sw([
+        ['Navy', '#1F2F4D', '"ottawa", text'],
+        ['Teal', '#2B6A64', 'Descriptor, links'],
+        ['Sage', '#5B9384', 'Supporting arc'],
+        ['Sage light', '#9CC3B7', 'Reverse descriptor'],
+        ['Coral', '#D98574', 'The ring, booking button'],
+        ['Cream', '#FAF7F2', 'Page background'],
+        ['Sage mist', '#E4EEEA', 'Panels, pattern ground']
+      ])
+    };
+  }
+}
+</script>
+</body>
+</html>

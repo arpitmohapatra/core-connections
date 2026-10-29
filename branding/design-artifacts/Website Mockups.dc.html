@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#e9e6e0;-webkit-font-smoothing:antialiased}a{color:#4d4184}a:hover{color:#362c5e}</style>
+</helmet>
+
+<div style="display:flex;flex-direction:column;gap:120px;padding:80px;">
+
+<!-- ================= CORE CONNECTIONS ROW ================= -->
+<div style="display:flex;gap:80px;align-items:flex-start;">
+
+<div style="display:flex;flex-direction:column;gap:16px;flex:none;">
+<div style="font:600 14px Inter,sans-serif;color:#2b2640;letter-spacing:.04em;">Core Connections · Home · Desktop 1440</div>
+<div data-screen-label="CC Home Desktop" style="width:1440px;background:#faf7f2;color:#2b2640;font-family:Inter,sans-serif;font-size:17px;line-height:1.6;box-shadow:0 30px 60px -30px rgba(43,38,64,.35);">
+
+  <div style="background:#362c5e;color:#fff;font-size:14px;padding:9px 0;display:flex;justify-content:center;gap:10px;">
+    <span style="opacity:.85;">Looking for pessary care?</span><b style="color:#93bf2e;">Visit the Ottawa Pessary Clinic →</b>
+  </div>
+
+  <header style="background:#fff;border-bottom:1px solid rgba(43,38,64,.13);">
+    <div style="max-width:1240px;margin:0 auto;padding:14px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:10px;color:#5c68a0;line-height:1;">
+        <img src="assets/cc-mark.svg" alt="" style="height:38px;width:auto;">
+        <div style="display:flex;flex-direction:column;gap:4px;text-transform:uppercase;"><b style="font-weight:700;font-size:17px;letter-spacing:.04em;">Core Connections</b><span style="font-size:16px;letter-spacing:.1em;">Physiotherapy</span></div>
+      </div>
+      <nav style="display:flex;align-items:center;gap:30px;font-size:15.5px;font-weight:500;">
+        <span style="border-bottom:2px solid #93bf2e;padding:4px 0;">Home</span>
+        <span>About</span><span>Services</span><span>Conditions</span><span>Team</span><span>Fees</span><span>Contact</span>
+        <span style="background:#93bf2e;color:#362c5e;padding:13px 26px;border-radius:999px;font-weight:600;">Book Online</span>
+      </nav>
+    </div>
+  </header>
+
+  <section style="position:relative;height:680px;overflow:hidden;color:#fff;">
+    <sc-for list="{{ slides }}" as="s" hint-placeholder-count="1">
+      <div style="position:absolute;inset:0;transition:opacity .9s ease;opacity:{{ s.op }};">
+        <img src="{{ s.img }}" alt="" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </sc-for>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,25,51,.86) 0%,rgba(43,38,64,.55) 45%,rgba(43,38,64,.05) 80%);"></div>
+    <div style="position:absolute;inset:0;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;gap:24px;">
+      <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(20,16,36,.4);border:1px solid rgba(255,255,255,.25);padding:7px 14px 7px 12px;border-radius:999px;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>In the heart of Westboro since 2008</span>
+      <h1 style="margin:0;font-family:Fraunces,serif;font-weight:500;font-size:60px;line-height:1.1;letter-spacing:-.015em;max-width:17ch;text-wrap:pretty;min-height:198px;">{{ current.text }}</h1>
+      <div style="display:flex;gap:14px;">
+        <span style="background:#93bf2e;color:#362c5e;padding:15px 30px;border-radius:999px;font-weight:600;font-size:16px;">Book Online</span>
+        <span style="border:1.5px solid #fff;padding:13.5px 28.5px;border-radius:999px;font-weight:600;font-size:16px;">Free phone consultation</span>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:28px;align-items:center;">
+        <sc-for list="{{ slides }}" as="s" hint-placeholder-count="3">
+          <span onClick="{{ s.go }}" style="cursor:pointer;height:4px;border-radius:2px;transition:all .4s;width:{{ s.dotW }};background:{{ s.dotBg }};"></span>
+        </sc-for>
+        <span style="font-size:13px;opacity:.8;margin-left:8px;">{{ current.num }} / 03</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-bottom:1px solid rgba(43,38,64,.13);background:#fff;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);">
+      <div style="padding:30px 32px 30px 0;display:flex;gap:14px;align-items:flex-start;"><span style="flex:none;width:8px;height:8px;border-radius:50%;background:#93bf2e;margin-top:9px;"></span><span style="font-size:16px;">We have been fitting pessaries for <b style="font-family:Fraunces,serif;color:#362c5e;font-weight:600;">over 13 years</b>.</span></div>
+      <div style="padding:30px 32px;display:flex;gap:14px;align-items:flex-start;border-left:1px solid rgba(43,38,64,.13);"><span style="flex:none;width:8px;height:8px;border-radius:50%;background:#93bf2e;margin-top:9px;"></span><span style="font-size:16px;">We provide <b style="font-family:Fraunces,serif;color:#362c5e;font-weight:600;">gender-affirming and trauma-informed</b> care.</span></div>
+      <div style="padding:30px 0 30px 32px;display:flex;gap:14px;align-items:flex-start;border-left:1px solid rgba(43,38,64,.13);"><span style="flex:none;width:8px;height:8px;border-radius:50%;background:#93bf2e;margin-top:9px;"></span><span style="font-size:16px;">Services in <b style="font-family:Fraunces,serif;color:#362c5e;font-weight:600;">English, French, Spanish and Telugu</b>.</span></div>
+    </div>
+  </section>
+
+  <section style="padding:104px 0;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:22px;">
+        <span style="display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#4d4184;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>Welcome</span>
+        <h2 style="margin:0;font-family:Fraunces,serif;font-weight:600;font-size:44px;line-height:1.15;color:#362c5e;">Welcome to Core Connections Physiotherapy!</h2>
+        <p style="margin:0;">We have been providing integrated pelvic health and orthopedic physiotherapy since 2008. As a community-based, physiotherapist-owned clinic in the heart of Westboro, we’re proud to provide compassionate, hands-on care grounded in clinical excellence.</p>
+        <p style="margin:0;font-family:Fraunces,serif;font-style:italic;font-weight:500;font-size:24px;line-height:1.4;color:#362c5e;border-left:3px solid #93bf2e;padding-left:20px;">“We treat the source, not just the symptom.”</p>
+        <span style="align-self:flex-start;background:#362c5e;color:#fff;padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;">Our story</span>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute;top:-18px;left:-18px;right:30px;bottom:30px;border:2px solid #93bf2e;border-radius:6px;"></div>
+        <img src="assets/clinic-exterior.jpg" alt="" style="position:relative;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:0 18px 40px -20px rgba(43,38,64,.35);display:block;">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:104px 0;background:#f2ebe0;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#4d4184;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>What we offer</span>
+          <h2 style="margin:0;font-family:Fraunces,serif;font-weight:600;font-size:44px;line-height:1.15;color:#362c5e;">Integrated care, from pregnancy to 60+.</h2>
+        </div>
+        <span style="border:1.5px solid #362c5e;color:#362c5e;padding:12.5px 26px;border-radius:999px;font-weight:600;font-size:15px;flex:none;">All services &amp; conditions</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{ primary }}" as="p" hint-placeholder-count="3">
+          <div style="background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(43,38,64,.13);">
+            <img src="{{ p.img }}" alt="" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block;">
+            <div style="padding:26px 28px 30px;display:flex;flex-direction:column;gap:10px;">
+              <h3 style="margin:0;font-family:Fraunces,serif;font-weight:600;font-size:24px;color:#362c5e;line-height:1.2;">{{ p.title }}</h3>
+              <p style="margin:0;font-size:15.5px;color:#675f78;">{{ p.body }}</p>
+              <span style="font-size:15px;font-weight:600;color:#4d4184;margin-top:4px;">Learn more →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{ specialty }}" as="p" hint-placeholder-count="3">
+          <div style="background:#faf7f2;border-radius:6px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+            <div style="display:flex;flex-direction:column;gap:2px;"><b style="font-family:Fraunces,serif;font-weight:600;font-size:19px;color:#362c5e;">{{ p.title }}</b><span style="font-size:14.5px;color:#675f78;">{{ p.body }}</span></div>
+            <span style="color:#74991f;font-weight:600;">→</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;background:#1f2f4d;color:#fff;">
+      <img src="assets/service-pessary.jpg" alt="" style="width:100%;height:100%;min-height:440px;object-fit:cover;display:block;">
+      <div style="padding:72px 96px 72px 80px;display:flex;flex-direction:column;gap:20px;justify-content:center;font-family:Figtree,sans-serif;">
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:52px;height:52px;border-radius:50%;background:#faf7f2;display:grid;place-items:center;"><img src="assets/opc-mark.svg" alt="" style="width:38px;height:38px;"></div><span style="font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7fae9f;">Exciting news!</span></div>
+        <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:44px;line-height:1.12;">Our pessary fitting services are now the Ottawa Pessary Clinic.</h2>
+        <p style="margin:0;color:#dfe6f2;font-size:17px;">Officially opening January 2027, in collaboration with Core Connections at 363 Richmond Rd.</p>
+        <span style="align-self:flex-start;background:#f4dfd7;color:#1f2f4d;padding:14px 26px;border-radius:999px;font-weight:700;font-size:16px;">Go to ottawapessaryclinic.ca →</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:104px 0;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:44px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span style="display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#4d4184;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>Our team</span>
+          <h2 style="margin:0;font-family:Fraunces,serif;font-weight:600;font-size:44px;line-height:1.15;color:#362c5e;max-width:22ch;">Six physiotherapists, working as one team.</h2>
+        </div>
+        <span style="border:1.5px solid #362c5e;color:#362c5e;padding:12.5px 26px;border-radius:999px;font-weight:600;font-size:15px;">Meet the team</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:18px;">
+        <sc-for list="{{ team }}" as="t" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <img src="{{ t.img }}" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block;">
+            <div style="display:flex;flex-direction:column;gap:2px;"><b style="font-family:Fraunces,serif;font-weight:600;font-size:17px;color:#362c5e;line-height:1.25;">{{ t.name }}</b><span style="font-size:13.5px;color:#675f78;">{{ t.role }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:96px 0;background:#eee9f5;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:64px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#4d4184;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>What our patients say</span>
+        <div style="font-family:Fraunces,serif;font-size:88px;font-weight:500;color:#362c5e;line-height:1;">5.0</div>
+        <span style="color:#c68f5b;letter-spacing:.14em;font-size:20px;">★★★★★</span>
+        <span style="font-size:15px;color:#675f78;">87 Google reviews, October 2026</span>
+        <span style="font-size:15px;font-weight:600;color:#4d4184;">Read all reviews on Google →</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        <sc-for list="{{ reviews }}" as="r" hint-placeholder-count="3">
+          <div style="background:#fff;border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:14px;justify-content:space-between;">
+            <p style="margin:0;font-family:Fraunces,serif;font-size:18px;line-height:1.5;color:#362c5e;">“{{ r.q }}”</p>
+            <span style="font-size:13.5px;color:#675f78;">{{ r.who }} · Google review</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#362c5e;color:#fff;padding:96px 0;">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end;">
+      <h2 style="margin:0;font-family:Fraunces,serif;font-weight:500;font-size:50px;line-height:1.12;">Ready to feel better, move better, and get back to the things you love?</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+        <span style="background:#93bf2e;color:#362c5e;padding:15px 30px;border-radius:999px;font-weight:600;font-size:16px;">Book Online</span>
+        <span style="font-size:16px;color:rgba(255,255,255,.82);">or call <b style="color:#fff;">613-291-2956</b> for a complimentary phone consultation</span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#2b2640;color:rgba(255,255,255,.72);padding:64px 0 32px;font-size:15px;">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+      <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:center;gap:10px;color:#fff;line-height:1;"><img src="assets/cc-mark.svg" alt="" style="height:34px;width:auto;filter:brightness(0) invert(1);"><div style="display:flex;flex-direction:column;gap:4px;text-transform:uppercase;"><b style="font-size:15px;letter-spacing:.04em;">Core Connections</b><span style="font-size:14px;letter-spacing:.1em;">Physiotherapy</span></div></div>
+          <span style="max-width:32ch;">A centre of excellence in pelvic health, pre &amp; postnatal, and orthopedic physiotherapy in Ottawa.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><b style="color:#fff;font-family:Fraunces,serif;font-size:17px;margin-bottom:6px;">Visit</b><span>363 Richmond Rd.</span><span>Ottawa, ON K2A 0E7</span><span>Mon–Fri, 8:30–5:00</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><b style="color:#fff;font-family:Fraunces,serif;font-size:17px;margin-bottom:6px;">Contact</b><span>613-291-2956</span><span>reception@core-connections.ca</span><span>Instagram · Facebook</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px;"><b style="color:#fff;font-family:Fraunces,serif;font-size:17px;margin-bottom:6px;">Clinic</b><span>Directions &amp; parking</span><span>Accessibility</span><span>Join our team</span><span style="color:#93bf2e;">Ottawa Pessary Clinic →</span></div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:13px;">© Core Connections Physiotherapy</div>
+    </div>
+  </footer>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px;flex:none;">
+<div style="font:600 14px Inter,sans-serif;color:#2b2640;letter-spacing:.04em;">Core Connections · Home · Mobile 390</div>
+<div data-screen-label="CC Home Mobile" style="width:390px;background:#faf7f2;color:#2b2640;font-family:Inter,sans-serif;font-size:16px;line-height:1.6;box-shadow:0 30px 60px -30px rgba(43,38,64,.35);position:relative;">
+  <header style="background:#fff;border-bottom:1px solid rgba(43,38,64,.13);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:8px;color:#5c68a0;line-height:1;"><img src="assets/cc-mark.svg" alt="" style="height:30px;width:auto;"><div style="display:flex;flex-direction:column;gap:3px;text-transform:uppercase;"><b style="font-size:13px;letter-spacing:.04em;">Core Connections</b><span style="font-size:12px;letter-spacing:.1em;">Physiotherapy</span></div></div>
+    <div style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;"><span style="width:22px;height:2px;background:#362c5e;border-radius:1px;"></span><span style="width:22px;height:2px;background:#362c5e;border-radius:1px;"></span><span style="width:22px;height:2px;background:#362c5e;border-radius:1px;"></span></div>
+  </header>
+  <section style="position:relative;height:620px;overflow:hidden;color:#fff;">
+    <sc-for list="{{ slides }}" as="s" hint-placeholder-count="1">
+      <div style="position:absolute;inset:0;transition:opacity .9s ease;opacity:{{ s.op }};"><img src="{{ s.img }}" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+    </sc-for>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,38,64,.15) 0%,rgba(43,38,64,.45) 40%,rgba(30,25,51,.94) 100%);"></div>
+    <div style="position:absolute;left:22px;right:22px;bottom:30px;display:flex;flex-direction:column;gap:18px;">
+      <span style="display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>Westboro, Ottawa</span>
+      <h1 style="margin:0;font-family:Fraunces,serif;font-weight:500;font-size:32px;line-height:1.15;text-wrap:pretty;min-height:148px;display:flex;align-items:flex-end;">{{ current.text }}</h1>
+      <div style="display:flex;gap:8px;">
+        <sc-for list="{{ slides }}" as="s" hint-placeholder-count="3"><span onClick="{{ s.go }}" style="cursor:pointer;height:4px;border-radius:2px;transition:all .4s;width:{{ s.dotW }};background:{{ s.dotBg }};"></span></sc-for>
+      </div>
+      <span style="background:#93bf2e;color:#362c5e;padding:15px;border-radius:999px;font-weight:600;text-align:center;">Book Online</span>
+    </div>
+  </section>
+  <section style="padding:48px 22px;display:flex;flex-direction:column;gap:16px;">
+    <span style="display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#4d4184;"><span style="width:7px;height:7px;border-radius:50%;background:#93bf2e;"></span>Welcome</span>
+    <h2 style="margin:0;font-family:Fraunces,serif;font-weight:600;font-size:30px;line-height:1.15;color:#362c5e;">Community-based care since 2008.</h2>
+    <p style="margin:0;">Integrated pelvic health and orthopedic physiotherapy. Inclusive, gender-affirming and trauma-informed. English, French, Spanish and Telugu.</p>
+  </section>
+  <section style="padding:0 22px 48px;display:flex;flex-direction:column;">
+    <sc-for list="{{ allServices }}" as="p" hint-placeholder-count="6">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid rgba(43,38,64,.13);gap:12px;">
+        <b style="font-family:Fraunces,serif;font-weight:600;font-size:19px;color:#362c5e;line-height:1.25;">{{ p.title }}</b>
+        <span style="flex:none;width:36px;height:36px;border-radius:50%;background:#f2ebe0;display:grid;place-items:center;color:#4d4184;font-weight:600;">→</span>
+      </div>
+    </sc-for>
+  </section>
+  <section style="background:#1f2f4d;color:#fff;padding:36px 22px;display:flex;flex-direction:column;gap:14px;font-family:Figtree,sans-serif;">
+    <div style="display:flex;align-items:center;gap:12px;"><div style="width:44px;height:44px;border-radius:50%;background:#faf7f2;display:grid;place-items:center;"><img src="assets/opc-mark.svg" alt="" style="width:32px;height:32px;"></div><span style="font-family:'DM Serif Display',serif;font-size:21px;line-height:1.1;">Ottawa Pessary Clinic</span></div>
+    <p style="margin:0;color:#dfe6f2;font-size:15.5px;">Our pessary fitting services have a new home, opening January 2027.</p>
+    <span style="color:#f4dfd7;font-weight:700;">Visit the clinic site →</span>
+  </section>
+  <section style="padding:44px 22px;background:#eee9f5;display:flex;flex-direction:column;gap:14px;">
+    <div style="display:flex;align-items:baseline;gap:12px;"><span style="font-family:Fraunces,serif;font-size:48px;font-weight:500;color:#362c5e;line-height:1;">5.0</span><span style="color:#c68f5b;letter-spacing:.12em;">★★★★★</span></div>
+    <p style="margin:0;font-family:Fraunces,serif;font-size:18px;line-height:1.5;color:#362c5e;">“I always feel very safe at my appointments and I have gotten so much out of my treatments.”</p>
+    <span style="font-size:13px;color:#675f78;">Meaghan B. · 87 Google reviews</span>
+  </section>
+  <footer style="background:#2b2640;color:rgba(255,255,255,.72);padding:36px 22px 110px;font-size:14.5px;display:flex;flex-direction:column;gap:6px;">
+    <b style="color:#fff;font-family:Fraunces,serif;font-size:18px;margin-bottom:4px;">363 Richmond Rd., Westboro</b>
+    <span>Mon–Fri, 8:30–5:00</span><span>613-291-2956 · reception@core-connections.ca</span>
+  </footer>
+  <div style="position:absolute;left:14px;right:14px;bottom:14px;background:#fff;border-radius:999px;padding:6px;display:flex;gap:6px;box-shadow:0 12px 30px -10px rgba(43,38,64,.45);">
+    <span style="flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:600;color:#362c5e;font-size:15px;">Call</span>
+    <span style="flex:2;text-align:center;padding:12px;border-radius:999px;font-weight:600;background:#93bf2e;color:#362c5e;font-size:15px;">Book Online</span>
+  </div>
+</div>
+</div>
+
+</div>
+
+<!-- ================= OTTAWA PESSARY CLINIC ROW ================= -->
+<div style="display:flex;gap:80px;align-items:flex-start;">
+
+<div style="display:flex;flex-direction:column;gap:16px;flex:none;">
+<div style="font:600 14px Inter,sans-serif;color:#1f2f4d;letter-spacing:.04em;">Ottawa Pessary Clinic · Home · Desktop 1440</div>
+<div data-screen-label="OPC Home Desktop" style="width:1440px;background:#faf7f2;color:#1f2f4d;font-family:Figtree,sans-serif;font-size:17px;line-height:1.65;box-shadow:0 30px 60px -30px rgba(31,47,77,.4);">
+  <div style="background:#1f2f4d;color:#fff;font-size:14.5px;padding:9px 0;text-align:center;">Ottawa Pessary Clinic works in collaboration with <b>Core Connections Physiotherapy</b>.</div>
+  <header style="background:#fff;border-bottom:1px solid #d9dde3;">
+    <div style="max-width:1200px;margin:0 auto;padding:12px 0;display:flex;justify-content:space-between;align-items:center;">
+      <div style="display:flex;align-items:center;gap:12px;"><img src="assets/opc-mark.svg" alt="" style="width:46px;height:46px;"><div style="display:flex;flex-direction:column;"><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:22px;line-height:1.05;">Ottawa Pessary Clinic</b><span style="font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#59626f;">Opening January 2027</span></div></div>
+      <nav style="display:flex;gap:4px;font-weight:600;font-size:16px;align-items:center;">
+        <span style="padding:10px 16px;border-radius:999px;background:#dcebe5;">Home</span>
+        <span style="padding:10px 16px;">About pessaries</span>
+        <span style="padding:10px 16px;">Your visit</span>
+        <span style="padding:10px 16px;">For referrers</span>
+        <span style="padding:10px 16px;">FAQ</span>
+        <span style="padding:8.5px 16px;border-radius:999px;border:1.5px solid #1f2f4d;margin-left:8px;">Core Connections</span>
+      </nav>
+    </div>
+  </header>
+
+  <section style="background:#f4dfd7;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;padding:80px 0;">
+      <div style="display:flex;flex-direction:column;gap:22px;">
+        <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:#1f2f4d;color:#fff;padding:8px 18px;border-radius:999px;font-weight:700;font-size:14.5px;"><span style="width:10px;height:10px;border-radius:50%;background:#7fae9f;box-shadow:0 0 0 5px rgba(127,174,159,.35);"></span>Officially opening January 2027</span>
+        <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:72px;line-height:1.04;">Support, fitted with care.</h1>
+        <p style="margin:0;font-size:19.5px;color:#2d4268;max-width:34em;">Individualized pessary fitting and pelvic health physiotherapy in Westboro. Fitting pessaries in collaboration with Ottawa specialists, physicians and NPs since 2013.</p>
+        <div style="display:flex;gap:12px;margin-top:6px;">
+          <span style="background:#1f2f4d;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;">Book a fitting</span>
+          <span style="border:2px solid #1f2f4d;padding:12px 24px;border-radius:999px;font-weight:700;">Is this for me?</span>
+        </div>
+      </div>
+      <div style="position:relative;">
+        <img src="assets/service-pessary.jpg" alt="" style="width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:18px;display:block;box-shadow:0 18px 40px -20px rgba(31,47,77,.5);">
+        <div style="position:absolute;left:-32px;bottom:-28px;background:#fff;border-radius:18px;padding:18px 22px;display:flex;gap:14px;align-items:center;box-shadow:0 18px 40px -20px rgba(31,47,77,.5);">
+          <span style="font-family:'DM Serif Display',serif;font-size:44px;line-height:1;color:#2b6a64;">13+</span>
+          <span style="font-size:14.5px;line-height:1.4;color:#59626f;">years fitting<br>pessaries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:96px 0;background:#fff;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:28px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;">
+        <div style="display:flex;flex-direction:column;gap:10px;"><span style="font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#2b6a64;">Is this for me?</span><h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:44px;line-height:1.12;">Start where you are.</h2></div>
+        <p style="margin:0;color:#59626f;">Choose what sounds closest. This is general information only and cannot tell you what is right for you.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <sc-for list="{{ concerns }}" as="c" hint-placeholder-count="4">
+          <span onClick="{{ c.pick }}" style="cursor:pointer;font-weight:600;padding:12px 22px;border-radius:999px;border:2px solid #1f2f4d;transition:background .2s;background:{{ c.bg }};color:{{ c.fg }};">{{ c.label }}</span>
+        </sc-for>
+      </div>
+      <div style="background:#f4dfd7;border-radius:18px;padding:34px 40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;min-height:150px;">
+        <div style="display:flex;flex-direction:column;gap:8px;"><h3 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:28px;">{{ answer.title }}</h3><p style="margin:0;color:#2d4268;max-width:62ch;">{{ answer.body }}</p></div>
+        <span style="color:#2b6a64;font-weight:700;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;">{{ answer.link }} →</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:96px 0;background:#1f2f4d;color:#fff;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:80px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <span style="font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7fae9f;">How a visit may unfold</span>
+        <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:44px;line-height:1.12;">A calm, step-by-step path.</h2>
+        <p style="margin:0;color:#dfe6f2;">Every person’s care is different. This is a general outline, not a fixed protocol.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-top:1px solid rgba(255,255,255,.15);">
+            <span style="width:32px;height:32px;border-radius:50%;background:#f4dfd7;color:#1f2f4d;font-weight:700;font-size:15px;display:grid;place-items:center;">{{ s.n }}</span>
+            <div style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:24px;">{{ s.t }}</b><span style="color:#dfe6f2;">{{ s.b }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:96px 0;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="background:#dcebe5;border-radius:18px;padding:40px;display:flex;flex-direction:column;gap:14px;">
+        <span style="font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#2b6a64;">For patients</span>
+        <h3 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:32px;line-height:1.15;">Private, respectful, consent-first.</h3>
+        <p style="margin:0;color:#2d4268;">Inclusive, gender-affirming and trauma-informed care in private treatment rooms. English, French, Spanish and Telugu.</p>
+        <span style="align-self:flex-start;background:#1f2f4d;color:#fff;padding:13px 24px;border-radius:999px;font-weight:700;margin-top:6px;">Plan your visit</span>
+      </div>
+      <div style="background:#fff;border:1px solid #d9dde3;border-radius:18px;padding:40px;display:flex;flex-direction:column;gap:14px;">
+        <span style="font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#2b6a64;">For referrers</span>
+        <h3 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:32px;line-height:1.15;">Working alongside your patient’s care team.</h3>
+        <p style="margin:0;color:#2d4268;">We collaborate with specialists, physicians, nurse practitioners and physio clinics in Ottawa and surrounding areas.</p>
+        <span style="align-self:flex-start;border:2px solid #1f2f4d;padding:11px 22px;border-radius:999px;font-weight:700;margin-top:6px;">Referral information</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 0 96px;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:80px;">
+      <div style="display:flex;flex-direction:column;gap:10px;"><span style="font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#2b6a64;">Common questions</span><h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:40px;line-height:1.12;">Before your first visit.</h2></div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+          <div onClick="{{ f.toggle }}" style="cursor:pointer;background:#fff;border:1px solid #d9dde3;border-radius:14px;padding:18px 24px;display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;gap:12px;font-weight:700;"><span>{{ f.q }}</span><span style="color:#2b6a64;font-size:22px;line-height:1;">{{ f.sign }}</span></div>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><span style="color:#2d4268;">{{ f.a }}</span></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1f2f4d;color:#dfe6f2;padding:56px 0 28px;font-size:15.5px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:32px;">
+      <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;">
+        <div style="display:flex;flex-direction:column;gap:12px;"><div style="display:flex;align-items:center;gap:12px;"><div style="width:48px;height:48px;border-radius:50%;background:#faf7f2;display:grid;place-items:center;"><img src="assets/opc-mark.svg" alt="" style="width:36px;height:36px;"></div><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:22px;color:#fff;">Ottawa Pessary Clinic</b></div><span style="max-width:34ch;">Pessary fitting and pelvic health physiotherapy, in collaboration with Core Connections Physiotherapy.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:19px;color:#fff;margin-bottom:6px;">Find us</b><span>363 Richmond Rd., Westboro</span><span>Ottawa, ON K2A 0E7</span><span>Mon–Fri, 8:30 a.m.–5:00 p.m.</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:19px;color:#fff;margin-bottom:6px;">Contact</b><span style="color:#fff;">613-291-2956</span><span style="color:#fff;">reception@core-connections.ca</span></div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.2);padding-top:18px;font-size:13.5px;">Information on this site is general and educational and is not a diagnosis or medical advice. © Ottawa Pessary Clinic.</div>
+    </div>
+  </footer>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px;flex:none;">
+<div style="font:600 14px Inter,sans-serif;color:#1f2f4d;letter-spacing:.04em;">Ottawa Pessary Clinic · Home · Mobile 390</div>
+<div data-screen-label="OPC Home Mobile" style="width:390px;background:#faf7f2;color:#1f2f4d;font-family:Figtree,sans-serif;font-size:16px;line-height:1.6;box-shadow:0 30px 60px -30px rgba(31,47,77,.4);">
+  <header style="background:#fff;border-bottom:1px solid #d9dde3;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:10px;"><img src="assets/opc-mark.svg" alt="" style="width:38px;height:38px;"><b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:19px;line-height:1.05;">Ottawa Pessary<br>Clinic</b></div>
+    <div style="width:44px;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;"><span style="width:22px;height:2px;background:#1f2f4d;"></span><span style="width:22px;height:2px;background:#1f2f4d;"></span><span style="width:22px;height:2px;background:#1f2f4d;"></span></div>
+  </header>
+  <section style="background:#f4dfd7;padding:32px 22px 40px;display:flex;flex-direction:column;gap:18px;">
+    <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:#1f2f4d;color:#fff;padding:6px 14px;border-radius:999px;font-weight:700;font-size:13px;"><span style="width:8px;height:8px;border-radius:50%;background:#7fae9f;"></span>Opening January 2027</span>
+    <h1 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:44px;line-height:1.05;">Support, fitted with care.</h1>
+    <p style="margin:0;color:#2d4268;font-size:17px;">Individualized pessary fitting and pelvic health physiotherapy in Westboro.</p>
+    <img src="assets/service-pessary.jpg" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;display:block;">
+    <span style="background:#1f2f4d;color:#fff;padding:15px;border-radius:999px;font-weight:700;text-align:center;">Book a fitting</span>
+  </section>
+  <section style="padding:40px 22px;background:#fff;display:flex;flex-direction:column;gap:16px;">
+    <span style="font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#2b6a64;">Is this for me?</span>
+    <h2 style="margin:0;font-family:'DM Serif Display',serif;font-weight:400;font-size:32px;line-height:1.1;">Start where you are.</h2>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <sc-for list="{{ concerns }}" as="c" hint-placeholder-count="4">
+        <span onClick="{{ c.pick }}" style="cursor:pointer;font-weight:600;padding:12px 18px;border-radius:999px;border:2px solid #1f2f4d;background:{{ c.bg }};color:{{ c.fg }};">{{ c.label }}</span>
+      </sc-for>
+    </div>
+    <div style="background:#f4dfd7;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:6px;">
+      <b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:22px;">{{ answer.title }}</b>
+      <span style="color:#2d4268;font-size:15.5px;">{{ answer.body }}</span>
+      <span style="color:#2b6a64;font-weight:700;text-decoration:underline;text-underline-offset:3px;">{{ answer.link }} →</span>
+    </div>
+  </section>
+  <section style="padding:40px 22px;background:#1f2f4d;color:#fff;display:flex;flex-direction:column;gap:6px;">
+    <span style="font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#7fae9f;margin-bottom:6px;">How a visit may unfold</span>
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+      <div style="display:flex;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.15);align-items:center;">
+        <span style="flex:none;width:28px;height:28px;border-radius:50%;background:#f4dfd7;color:#1f2f4d;font-weight:700;font-size:14px;display:grid;place-items:center;">{{ s.n }}</span>
+        <b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:19px;">{{ s.t }}</b>
+      </div>
+    </sc-for>
+  </section>
+  <footer style="padding:32px 22px;display:flex;flex-direction:column;gap:4px;font-size:15px;color:#59626f;">
+    <b style="font-family:'DM Serif Display',serif;font-weight:400;font-size:20px;color:#1f2f4d;margin-bottom:4px;">363 Richmond Rd., Westboro</b>
+    <span>613-291-2956 · Mon–Fri, 8:30–5:00</span>
+    <span style="color:#2b6a64;font-weight:700;margin-top:8px;">Core Connections Physiotherapy →</span>
+  </footer>
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { slide: 0, concern: 0, faq: 0 };
+  componentDidMount() {
+    this.t = setInterval(() => this.setState(s => ({ slide: (s.slide + 1) % 3 })), 6000);
+  }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    const S = [
+      { img: 'assets/clinic-room.jpg', text: 'We are celebrating 17 years of providing excellence in care in pelvic health and orthopedics' },
+      { img: 'assets/service-hypopressives.jpg', text: 'Our therapists have up to 19 years of experience in pelvic health for women, men and 2SLGBTQIA+ individuals' },
+      { img: 'assets/service-orthopedic.jpg', text: 'We have up to 36 years of experience in Orthopedic Manual Therapy & Sports. We are FCAMPT- certified!' }
+    ];
+    const { slide, concern, faq } = this.state;
+    const slides = S.map((s, i) => ({ ...s, op: i === slide ? 1 : 0, dotW: i === slide ? '44px' : '18px', dotBg: i === slide ? '#93bf2e' : 'rgba(255,255,255,.5)', go: () => this.setState({ slide: i }) }));
+    const primary = [
+      { img: 'assets/service-pessary.jpg', title: 'Pelvic Health Physiotherapy', body: 'For women, men and 2SLGBTQIA+ individuals. Thorough, consent-led assessment and treatment.' },
+      { img: 'assets/service-hypopressives.jpg', title: 'Pre & Postnatal', body: 'Supporting you through pregnancy, labour and birth preparation, and postpartum recovery.' },
+      { img: 'assets/service-orthopedic.jpg', title: 'Orthopedic & Sports', body: 'FCAMPT-certified orthopedic manual physiotherapy and return-to-activity rehabilitation.' }
+    ];
+    const specialty = [
+      { title: 'Hypermobility & Ehlers-Danlos', body: 'EDS and Hypermobility Spectrum Disorders' },
+      { title: 'Vestibular Physiotherapy', body: 'Dizziness, vertigo and balance' },
+      { title: 'Adults 60+', body: 'Staying strong, active and independent' }
+    ];
+    const C = [
+      { label: 'Noticing prolapse symptoms', title: 'Pelvic organ prolapse', body: 'Pessaries can provide support for pelvic organ prolapse. Whether a pessary is appropriate is something to explore with a qualified clinician, who can offer assessment and fitting when appropriate.', link: 'See how to reach us' },
+      { label: 'Dealing with urine leakage', title: 'Urinary incontinence', body: 'Pessaries may help manage certain types of urinary incontinence, not all. A clinician can help you understand your options, including pelvic health physiotherapy alongside a pessary.', link: 'See how to reach us' },
+      { label: 'Just curious about pessaries', title: 'Questions are welcome', body: 'Core Connections offers complimentary phone consultations to help you learn more about services and decide on a next step.', link: 'Read common questions' },
+      { label: 'A healthcare provider', title: 'Collaborating with referrers', body: 'We collaborate with specialists, physicians, other healthcare providers and physio clinics in Ottawa and surrounding areas, and keep in touch through follow-up.', link: 'Information for referrers' }
+    ];
+    const F = [
+      { q: 'Do I need a referral?', a: 'Call Core Connections reception to ask about referrals and your extended health coverage before booking.' },
+      { q: 'Will I have an internal exam?', a: 'Your assessment may include an internal exam. You always choose whether to have one, to defer it, or not to have one at all.' },
+      { q: 'Can I keep seeing my own physio?', a: 'Yes. Follow-up and collaboration with your healthcare provider are part of pessary care.' },
+      { q: 'Where is the clinic?', a: '363 Richmond Rd. in Westboro, inside Core Connections Physiotherapy.' }
+    ];
+    return {
+      slides, current: { text: S[slide].text, num: '0' + (slide + 1) },
+      primary, specialty, allServices: [...primary, ...specialty, { title: 'Pessary Fitting → OPC' }],
+      team: [
+        { img: 'assets/team-heather.jpg', name: 'Heather Grewar', role: 'Founder & Physiotherapist' },
+        { img: 'assets/team-monate.jpg', name: 'Monate Praamsma', role: 'Physiotherapist' },
+        { img: 'assets/team-susan.jpg', name: 'Susan Netherton', role: 'Physiotherapist' },
+        { img: 'assets/team-galia.jpg', name: 'Galia Carranco Herrera', role: 'Physiotherapist' },
+        { img: 'assets/team-pratyusha.jpg', name: 'Pratyusha Kavuluri', role: 'Physiotherapist' },
+        { img: 'assets/team-kelly.jpg', name: "Kelly O'Connor", role: 'Physiotherapist' }
+      ],
+      reviews: [
+        { q: 'Heather is an amazing physiotherapist! With her knowledgeable and caring approach, she has helped me control my incontinence and avoid surgery.', who: 'Betty Anne B.' },
+        { q: 'I had amazing experiences going to Core Connections for pelvic floor therapy with Galia after both of my daughters were born.', who: 'Kelly H.' },
+        { q: 'Susan is very knowledgeable and was able to diagnose and treat the issue effectively. Top notch treatment.', who: 'Mark' }
+      ],
+      concerns: C.map((c, i) => ({ ...c, bg: i === concern ? '#1f2f4d' : '#fff', fg: i === concern ? '#fff' : '#1f2f4d', pick: () => this.setState({ concern: i }) })),
+      answer: C[concern],
+      steps: [
+        { n: 1, t: 'Reach out', b: 'Call or email with questions. Complimentary phone consultations are available.' },
+        { n: 2, t: 'Talk it through', b: 'Share your symptoms, goals and concerns. You set the pace.' },
+        { n: 3, t: 'Assessment, on your terms', b: 'You always choose whether to have an internal exam, to defer it, or not at all.' },
+        { n: 4, t: 'Fitting, when appropriate', b: 'If a pessary is appropriate, a fitting may follow, alongside pelvic health physiotherapy.' },
+        { n: 5, t: 'Follow-up and teamwork', b: 'Follow-up and collaboration with your healthcare provider are part of care.' }
+      ],
+      faqs: F.map((f, i) => ({ ...f, open: i === faq, sign: i === faq ? '−' : '+', toggle: () => this.setState({ faq: i === faq ? -1 : i }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

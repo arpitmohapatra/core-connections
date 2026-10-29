@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F6F4F9;-webkit-font-smoothing:antialiased}a{color:#4D4184;text-decoration:none}a:hover{color:#362C5E}</style>
+</helmet>
+
+<div style="font-family:'Plus Jakarta Sans','Noto Sans Telugu',system-ui,sans-serif;color:#1B1730;font-size:15px;line-height:1.6;font-feature-settings:'tnum' 1;">
+
+<nav style="position:sticky;top:0;z-index:40;background:rgba(246,244,249,.94);backdrop-filter:blur(10px);border-bottom:1px solid #DDD8E6;">
+  <div style="max-width:1180px;margin:0 auto;padding:8px 16px;display:flex;gap:4px;align-items:center;overflow-x:auto;">
+    <span style="display:inline-flex;align-items:center;gap:8px;font-weight:800;letter-spacing:-.03em;font-size:18px;color:#4D4184;margin-right:12px;white-space:nowrap;"><img src="assets/cc-mark.svg" alt="" style="height:22px;width:auto;">core system</span>
+    <a href="#principles" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Principles</a>
+    <a href="#color" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Colour</a>
+    <a href="#type" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Type</a>
+    <a href="#space" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Space and shape</a>
+    <a href="#icons" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Icons</a>
+    <a href="#comp" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Components</a>
+    <a href="#kit" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Booking kit</a>
+    <a href="#themes" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Two clinics</a>
+    <a href="#rules" style="white-space:nowrap;padding:8px 12px;border-radius:10px;color:#4A4360;font-weight:600;font-size:13px;">Do and don't</a>
+  </div>
+</nav>
+
+<div style="max-width:1180px;margin:0 auto;padding:24px 16px 96px;">
+
+<header style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px;align-items:center;padding:48px 0 8px;">
+  <div style="display:flex;flex-direction:column;gap:16px;">
+    <div style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Design system v1.0 · Core Connections + Ottawa Pessary Clinic</div>
+    <h1 style="margin:0;font-size:clamp(34px,5vw,56px);line-height:1.04;font-weight:800;letter-spacing:-.035em;text-wrap:balance;">Care that feels clear from the first click.</h1>
+    <p style="margin:0;color:#4A4360;max-width:52ch;">One set of tokens for two sibling clinics in Westboro. Violet and citron for Core Connections Physiotherapy, navy and teal for the Ottawa Pessary Clinic. Clear type, calm surfaces, and a booking action that is always one thumb away.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;">
+      <a href="Website Mockups.dc.html" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#4D4184;color:#fff;">Core Connections site</a>
+      <a href="#themes" style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#EEEBF4;color:#1B1730;">Pessary Clinic theme</a>
+    </div>
+  </div>
+  <div style="background:#362C5E;border-radius:16px;padding:40px;display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div style="width:120px;height:120px;border-radius:28px;background:#fff;display:grid;place-items:center;"><img src="assets/cc-mark.svg" alt="" style="width:84px;height:auto;"></div>
+      <div style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-.02em;">Core Connections</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div style="width:120px;height:120px;border-radius:28px;background:#FAF7F2;display:grid;place-items:center;"><img src="assets/opc-mark.svg" alt="" style="width:84px;height:84px;"></div>
+      <div style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-.02em;">Ottawa Pessary Clinic</div>
+    </div>
+  </div>
+</header>
+
+<section id="principles" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Principles</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">Decisions are tested against these, in order.</p>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;font-variation-settings:'FILL' 1;color:#4D4184;">handshake</span><b style="font-size:17px;">Consent is never buried</b><span style="font-size:13px;line-height:20px;color:#4A4360;">Internal exams, pace and choices are explained before booking, not in fine print.</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;font-variation-settings:'FILL' 1;color:#74991F;">visibility</span><b style="font-size:17px;">Say it plainly</b><span style="font-size:13px;line-height:20px;color:#4A4360;">Condition, what we do, next step. "Waitlist: about 3 weeks" beats a vague "contact us".</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;font-variation-settings:'FILL' 1;color:#C68F5B;">touch_app</span><b style="font-size:17px;">Thumb first</b><span style="font-size:13px;line-height:20px;color:#4A4360;">48 px targets. Book and Call sit in the lower third on phones, on every page.</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;font-variation-settings:'FILL' 1;color:#2B6A64;">spa</span><b style="font-size:17px;">Calm, not clinical</b><span style="font-size:13px;line-height:20px;color:#4A4360;">Soft tinted surfaces and real clinic photos. No stock anatomy, no alarm colours for routine content.</span></div>
+  </div>
+</section>
+
+<section id="color" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Colour</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">Violet ink on lavender-tinted neutrals. Citron marks the one thing to do next, almost always booking. Red is reserved for errors and closures. Every text pair below meets WCAG AA.</p>
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Core tokens · Core Connections</h3>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+    <sc-for list="{{ ccTokens }}" as="t" hint-placeholder-count="11">
+      <div style="border:1px solid #DDD8E6;border-radius:14px;overflow:hidden;background:#fff;">
+        <div style="height:64px;display:flex;align-items:flex-end;padding:6px 10px;font:700 11px ui-monospace,Menlo,monospace;background:{{ t.hex }};color:{{ t.on }};">{{ t.hex }}</div>
+        <div style="padding:10px 12px;display:flex;flex-direction:column;"><span style="font-size:13px;"><b>{{ t.name }}</b> <code style="font:12px ui-monospace,Menlo,monospace;color:#675F78;">{{ t.tok }}</code></span><span style="font-size:12px;color:#4A4360;">{{ t.use }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Status language</h3>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#DDF3E5;color:#157A3B;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">check_circle</span>Accepting</span><b style="font-size:13px;">New patients welcome</b><span style="font-size:12px;color:#4A4360;">Therapist or service with open spots</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#FCEBD0;color:#A8480A;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">schedule</span>Waitlist</span><b style="font-size:13px;">Limited availability</b><span style="font-size:12px;color:#4A4360;">Always paired with an estimate</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#E1EAFD;color:#1D4FD7;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">videocam</span>Telehealth</span><b style="font-size:13px;">Available online</b><span style="font-size:12px;color:#4A4360;">Virtual appointments</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#DCEBE5;color:#2B6A64;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">trip_origin</span>OPC</span><b style="font-size:13px;">Pessary Clinic link</b><span style="font-size:12px;color:#4A4360;">Hand-off to the sibling site</span></div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:6px;"><span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#FDE6E3;color:#C92418;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">event_busy</span>Closed</span><b style="font-size:13px;">Closed / error</b><span style="font-size:12px;color:#4A4360;">Holidays, form errors only</span></div>
+  </div>
+</section>
+
+<section id="type" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Type</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">Plus Jakarta Sans for everything. Noto Sans Telugu is the fallback, so Telugu pages keep line height 1.7 and never clip. French and Spanish use the same scale.</p>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:8px 20px;display:flex;flex-direction:column;">
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Display</span><span style="font-size:44px;line-height:52px;font-weight:800;letter-spacing:-.03em;">Move better, feel whole.</span><span style="font-size:12px;color:#675F78;text-align:right;">44 / 52 / 800 / -0.03em</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">H1</span><span style="font-size:32px;line-height:40px;font-weight:800;letter-spacing:-.02em;">Pelvic Health Physiotherapy</span><span style="font-size:12px;color:#675F78;text-align:right;">32 / 40 / 800 / -0.02em</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">H2</span><span style="font-size:22px;line-height:30px;font-weight:700;letter-spacing:-.01em;">Conditions we treat</span><span style="font-size:12px;color:#675F78;text-align:right;">22 / 30 / 700</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Title</span><span style="font-size:17px;line-height:26px;font-weight:700;">Orthopedic &amp; Sports</span><span style="font-size:12px;color:#675F78;text-align:right;">17 / 26 / 700</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Body</span><span style="font-size:16px;line-height:26px;">Compassionate, hands-on care grounded in clinical excellence.</span><span style="font-size:12px;color:#675F78;text-align:right;">16 / 26 / 400</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Body small</span><span style="font-size:13px;line-height:20px;">Complimentary 15-minute phone consultations available.</span><span style="font-size:12px;color:#675F78;text-align:right;">13 / 20 / 400</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Overline</span><span style="font-size:11px;line-height:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;">FCAMPT-certified</span><span style="font-size:12px;color:#675F78;text-align:right;">11 / 16 / 700 / +0.08em</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">Stat</span><span style="font-size:48px;line-height:52px;font-weight:800;letter-spacing:-.03em;color:#4D4184;">17 <span style="font-size:15px;font-weight:600;letter-spacing:0;color:#4A4360;">years in Westboro</span></span><span style="font-size:12px;color:#675F78;text-align:right;">48 / 52 / 800, tabular</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #DDD8E6;"><span style="font-size:12px;color:#675F78;">French</span><span style="font-size:16px;line-height:26px;">Des soins inclusifs, adaptés et tenant compte des traumatismes.</span><span style="font-size:12px;color:#675F78;text-align:right;">same scale</span></div>
+    <div style="display:grid;grid-template-columns:110px minmax(0,1fr) 150px;gap:16px;align-items:baseline;padding:12px 0;"><span style="font-size:12px;color:#675F78;">Telugu</span><span style="font-size:16px;line-height:1.7;">మేము తెలుగులో సేవలు అందిస్తాము.</span><span style="font-size:12px;color:#675F78;text-align:right;">line height 1.7</span></div>
+  </div>
+</section>
+
+<section id="space" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Space, shape, elevation</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">A 4 / 8 grid. Corners: 14 on buttons and inputs, 16 on cards, 20 on photos, 28 on hero panels, full pill on chips and badges. Shadows are tinted violet, never pure black.</p>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));">
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:6px;">
+      <b style="font-size:13px;margin-bottom:6px;">Spacing scale</b>
+      <sc-for list="{{ spacing }}" as="s" hint-placeholder-count="10">
+        <div style="display:flex;align-items:center;gap:12px;"><span style="width:36px;font:12px ui-monospace,Menlo,monospace;color:#675F78;">{{ s.n }}</span><span style="height:14px;border-radius:4px;background:#4D4184;width:{{ s.w }};"></span></div>
+      </sc-for>
+    </div>
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:14px;">
+      <b style="font-size:13px;">Radii</b>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:6px;"></div><span style="font-size:12px;color:#4A4360;">xs 6</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:10px;"></div><span style="font-size:12px;color:#4A4360;">sm 10</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:14px;"></div><span style="font-size:12px;color:#4A4360;">md 14</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:20px;"></div><span style="font-size:12px;color:#4A4360;">lg 20</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:28px;"></div><span style="font-size:12px;color:#4A4360;">xl 28</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="width:60px;height:60px;background:#EEE9F5;border:2px solid #4D4184;border-radius:999px;"></div><span style="font-size:12px;color:#4A4360;">pill</span></div>
+      </div>
+      <b style="font-size:13px;margin-top:6px;">Elevation</b>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:88px;height:60px;background:#fff;border-radius:14px;box-shadow:0 1px 2px rgba(54,44,94,.07),0 0 0 1px rgba(54,44,94,.03);"></div><span style="font-size:12px;color:#4A4360;">1 Cards</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:88px;height:60px;background:#fff;border-radius:14px;box-shadow:0 4px 16px rgba(54,44,94,.10),0 1px 3px rgba(54,44,94,.06);"></div><span style="font-size:12px;color:#4A4360;">2 Sticky bar</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:88px;height:60px;background:#fff;border-radius:14px;box-shadow:0 16px 40px rgba(54,44,94,.18),0 4px 10px rgba(54,44,94,.08);"></div><span style="font-size:12px;color:#4A4360;">3 Menus, sheets</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="icons" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Iconography</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">Material Symbols Rounded, weight 400, optical size 24. Outline by default, filled for the active nav item and service tiles. Sizes: 16 inline, 20 in buttons, 24 default, 32 feature tiles. Used for services and logistics, never to depict bodies.</p>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:12px;display:flex;flex-wrap:wrap;gap:6px;">
+    <sc-for list="{{ icons }}" as="i" hint-placeholder-count="24">
+      <div style="width:96px;text-align:center;padding:8px 0;display:flex;flex-direction:column;align-items:center;gap:4px;"><span style="font-family:'Material Symbols Rounded';font-size:28px;line-height:1;color:#1B1730;">{{ i.n }}</span><span style="font-size:10.5px;color:#675F78;word-break:break-all;">{{ i.n }}</span></div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="comp" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Components</h2>
+  <p style="margin:0 0 8px;color:#4A4360;max-width:68ch;">The pieces both sites are built from.</p>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Buttons</h3>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#4D4184;color:#fff;cursor:pointer;" style-hover="background:#3F3570;">Primary</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#93BF2E;color:#1E2A05;cursor:pointer;"><span style="font-family:'Material Symbols Rounded';font-size:20px;line-height:1;">calendar_month</span>Book online</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#EEEBF4;color:#1B1730;cursor:pointer;">Secondary</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;color:#4D4184;box-shadow:inset 0 0 0 1.5px #BDB5CC;cursor:pointer;">Outlined</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#EEE9F5;color:#4D4184;cursor:pointer;">Tonal</span>
+    <span style="display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;background:#4D4184;color:#fff;opacity:.42;">Disabled</span>
+    <span style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:12px;font-weight:700;font-size:14px;background:#4D4184;color:#fff;">Small 40</span>
+    <span style="width:48px;height:48px;border-radius:999px;display:inline-grid;place-items:center;background:#EEEBF4;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;">call</span></span>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Inputs · contact form</h3>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:13px;font-weight:600;color:#4A4360;">Your name</span><input placeholder="First and last name" style="height:52px;border-radius:12px;border:1.5px solid #BDB5CC;background:#fff;padding:0 14px;font:inherit;font-size:16px;outline:none;" style-focus="border-color:#4D4184;box-shadow:0 0 0 4px rgba(77,65,132,.2);"><span style="font-size:12px;color:#675F78;">How you’d like us to address you.</span></label>
+      <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:13px;font-weight:600;color:#4A4360;">Phone</span><input value="613-291" style="height:52px;border-radius:12px;border:1.5px solid #C92418;background:#fff;padding:0 14px;font:inherit;font-size:16px;outline:none;"><span style="font-size:12px;color:#C92418;font-weight:600;display:flex;gap:4px;align-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:16px;font-variation-settings:'FILL' 1;">error</span>Add the last four digits so we can call you back.</span></label>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:13px;font-weight:600;color:#4A4360;">I’m interested in</span><select style="height:52px;border-radius:12px;border:1.5px solid #BDB5CC;background:#fff;padding:0 14px;font:inherit;font-size:16px;"><option>Pelvic health physiotherapy</option><option>Orthopedic &amp; sports</option><option>Pessary fitting (OPC)</option></select></label>
+      <label style="display:flex;flex-direction:column;gap:6px;"><span style="font-size:13px;font-weight:600;color:#4A4360;">Anything you’d like us to know</span><textarea placeholder="Optional" style="min-height:88px;border-radius:12px;border:1.5px solid #BDB5CC;background:#fff;padding:12px 14px;font:inherit;font-size:16px;resize:vertical;"></textarea></label>
+    </div>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Chips, badges, language switch</h3>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+    <sc-for list="{{ chips }}" as="c" hint-placeholder-count="5">
+      <span onClick="{{ c.pick }}" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap;transition:all 120ms;border:1.5px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }};">{{ c.label }}</span>
+    </sc-for>
+    <span style="width:1px;height:28px;background:#DDD8E6;"></span>
+    <span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#EEF5DC;color:#4F6B12;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">verified</span>FCAMPT</span>
+    <span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#EEE9F5;color:#4D4184;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">diversity_3</span>Gender-affirming</span>
+    <span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#DDF3E5;color:#157A3B;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">check_circle</span>Accepting</span>
+    <span style="width:1px;height:28px;background:#DDD8E6;"></span>
+    <div style="display:inline-flex;background:#EEEBF4;border-radius:12px;padding:3px;gap:2px;">
+      <sc-for list="{{ langs }}" as="l" hint-placeholder-count="4">
+        <span onClick="{{ l.pick }}" style="cursor:pointer;padding:6px 12px;border-radius:9px;font-size:13px;font-weight:700;background:{{ l.bg }};color:{{ l.fg }};box-shadow:{{ l.sh }};">{{ l.label }}</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Cards and list rows</h3>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));">
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);overflow:hidden;display:flex;flex-direction:column;">
+      <img src="assets/service-orthopedic.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+      <div style="padding:16px;display:flex;flex-direction:column;gap:4px;">
+        <div style="display:flex;gap:6px;"><span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#EEF5DC;color:#4F6B12;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">verified</span>FCAMPT</span></div>
+        <b style="font-size:17px;line-height:26px;margin-top:6px;">Orthopedic &amp; Sports</b>
+        <span style="font-size:13px;line-height:20px;color:#4A4360;">Manual physiotherapy and return-to-activity rehab. Up to 36 years of experience.</span>
+        <span style="margin-top:8px;font-size:14px;font-weight:700;color:#4D4184;display:flex;align-items:center;gap:4px;">Learn more<span style="font-family:'Material Symbols Rounded';font-size:18px;">arrow_forward</span></span>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);display:flex;flex-direction:column;">
+      <sc-for list="{{ therapists }}" as="t" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #DDD8E6;">
+          <img src="{{ t.img }}" alt="" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;">
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;"><b style="font-size:15px;">{{ t.name }}</b><span style="font-size:12px;color:#675F78;">{{ t.focus }}</span></div>
+          <span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:{{ t.sbg }};color:{{ t.sfg }};"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">{{ t.sic }}</span>{{ t.status }}</span>
+        </div>
+      </sc-for>
+      <span style="padding:12px 16px;font-size:12px;color:#675F78;">Availability shown is illustrative.</span>
+    </div>
+    <div style="background:#fff;border:1px solid #DDD8E6;border-radius:16px;box-shadow:0 1px 2px rgba(54,44,94,.07);padding:16px;display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:center;gap:8px;"><span style="font-size:28px;font-weight:800;letter-spacing:-.02em;">5.0</span><span style="font-family:'Material Symbols Rounded';font-size:18px;font-variation-settings:'FILL' 1;color:#C68F5B;letter-spacing:-2px;">star star star star star</span><span style="font-size:12px;color:#675F78;">87 Google reviews</span></div>
+      <span style="font-size:15px;line-height:24px;">“The physiotherapists here are understanding, knowledgeable and kind. I always feel very safe at my appointments.”</span>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:auto;"><span style="width:36px;height:36px;border-radius:50%;background:#EEE9F5;color:#4D4184;display:grid;place-items:center;font-weight:800;font-size:13px;">MB</span><span style="font-size:13px;color:#4A4360;"><b style="color:#1B1730;">Meaghan B.</b> · Google review</span></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Expandable "Read more"</h3>
+  <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;display:flex;flex-direction:column;">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="3">
+      <div onClick="{{ f.toggle }}" style="cursor:pointer;padding:14px 16px;border-bottom:1px solid #DDD8E6;display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:12px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;color:#4D4184;">{{ f.icon }}</span><b style="flex:1;font-size:15px;">{{ f.q }}</b><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;color:#675F78;">{{ f.chev }}</span></div>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}"><span style="padding-left:36px;font-size:14px;line-height:22px;color:#4A4360;">{{ f.a }}</span></sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <h3 style="font-size:13px;font-weight:700;color:#675F78;letter-spacing:.08em;text-transform:uppercase;margin:32px 0 12px;">Navigation</h3>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));align-items:start;">
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;overflow:hidden;">
+      <div style="display:flex;align-items:center;gap:20px;padding:12px 16px;border-bottom:1px solid #DDD8E6;flex-wrap:wrap;">
+        <img src="assets/cc-mark.svg" alt="" style="height:28px;width:auto;">
+        <span style="font-size:14px;font-weight:700;color:#4D4184;position:relative;">Services<span style="position:absolute;left:0;right:0;bottom:-15px;height:3px;border-radius:3px 3px 0 0;background:#4D4184;"></span></span>
+        <span style="font-size:14px;font-weight:600;color:#4A4360;">Conditions</span><span style="font-size:14px;font-weight:600;color:#4A4360;">Team</span><span style="font-size:14px;font-weight:600;color:#4A4360;">Fees</span>
+        <span style="flex:1;"></span>
+        <span style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border-radius:12px;font-weight:700;font-size:14px;background:#93BF2E;color:#1E2A05;">Book online</span>
+      </div>
+      <div style="padding:14px 16px;font-size:13px;color:#4A4360;">Desktop header: 64 px, white, 3 px active indicator. Max 6 links plus Book.</div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+      <div style="width:300px;border-radius:30px;border:8px solid #1B1730;overflow:hidden;background:#F6F4F9;position:relative;height:300px;flex:none;">
+        <img src="assets/clinic-room.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,23,48,0) 30%,rgba(27,23,48,.75) 100%);"></div>
+        <div style="position:absolute;left:12px;right:12px;bottom:12px;background:#fff;border-radius:16px;padding:6px;display:flex;gap:6px;box-shadow:0 16px 40px rgba(54,44,94,.18);">
+          <span style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:12px;font-weight:700;font-size:14px;background:#EEEBF4;"><span style="font-family:'Material Symbols Rounded';font-size:20px;">call</span>Call</span>
+          <span style="flex:2;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:12px;font-weight:700;font-size:14px;background:#93BF2E;color:#1E2A05;"><span style="font-family:'Material Symbols Rounded';font-size:20px;">calendar_month</span>Book online</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;font-size:13px;color:#4A4360;display:flex;flex-direction:column;gap:8px;"><b style="color:#1B1730;">Mobile action bar</b><span>Floats 12 px above the bottom edge on every page. Call and Book only. Hides while a form field is focused.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="kit" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Booking kit</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">These four elements are how patients reach the clinic. They look exactly like this everywhere.</p>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));">
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Book online</span>
+      <span style="display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;border-radius:14px;font-weight:800;font-size:16px;background:#93BF2E;color:#1E2A05;box-shadow:0 6px 18px rgba(147,191,46,.4);"><span style="font-family:'Material Symbols Rounded';font-size:22px;">calendar_month</span>Book online</span>
+      <span style="font-size:13px;color:#4A4360;">Citron, 56 px, opens Jane booking in a new tab. The only citron-filled element on a page.</span>
+    </div>
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Free phone consult</span>
+      <div style="display:flex;align-items:center;gap:12px;background:#EEE9F5;border-radius:14px;padding:14px;"><span style="width:44px;height:44px;border-radius:50%;background:#4D4184;color:#fff;display:grid;place-items:center;flex:none;"><span style="font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1;">call</span></span><div style="display:flex;flex-direction:column;"><b style="font-size:15px;">Not sure where to start?</b><span style="font-size:13px;color:#4A4360;">Complimentary phone consultation · 613-291-2956</span></div></div>
+    </div>
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Consent note</span>
+      <div style="display:flex;gap:12px;border:1px solid #BDB5CC;border-radius:14px;padding:14px;"><span style="font-family:'Material Symbols Rounded';font-size:24px;line-height:1;font-variation-settings:'FILL' 1;color:#4D4184;">shield_with_heart</span><span style="font-size:13px;line-height:20px;color:#1B1730;"><b>You set the pace.</b> Your assessment may include an internal exam. You always choose whether to have one, to defer it, or not at all.</span></div>
+    </div>
+    <div style="border:1px solid #DDD8E6;border-radius:16px;background:#fff;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#675F78;">Clinic info</span>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+        <div style="display:flex;gap:10px;align-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#4D4184;">location_on</span>363 Richmond Rd., Ottawa, ON K2A 0E7</div>
+        <div style="display:flex;gap:10px;align-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#4D4184;">schedule</span>Mon–Fri, 8:30 a.m.–5:00 p.m.</div>
+        <div style="display:flex;gap:10px;align-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#4D4184;">translate</span>English, French, Spanish, Telugu</div>
+        <div style="display:flex;gap:10px;align-items:center;"><span style="font-family:'Material Symbols Rounded';font-size:20px;color:#4D4184;">accessible</span>Accessible parking at the rear lot</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themes" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Two clinics, one system</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">Same type, spacing, radii and components. Only the colour tokens swap. The pessary clinic leads with teal and uses coral as its next-action colour.</p>
+  <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));">
+    <div style="background:#F6F4F9;border:1px solid #DDD8E6;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:10px;"><img src="assets/cc-mark.svg" alt="" style="height:28px;width:auto;"><b style="font-size:17px;">Core Connections</b></div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#4D4184;"></div><span style="font-size:11px;color:#4A4360;">brand</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#362C5E;"></div><span style="font-size:11px;color:#4A4360;">deep</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#EEE9F5;border:1px solid #DDD8E6;"></div><span style="font-size:11px;color:#4A4360;">soft</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#93BF2E;"></div><span style="font-size:11px;color:#4A4360;">accent</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#F6F4F9;border:1px solid #DDD8E6;"></div><span style="font-size:11px;color:#4A4360;">bg</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#1B1730;"></div><span style="font-size:11px;color:#4A4360;">ink</span></div>
+      </div>
+      <div style="background:#362C5E;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;color:#fff;">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C9C1EA;">Since 2008 · Westboro</span>
+        <span style="font-size:26px;line-height:32px;font-weight:800;letter-spacing:-.02em;">Up to 36 years of orthopedic manual therapy experience.</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:#93BF2E;color:#1E2A05;">Book online</span><span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:rgba(255,255,255,.12);color:#fff;">Our team</span></div>
+      </div>
+    </div>
+    <div style="background:#F3F7F6;border:1px solid #D6E2DF;border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px;color:#13213A;">
+      <div style="display:flex;align-items:center;gap:10px;"><img src="assets/opc-mark.svg" alt="" style="width:30px;height:30px;"><b style="font-size:17px;">Ottawa Pessary Clinic</b></div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px;">
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#2B6A64;"></div><span style="font-size:11px;color:#2D4268;">brand</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#1F2F4D;"></div><span style="font-size:11px;color:#2D4268;">deep</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#DCEBE5;"></div><span style="font-size:11px;color:#2D4268;">soft</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#D98574;"></div><span style="font-size:11px;color:#2D4268;">accent</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#F3F7F6;border:1px solid #D6E2DF;"></div><span style="font-size:11px;color:#2D4268;">bg</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;"><div style="height:48px;border-radius:10px;background:#13213A;"></div><span style="font-size:11px;color:#2D4268;">ink</span></div>
+      </div>
+      <div style="background:#1F2F4D;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;color:#fff;">
+        <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px 0 6px;border-radius:999px;font-size:12px;font-weight:700;background:#DCEBE5;color:#2B6A64;"><span style="font-family:'Material Symbols Rounded';font-size:14px;font-variation-settings:'FILL' 1;">event_available</span>Opening January 2027</span>
+        <span style="font-size:26px;line-height:32px;font-weight:800;letter-spacing:-.02em;">Support, fitted with care.</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;"><span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:#D98574;color:#2A0F08;">Book a fitting</span><span style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:14px;font-weight:700;background:rgba(255,255,255,.12);color:#fff;">For referrers</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px;overflow-x:auto;border:1px solid #DDD8E6;border-radius:14px;background:#fff;">
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead><tr><th style="text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#675F78;padding:8px 12px;background:#EEEBF4;">Token</th><th style="text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#675F78;padding:8px 12px;background:#EEEBF4;">Core Connections</th><th style="text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#675F78;padding:8px 12px;background:#EEEBF4;">Pessary Clinic</th><th style="text-align:left;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#675F78;padding:8px 12px;background:#EEEBF4;">Use</th></tr></thead>
+      <tbody>
+        <sc-for list="{{ themeRows }}" as="r" hint-placeholder-count="8">
+          <tr><td style="padding:10px 12px;border-bottom:1px solid #DDD8E6;font:12px ui-monospace,Menlo,monospace;">{{ r.tok }}</td><td style="padding:10px 12px;border-bottom:1px solid #DDD8E6;"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:5px;border:1px solid #DDD8E6;background:{{ r.cc }};"></span><code style="font:12px ui-monospace,Menlo,monospace;">{{ r.cc }}</code></span></td><td style="padding:10px 12px;border-bottom:1px solid #DDD8E6;"><span style="display:inline-flex;align-items:center;gap:8px;"><span style="width:16px;height:16px;border-radius:5px;border:1px solid #DDD8E6;background:{{ r.opc }};"></span><code style="font:12px ui-monospace,Menlo,monospace;">{{ r.opc }}</code></span></td><td style="padding:10px 12px;border-bottom:1px solid #DDD8E6;color:#4A4360;">{{ r.use }}</td></tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="rules" style="padding-top:56px;">
+  <h2 style="font-size:28px;line-height:36px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;">Do and don't</h2>
+  <p style="margin:0 0 24px;color:#4A4360;max-width:68ch;">The mistakes that most often make a health clinic site feel cold or confusing.</p>
+  <div style="display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));">
+    <div style="border:1px solid #DDD8E6;border-radius:14px;background:#fff;overflow:hidden;"><div style="display:flex;gap:8px;align-items:center;padding:10px 14px;font-weight:800;font-size:13px;background:#DDF3E5;color:#157A3B;"><span style="font-family:'Material Symbols Rounded';font-size:20px;">check_circle</span>Do</div><div style="padding:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#4A4360;"><span>Keep Book online visible in the header and the mobile action bar on every page.</span><span>Use real clinic and team photos. Put white text on the darker, lower part of the image.</span><span>Use "Read more" rows to shorten long pages.</span></div></div>
+    <div style="border:1px solid #DDD8E6;border-radius:14px;background:#fff;overflow:hidden;"><div style="display:flex;gap:8px;align-items:center;padding:10px 14px;font-weight:800;font-size:13px;background:#FDE6E3;color:#C92418;"><span style="font-family:'Material Symbols Rounded';font-size:20px;">cancel</span>Don't</div><div style="padding:14px;display:flex;flex-direction:column;gap:10px;font-size:13px;color:#4A4360;"><span>Mix the two palettes on one page. Cross-links use the other clinic's soft badge only.</span><span>Use red for anything except errors and closures.</span><span>Signal status with colour alone. Always add an icon and a word.</span></div></div>
+  </div>
+</section>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { chip: 0, lang: 0, faq: 0 };
+  renderVals() {
+    const { chip, lang, faq } = this.state;
+    const dark = ['Primary dark', 'Brand', 'Ink', 'Ink 2', 'Ink 3'];
+    const ccTokens = [
+      ['Brand', '--brand', '#4D4184', 'Primary buttons, links, active nav'],
+      ['Brand deep', '--brand-deep', '#362C5E', 'Hero panels, footer'],
+      ['Brand soft', '--brand-soft', '#EEE9F5', 'Tonal buttons, selected chips'],
+      ['Accent', '--accent', '#93BF2E', 'Book online, current step'],
+      ['Accent soft', '--accent-soft', '#EEF5DC', 'Credential badges'],
+      ['Honey', '--wood', '#C68F5B', 'Stars, warm details'],
+      ['Background', '--bg', '#F6F4F9', 'Page background'],
+      ['Surface', '--surface', '#FFFFFF', 'Cards, header, sheets'],
+      ['Surface 2', '--surface-2', '#EEEBF4', 'Secondary buttons, table header'],
+      ['Line', '--line', '#DDD8E6', 'Dividers, card borders'],
+      ['Ink', '--ink', '#1B1730', 'Primary text'],
+      ['Ink 2', '--ink-2', '#4A4360', 'Secondary text'],
+      ['Ink 3', '--ink-3', '#675F78', 'Captions (5.9:1)']
+    ].map(([name, tok, hex, use]) => ({ name, tok, hex, use, on: ['Brand', 'Brand deep', 'Ink', 'Ink 2', 'Ink 3'].includes(name) ? '#fff' : '#1B1730' }));
+    const chipLabels = ['All services', 'Pelvic health', 'Pre & postnatal', 'Orthopedic', 'Vestibular'];
+    const langLabels = ['EN', 'FR', 'ES', 'తె'];
+    const F = [
+      { icon: 'psychology', q: 'Understanding the mind-body connection', a: 'We understand how working through fear, trauma, anxiety and emotional overwhelm can impact our bodies.' },
+      { icon: 'self_improvement', q: 'Building body awareness', a: 'We integrate principles of somatic education into our practice, helping you develop greater awareness of your body, movement, sensations, breathing, tension and patterns of response.' },
+      { icon: 'groups', q: 'Collaborative, passionate care', a: 'We are a close-knit team of physiotherapists who share knowledge, collaborate on complex cases, and learn from one another.' }
+    ];
+    const st = { ok: ['#DDF3E5', '#157A3B', 'check_circle', 'Accepting'], wait: ['#FCEBD0', '#A8480A', 'schedule', 'Waitlist'] };
+    const th = [
+      ['assets/team-heather.jpg', 'Heather Grewar', 'Founder · Orthopedics & pelvic health', 'wait'],
+      ['assets/team-galia.jpg', 'Galia Carranco Herrera', 'Pelvic health', 'ok'],
+      ['assets/team-pratyusha.jpg', 'Pratyusha Kavuluri', 'Pelvic health, orthopedics & sports', 'ok'],
+      ['assets/team-susan.jpg', 'Susan Netherton', 'Orthopedic manipulative therapy', 'wait']
+    ];
+    return {
+      ccTokens,
+      spacing: [4, 8, 12, 16, 20, 24, 32, 40, 48, 64].map(n => ({ n, w: n * 3 + 'px' })),
+      icons: ['calendar_month', 'call', 'location_on', 'schedule', 'translate', 'accessible', 'local_parking', 'directions_bus', 'videocam', 'pregnant_woman', 'child_care', 'elderly', 'sports_gymnastics', 'self_improvement', 'accessibility_new', 'healing', 'spa', 'psychology', 'diversity_3', 'shield_with_heart', 'verified', 'groups', 'favorite', 'receipt_long'].map(n => ({ n })),
+      chips: chipLabels.map((label, i) => ({ label, bg: i === chip ? '#4D4184' : '#fff', fg: i === chip ? '#fff' : '#4A4360', bd: i === chip ? '#4D4184' : '#BDB5CC', pick: () => this.setState({ chip: i }) })),
+      langs: langLabels.map((label, i) => ({ label, bg: i === lang ? '#fff' : 'transparent', fg: i === lang ? '#1B1730' : '#675F78', sh: i === lang ? '0 1px 2px rgba(54,44,94,.12)' : 'none', pick: () => this.setState({ lang: i }) })),
+      therapists: th.map(([img, name, focus, s]) => ({ img, name, focus, sbg: st[s][0], sfg: st[s][1], sic: st[s][2], status: st[s][3] })),
+      faqs: F.map((f, i) => ({ ...f, open: i === faq, chev: i === faq ? 'expand_less' : 'expand_more', toggle: () => this.setState({ faq: i === faq ? -1 : i }) })),
+      themeRows: [
+        ['--brand', '#4D4184', '#2B6A64', 'Primary buttons, links'],
+        ['--brand-deep', '#362C5E', '#1F2F4D', 'Hero panels, footer'],
+        ['--brand-soft', '#EEE9F5', '#DCEBE5', 'Tonal, selected'],
+        ['--accent', '#93BF2E', '#D98574', 'Book action'],
+        ['--accent-soft', '#EEF5DC', '#F4DFD7', 'Highlight panels'],
+        ['--bg', '#F6F4F9', '#F3F7F6', 'Page'],
+        ['--line', '#DDD8E6', '#D6E2DF', 'Borders'],
+        ['--ink', '#1B1730', '#13213A', 'Text']
+      ].map(([tok, cc, opc, use]) => ({ tok, cc, opc, use }))
+    };
+  }
+}
+</script>
+</body>
+</html>
