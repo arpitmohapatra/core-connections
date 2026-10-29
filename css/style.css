@@ -362,9 +362,9 @@ p+p {
 .nav__menu {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1.15rem;
   font-weight: 500;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
 }
 
 .nav__menu a {
@@ -387,7 +387,7 @@ p+p {
   margin-left: var(--space-xs);
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1080px) {
   .nav__toggle {
     display: block;
   }
@@ -1273,3 +1273,411 @@ p+p {
   opacity: 1;
   transform: none;
 }
+
+/* =====================================================================
+   Ottawa Pessary Clinic (OPC) entry points
+   The business is splitting in two: Core Connections (this site) and the
+   Ottawa Pessary Clinic. Navy echoes the OPC's dark-navy signage; citron
+   links it back to the CC palette.
+   ===================================================================== */
+:root {
+  --color-navy: #17254a;
+  --color-navy-deep: #0f1a36;
+}
+
+/* Slim sitewide ribbon above the header */
+.opc-ribbon {
+  background: var(--color-navy);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.35rem var(--space-sm);
+  line-height: 1.4;
+}
+
+.opc-ribbon p {
+  color: inherit;
+  margin: 0;
+}
+
+.opc-ribbon a {
+  display: inline-block;
+  padding: 0.3rem 0.2rem;
+  color: var(--color-white);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.opc-ribbon a:hover {
+  color: var(--color-accent);
+}
+
+.opc-ribbon a:focus-visible,
+.opc-gate a:focus-visible,
+.opc-callout a:focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* Home-page gate: a distinct band directly under the header */
+.opc-gate {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg, var(--color-navy-deep) 0%, var(--color-navy) 60%, #243a6e 100%);
+  color: var(--color-white);
+  border-bottom: 3px solid var(--color-accent);
+}
+
+.opc-gate::before,
+.opc-gate::after {
+  /* pessary rings: two concentric outlines drifting off the right edge */
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+}
+
+.opc-gate::before {
+  width: 320px;
+  height: 320px;
+  right: -90px;
+  top: -150px;
+}
+
+.opc-gate::after {
+  width: 200px;
+  height: 200px;
+  right: 30px;
+  top: -60px;
+  border-color: rgba(147, 191, 46, 0.45);
+}
+
+.opc-gate__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-block: var(--space-sm);
+}
+
+.opc-gate__tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-navy-deep);
+  background: var(--color-accent);
+  padding: 0.25em 0.8em;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.opc-gate h2 {
+  color: var(--color-white);
+  font-size: clamp(1.45rem, 1.6vw + 1rem, 2.1rem);
+}
+
+.opc-gate p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.opc-gate__text p:not(.opc-gate__tag) {
+  margin-top: 0.3rem;
+  max-width: 52ch;
+  font-size: 0.98rem;
+}
+
+.opc-gate__btn {
+  flex: none;
+  background: var(--color-white);
+  color: var(--color-navy-deep);
+}
+
+.opc-gate__btn:hover {
+  background: var(--color-accent);
+  color: var(--color-navy-deep);
+}
+
+.opc-gate__btn .arrow {
+  transition: transform 0.2s ease;
+}
+
+.opc-gate__btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 720px) {
+  .opc-gate__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .opc-gate__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Callout used inside content pages */
+.opc-callout {
+  background: linear-gradient(120deg, var(--color-navy-deep), var(--color-navy));
+  color: var(--color-white);
+  border-radius: var(--radius);
+  border-left: 5px solid var(--color-accent);
+  padding: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.opc-callout h3,
+.opc-callout h2 {
+  color: var(--color-white);
+}
+
+.opc-callout p {
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 62ch;
+}
+
+.opc-callout .btn {
+  background: var(--color-white);
+  color: var(--color-navy-deep);
+}
+
+.opc-callout .btn:hover {
+  background: var(--color-accent);
+}
+
+.opc-link {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ---------- "Read more" expanders (native <details>) ---------- */
+.more {
+  margin-top: var(--space-sm);
+  border-top: 1px solid var(--color-line);
+}
+
+.more>summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 0;
+  font-weight: 600;
+  color: var(--color-primary);
+  min-height: 44px;
+}
+
+.more>summary::-webkit-details-marker {
+  display: none;
+}
+
+.more>summary::after {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.more[open]>summary::after {
+  content: "\2212";
+}
+
+.more>summary:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 4px;
+}
+
+.more__body {
+  padding-bottom: var(--space-xs);
+}
+
+.more__body>*+* {
+  margin-top: var(--space-xs);
+}
+
+.more__body h4 {
+  font-size: 1.15rem;
+  margin-top: var(--space-sm);
+}
+
+.more__body ul,
+.more__body ol,
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+}
+
+.more__body li+li,
+.prose li+li,
+.cond-card li+li {
+  margin-top: 0.35em;
+}
+
+.section--dark .more {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.section--dark .more>summary {
+  color: var(--color-white);
+}
+
+/* ---------- Feature list (home "why us" points) ---------- */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-sm) var(--space-md);
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 2.6rem;
+  font-weight: 500;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--color-surface-tint);
+  border: 2px solid var(--color-primary-light);
+}
+
+.feature-list li::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.55rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* ---------- Conditions grid ---------- */
+.cond-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-sm);
+}
+
+.cond-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.cond-card h4,
+.cond-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+}
+
+.cond-card ul {
+  padding-left: 1.2em;
+  font-size: 0.96rem;
+  color: var(--color-muted);
+}
+
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin-top: var(--space-sm);
+}
+
+.subnav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+
+.subnav a:hover {
+  border-color: var(--color-accent-dark);
+}
+
+.service-block {
+  scroll-margin-top: 90px;
+}
+
+.service-block+.service-block {
+  margin-top: var(--space-xl);
+}
+
+.note-box {
+  background: var(--color-surface-tint);
+  border-left: 4px solid var(--color-primary-light);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.96rem;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: var(--space-sm);
+}
+
+.pill-row span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.3em 0.85em;
+  border-radius: 999px;
+  background: var(--color-surface-tint);
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding-inline: 1.2em;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------- Google reviews ---------- */
+.reviews { display: grid; gap: var(--space-sm); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: var(--space-md); }
+.review { margin: 0; padding: var(--space-sm); background: var(--color-white); border: 1px solid var(--color-line); border-radius: var(--radius); box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: var(--space-xs); }
+.review blockquote { margin: 0; flex: 1; }
+.review blockquote p { font-family: var(--font-display); font-size: 1.05rem; line-height: 1.55; }
+.review figcaption { font-size: 0.875rem; color: var(--color-muted); }
+.review__stars { color: var(--color-accent-dark); letter-spacing: 0.15em; }
+.reviews__summary { color: var(--color-muted); margin-top: var(--space-3xs); }
+.reviews__summary span { color: var(--color-accent-dark); }
